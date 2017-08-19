@@ -1,4 +1,4 @@
-# Hass.io Add-on: SSH - Secure Shell
+# Community Hass.io Add-on: SSH - Secure Shell
 
 ![Project Stage][project-stage-shield]
 ![Maintenance][maintenance-shield]
@@ -54,13 +54,13 @@ Additionally, it comes out of the box with the following:
 - Compatible if Hass.io was installed via the generic Linux installer.
 - Have Alpine packages installed on start. This will allow you to install your
 favorite tools, which will be available every single time you log in.
-- Execute custom commands on start automatically, so you can customize the shell
-to your likings.
+- Execute custom commands on start automatically so that you can customize the 
+shell to your likings.
 - [ZSH][zsh] as its default shell. Easier to use for the beginner, more advanced
 for the more experienced user. It even comes preloaded with 
 ["Oh My ZSH"][ohmyzsh], with some plugins enabled as well.
 - Contains a sensible set of tools right out of the box: curl, Wget, RSync, GIT,
-Nmap, Mosquitto client, MariaDB/MySQL client, Awake (“wake on lan”), Nano, Vim,
+Nmap, Mosquitto client, MariaDB/MySQL client, Awake (“wake on LAN”), Nano, Vim,
 tmux, and a bunch commonly used networking tools.
 
 ## Installation
@@ -69,12 +69,14 @@ The installation of this add-on is pretty straight forward and not different in
 comparison to installing any other Hass.io add-on.
 
 1. If you installed the "SSH server" add-on from the built-in add-on, then
-that one first.
-2. [Add our Hass.io add-ons repository][repository] to your Hass.io instance
+    remove that one first.
+2. [Add our Hass.io add-ons repository][repository] to your Hass.io instance.  
+    **NOTE**: Do not add this repository, but use:
+    `https://github.com/hassio-addons/repository`.
 3. Install the "SSH - Secure Shell" add-on from our repository
-3. Start the "SSH - Secure Shell" add-on
-4. Check the logs of the "SSH - Secure Shell" add-on to see if everything
-went well.
+5. Start the "SSH - Secure Shell" add-on
+6. Check the logs of the "SSH - Secure Shell" add-on to see if everything
+    went well.
 
 Please read the rest of this document further instructions.
 
@@ -114,12 +116,12 @@ add-on. The add-on will also start the SSH daemon in debug mode. While SSH is
 running in daemon mode, it will be only able to accept one single connection. As
 soon as this session is ended, the addon will stop running.
 
-This might be useful when you're dealing with an unknown issue. It is
+This might be useful when you are dealing with an unknown issue. It is
 recommended leaving to option set to `false`, unless you are troubleshooting.
 
 **Option: `port`**
 
-The default port for SSH is `22`, some security guides actually recommend to
+The default port for SSH is `22`, some security guides recommend to
 change the port to something else. Sometimes you'd just like to have it on
 another port. Remember, if you change to port, be sure it is not in use 
 already!
@@ -127,7 +129,7 @@ already!
 **Option: `username`**
 
 This option allows you to change to username the use when you log in via SSH.
-It is only used for the authentication, you will be the `root` user after
+It is only utilized for the authentication; you will be the `root` user after
 you have authenticated. Using `root` as the username is possible, but not
 recommended.
 
@@ -136,7 +138,7 @@ order to be able to enable the SFTP capabilities._
 
 **Option: `password`**
 
-Sets the password to log in with. Leaving it empty would disable the posibility
+Sets the password to log in with. Leaving it empty would disable the possibility
 to authenticate with a password. We would highly recommend not to use this
 option from a security point of view.
 
@@ -146,7 +148,7 @@ Add one or more public keys to your SSH server to use with authentication.
 This is the recommended over setting a password.
 
 Please take a look at the awesome [documentation created by GitHub][github-ssh]
-about using public/private keypairs and how to create them.
+about using public/private key pairs and how to create them.
 
 **Option: `sftp`**
 
@@ -159,7 +161,7 @@ order to be able to enable the SFTP capabilities._
 **Option: `packages`**
 
 Allows you to specify additional [Alpine packages][alpine-packages] to be 
-installed in your shell environment (e.g. Python, Joe, Irssi).
+installed in your shell environment (e.g., Python, Joe, Irssi).
 
 _*Note*: Adding many packages will result in a longer start-up 
 time for the add-on._
@@ -178,14 +180,16 @@ single time this add-on starts.
 
 Got questions? Got some unexpected behavior caused by this plugin?
 
-Please [open an issue on our GitHub repository][issues] and we'll do our best
+Please [open an issue on our GitHub repository][issues] and we will do our best
 to help you out.
 
 ## Credits
 
-A big shout out to the following people, without them this add-on wasn't possible:
-- The team & community of [Home Assistant][home-assistant] for developing such an
-excellent home automation toolkit
+A big shout out to the following people, without them this add-on was not 
+possible:
+
+- The team & community of [Home Assistant][home-assistant] for developing such
+  an excellent home automation toolkit
 
 Thank you all!
 
@@ -194,7 +198,7 @@ Thank you all!
 Do you like this add-on? Want some more functionality to your Hass.io Home
 Assistant instance?
 
-We've created multiple add-ons for Hass.io. For a full list, check out
+We have created multiple add-ons for Hass.io. For a full list, check out
 our [GitHub Repository][repository].
 
 ## License
@@ -250,8 +254,8 @@ SOFTWARE.
 [i386-microbadger]: https://microbadger.com/images/hassioaddons/ssh-i386
 [i386-pulls-shield]: https://img.shields.io/docker/pulls/hassioaddons/ssh-i386.svg
 [i386-version-shield]: https://images.microbadger.com/badges/version/hassioaddons/ssh-i386.svg
-[issues]: https://github.com/hassio-addons/repository/issues
-[license-shield]: https://img.shields.io/github/license/hassio-addons/repository.svg
+[issues]: https://github.com/hassio-addons/addon-ssh/issues
+[license-shield]: https://img.shields.io/github/license/hassio-addons/addon-ssh.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2017.svg
 [ohmyzsh]: http://ohmyz.sh/
 [openssh]: https://www.openssh.com/
