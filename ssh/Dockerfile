@@ -4,28 +4,52 @@ FROM ${BUILD_FROM}
 # Add env
 ENV TERM="xterm-256color"
 
-# Copy data
-COPY files/run.sh /
-COPY files/hassio /usr/bin/
-COPY files/sshd_config /etc/ssh/
-COPY files/motd /etc/
-COPY files/.zshrc /root/
-COPY files/.tmux.conf /root/
-COPY files/wheel /etc/sudoers.d/
+# Copy root filesystem
+COPY rootfs /
 
 # Setup base
-RUN apk add --no-cache jq openssh sudo zsh openssl libxml2-utils ncurses \
-    curl wget net-tools bind-tools rsync git nmap wget awake \
-    nano vim mosquitto-clients mariadb-client tmux && \
-    git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh && \
-    chmod a+x /run.sh /usr/bin/hassio && \
-    sed -i -e "s/bin\/ash/bin\/zsh/" /etc/passwd && \
-    touch /etc/ssh/authorized_keys && \
-    chmod 0644 /etc/ssh/authorized_keys && \
-    touch /var/log/btmp && \
-    chmod 0600 /var/log/btmp
+RUN \
+    apk add --no-cache \
+        awake \
+        bind-tools \
+        curl \
+        git \
+        jq \
+        libxml2-utils \
+        mariadb-client \
+        mosquitto-clients \
+        nano \
+        ncurses \
+        net-tools \
+        nmap \
+        openssh \
+        openssl \
+        rsync \
+        sudo \
+        tmux \
+        vim \
+        wget \
+        wget \
+        zsh \
+    \
+    && git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh \
+    \
+    && chmod a+x /usr/bin/run.sh /usr/bin/hassio \
+    \
+    && sed -i -e "s/bin\/ash/bin\/zsh/" /etc/passwd \
+    \
+    && touch /etc/ssh/authorized_keys \
+    \
+    && chmod 0644 /etc/ssh/authorized_keys \
+    \
+    && touch /var/log/btmp \
+    \
+    && chmod 0600 /var/log/btmp \
+    \
+    && rm -f -r \
+        /tmp/*
 
-CMD [ "/run.sh" ]
+CMD [ "/usr/bin/run.sh" ]
 
 # Build arugments
 ARG BUILD_ARCH
@@ -39,7 +63,7 @@ LABEL \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
     maintainer="Franck Nijhof <frenck@addons.community>" \
-    org.label-schema.description="SSH add-on for Hass.io" \
+    org.label-schema.description="Allows SSH connections to your Home Assistant instance" \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="Hass.io SSH add-on for ${BUILD_ARCH}" \
     org.label-schema.schema-version="1.0" \
