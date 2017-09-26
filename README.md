@@ -9,7 +9,7 @@ This add-on allows you to log in to your Hass.io Home Assistant instance using
 SSH. Giving you to access your Hass.io folders and also includes a
 command-line tool to do things like restart, update, and check your instance.
 
-This is an enhanced version of the provided 
+This is an enhanced version of the provided
 [SSH add-on by Home Assistant][hass-ssh] and focusses on security,
 usability and flexibility.
 
@@ -52,15 +52,15 @@ Additionally, it comes out of the box with the following:
 - Debug mode for allowing you to triage issues easier.
 - Compatible if Hass.io was installed via the generic Linux installer.
 - Have Alpine packages installed on start. This will allow you to install your
-favorite tools, which will be available every single time you log in.
-- Execute custom commands on start automatically so that you can customize the 
-shell to your likings.
+  favorite tools, which will be available every single time you log in.
+- Execute custom commands on start automatically so that you can customize the
+  shell to your likings.
 - [ZSH][zsh] as its default shell. Easier to use for the beginner, more advanced
-for the more experienced user. It even comes preloaded with 
-["Oh My ZSH"][ohmyzsh], with some plugins enabled as well.
+  for the more experienced user. It even comes preloaded with
+  ["Oh My ZSH"][ohmyzsh], with some plugins enabled as well.
 - Contains a sensible set of tools right out of the box: curl, Wget, RSync, GIT,
-Nmap, Mosquitto client, MariaDB/MySQL client, Awake (“wake on LAN”), Nano, Vim,
-tmux, and a bunch commonly used networking tools.
+  Nmap, Mosquitto client, MariaDB/MySQL client, Awake (“wake on LAN”), Nano,
+  Vim, tmux, and a bunch commonly used networking tools.
 
 ## Installation
 
@@ -69,21 +69,22 @@ comparison to installing any other Hass.io add-on.
 
 1. If you installed the "SSH server" add-on from the built-in add-on, then
     remove that one first.
-2. [Add our Hass.io add-ons repository][repository] to your Hass.io instance.  
+1. [Add our Hass.io add-ons repository][repository] to your Hass.io instance.
     **NOTE**: Do not add this repository, but use:
     `https://github.com/hassio-addons/repository`.
-3. Install the "SSH - Secure Shell" add-on from our repository
-5. Start the "SSH - Secure Shell" add-on
-6. Check the logs of the "SSH - Secure Shell" add-on to see if everything
+1. Install the "SSH - Secure Shell" add-on from our repository
+1. Start the "SSH - Secure Shell" add-on
+1. Check the logs of the "SSH - Secure Shell" add-on to see if everything
     went well.
 
 Please read the rest of this document further instructions.
 
 ## Configuration
 
-_Please remember to restart the add-on when the configuration changes._
+Note: _Please remember to restart the add-on when the configuration changes._
 
 Example add-on configuration:
+
 ```json
 {
   "debug": true,
@@ -106,9 +107,10 @@ Example add-on configuration:
   ]
 }
 ```
-_*Note*: This is just an example, don't copy and past it! Create your own!_
 
-**Option: `debug`**
+Note: _This is just an example, don't copy and past it! Create your own!_
+
+### Option: `debug`
 
 When set to `true` the addon will output more information in the logs of the
 add-on. The add-on will also start the SSH daemon in debug mode. While SSH is
@@ -118,30 +120,30 @@ soon as this session is ended, the addon will stop running.
 This might be useful when you are dealing with an unknown issue. It is
 recommended leaving to option set to `false`, unless you are troubleshooting.
 
-**Option: `port`**
+### Option: `port`
 
 The default port for SSH is `22`, some security guides recommend to
 change the port to something else. Sometimes you'd just like to have it on
-another port. Remember, if you change to port, be sure it is not in use 
+another port. Remember, if you change to port, be sure it is not in use
 already!
 
-**Option: `username`**
+### Option: `username`
 
 This option allows you to change to username the use when you log in via SSH.
 It is only utilized for the authentication; you will be the `root` user after
 you have authenticated. Using `root` as the username is possible, but not
 recommended.
 
-_*Note*: Due to limitations, you will need to set this option to `root` in
+Note: _Due to limitations, you will need to set this option to `root` in
 order to be able to enable the SFTP capabilities._
 
-**Option: `password`**
+### Option: `password`
 
 Sets the password to log in with. Leaving it empty would disable the possibility
 to authenticate with a password. We would highly recommend not to use this
 option from a security point of view.
 
-**Option: `authorized_keys`**
+### Option: `authorized_keys`
 
 Add one or more public keys to your SSH server to use with authentication.
 This is the recommended over setting a password.
@@ -149,31 +151,31 @@ This is the recommended over setting a password.
 Please take a look at the awesome [documentation created by GitHub][github-ssh]
 about using public/private key pairs and how to create them.
 
-**Option: `sftp`**
+### Option: `sftp`
 
 When set to `true` the addon will enable SFTP support on the SSH daemon.
 Please only enable it when you plan to use it.
 
-_*Note*: Due to limitations, you will need to set the username to `root` in
+Note: _Due to limitations, you will need to set the username to `root` in
 order to be able to enable the SFTP capabilities._
 
-**Option: `packages`**
+### Option: `packages`
 
-Allows you to specify additional [Alpine packages][alpine-packages] to be 
+Allows you to specify additional [Alpine packages][alpine-packages] to be
 installed in your shell environment (e.g., Python, Joe, Irssi).
 
-_*Note*: Adding many packages will result in a longer start-up 
+Note: _Adding many packages will result in a longer start-up
 time for the add-on._
 
-**Option: `init_commands`**
+### Option: `init_commands`
 
 Customize your shell environment even more with the `init_commands` option.
 Add one or more shell commands to the list, and they will be executed every
-single time this add-on starts. 
+single time this add-on starts.
 
 ## Known issues and limitations
 
-- When SFTP is enabled, the username MUST be set to `root`. 
+- When SFTP is enabled, the username MUST be set to `root`.
 
 ## Support
 
@@ -184,7 +186,7 @@ to help you out.
 
 ## Credits
 
-A big shout out to the following people, without them this add-on was not 
+A big shout out to the following people, without them this add-on was not
 possible:
 
 - The team & community of [Home Assistant][home-assistant] for developing such

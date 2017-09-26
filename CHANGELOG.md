@@ -32,5 +32,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## 1.0.0 - 2017-08-16
 
 ### Added
+
 - First version of the SSH Add-on
 - This CHANGELOG file
