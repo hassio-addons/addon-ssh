@@ -1,4 +1,5 @@
-FROM %%BASE_IMAGE%%
+ARG BUILD_FROM=hassioaddons/base-amd64
+FROM ${BUILD_FROM}
 MAINTAINER Franck Nijhof <frenck@geekchimp.com>
 
 # Add env
