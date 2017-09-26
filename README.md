@@ -47,7 +47,6 @@ Additionally, it comes out of the box with the following:
   - Many more security tweaks, *this addon passes all [ssh-audit] checks
     without warnings!*
     ![Result of SSH-Audit](images/ssh-audit.png)
-- Port number is configurable (You could use `1982` instead of port `22`).
 - SFTP support is disabled by default but is user configurable.
 - Username is configurable, so `root` is no longer mandatory.
 - Debug mode for allowing you to triage issues easier.

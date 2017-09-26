@@ -298,29 +298,6 @@ setup_password_authentication() {
 }
 
 # ------------------------------------------------------------------------------
-# Configures the SSHd port
-# Globals:
-#   None
-# Arguments:
-#   None
-# Returns:
-#   None
-# ------------------------------------------------------------------------------
-configure_port() {
-  local port
-
-  port=$(get_config 'port' false)
-  if [[ ! -z "$port" ]];
-  then
-    display_status_message "Setting SSH port to: $port"
-    command sed -i "s/Port\ .*/Port\ $port/" "$SSH_CONFIG_PATH"
-  else
-    display_status_message 'Setting SSH port to: 22'
-    command sed -i "s/Port\ .*/Port\ 22/" "$SSH_CONFIG_PATH"
-  fi
-}
-
-# ------------------------------------------------------------------------------
 # Configures SFTP access
 # Globals:
 #   None
@@ -400,7 +377,7 @@ install_packages() {
   then
     display_status_message 'Installing user requested Alpine packages'
 
-    display_status_message 'Updating Alpine packages repository indexes' 
+    display_status_message 'Updating Alpine packages repository indexes'
     command apk update || display_error_message \
       'Failed updating Alpine packages repository indexes' "$EX_APK_UPDATE"
 
@@ -498,7 +475,6 @@ main() {
   setup_authorized_keys
   setup_password_authentication
 
-  configure_port
   configure_sftp
 
   link_common_directories

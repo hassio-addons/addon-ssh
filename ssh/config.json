@@ -6,7 +6,6 @@
   "url": "https://github.com/hassio-addons/addon-ssh",
   "startup": "services",
   "boot": "auto",
-  "host_network": true,
   "hassio_api": true,
   "map": [
     "config:rw",
@@ -17,7 +16,6 @@
   ],
   "options": {
     "debug": false,
-    "port": 22,
     "username": "hass",
     "password": "",
     "authorized_keys": [],
@@ -27,7 +25,6 @@
   },
   "schema": {
     "debug": "bool",
-    "port": "int",
     "username": "str",
     "password": "str",
     "authorized_keys": ["str"],
