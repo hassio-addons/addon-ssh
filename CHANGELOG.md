@@ -7,8 +7,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## Unreleased
 
-- Removed port configuration option, now natively supported by Hass.io
-- Disabled running on the host network, not longer required.
+### Added
+
+- Added CodeClimate
+- Added CircleCI
+- Added support for hass.io's extended label schema
+- Added persistency of the ~/.ssh folder
+- Added compatibility mode
+
+### Changed
+
+- Migrated to the new Hass.io build system
+- Migrated to our new base images
+- Rewrite of add-on onto the S6 process supervisor
+- Upgraded the hassio CLI tool to the latest version
+- Updated documentation
 
 ## 1.0.3 - 2017-08-16
 
