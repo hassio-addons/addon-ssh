@@ -1,0 +1,15 @@
+#!/usr/bin/with-contenv bash
+# ==============================================================================
+# Community Hass.io Add-ons: SSH
+# This files check if all user configuration requirements are met
+# ==============================================================================
+# shellcheck disable=SC1091
+source /usr/lib/hassio-addons/base.sh
+
+hass.log.info 'Starting the SSH daemon'
+
+if hass.debug; then
+  /usr/sbin/sshd -D -d -e < /dev/null
+else
+  /usr/sbin/sshd -D -e < /dev/null
+fi
