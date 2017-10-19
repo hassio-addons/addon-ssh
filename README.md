@@ -192,8 +192,8 @@ order to be able to enable the SFTP capabilities._
 
 ### Option: `compatibility_mode`
 
-This SSH add-on focusses on security and has therefor enabled only known
-secure encryption methods. However, some older client do not support these.
+This SSH add-on focusses on security and has therefore only enabled known
+secure encryption methods. However, some older clients does not support these.
 Setting this option to `true` will enable the original default set of methods,
 allowing those clients to connect.
 
@@ -325,6 +325,7 @@ SOFTWARE.
 [discord]: https://discord.gg/c5DvZ4e
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
 [forum]: https://community.home-assistant.io/t/repository-community-hass-io-add-ons/24705?u=frenck
+[frenck]: https://github.com/frenck
 [github-ssh]: https://help.github.com/articles/connecting-to-github-with-ssh/
 [gratipay-shield]: https://img.shields.io/badge/donate-gratipay-blue.svg
 [gratipay]: https://gratipay.com/hassio-addons/
