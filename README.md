@@ -317,7 +317,7 @@ SOFTWARE.
 [bountysource]: https://www.bountysource.com/teams/hassio-addons/issues
 [circleci-shield]: https://img.shields.io/circleci/project/github/hassio-addons/addon-ssh.svg
 [circleci]: https://circleci.com/gh/hassio-addons/addon-ssh
-[codeclimate-shield]: https://img.shields.io/codeclimate/github/hassio-addons/addon-ssh.svg
+[codeclimate-shield]: https://img.shields.io/badge/code%20climate-protected-brightgreen.svg
 [codeclimate]: https://codeclimate.com/github/hassio-addons/addon-ssh
 [commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/addon-ssh.svg
 [commits]: https://github.com/hassio-addons/addon-ssh/commits/master
