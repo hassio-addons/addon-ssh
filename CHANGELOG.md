@@ -1,17 +1,23 @@
-# Hass.io Add-on Changelog: SSH - Secure Shell
+# Community Hass.io Add-ons: SSH - Secure Shell
 
 All notable changes to this add-on will be documented in this file.
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
-and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog][keep-a-changelog]
+and this project adheres to [Semantic Versioning][semantic-versioning].
 
 ## Unreleased
+
+No are unreleased changes yet.
+
+## [v2.0.0][v2.0.0] (2017-10-20)
+
+[Full Changelog][v1.0.3-v2.0.0]
 
 ### Added
 
 - Added CodeClimate
 - Added CircleCI
-- Added support for hass.io's extended label schema
+- Added support for Hass.io's extended label schema
 - Added persistency of the ~/.ssh folder
 - Added compatibility mode
 
@@ -23,28 +29,46 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Upgraded the hassio CLI tool to the latest version
 - Updated documentation
 
-## 1.0.3 - 2017-08-16
+## [v1.0.3][v1.0.3] - 2017-08-16
+
+[Full Changelog][v1.0.2-v1.0.3]
 
 ### Changed
 
 - Fix issue: User with key and without password was unable to log in
   This time for real ;)
 
-## 1.0.2 - 2017-08-16
+## [v1.0.2][v1.0.2] - 2017-08-16
+
+[Full Changelog][v1.0.1-v1.0.2]
 
 ### Changed
 
 - Fix issue: User with key and without password was unable to log in
 
-## 1.0.1 - 2017-08-16
+## [v1.0.1][v1.0.1] - 2017-08-16
+
+[Full Changelog][v1.0.0-v1.0.1]
 
 ### Changed
 
 - Fix issue: User with key and without password was unable to log in
 
-## 1.0.0 - 2017-08-16
+## [v1.0.0][v1.0.0] - 2017-08-16
 
 ### Added
 
 - First version of the SSH Add-on
 - This CHANGELOG file
+
+[keep-a-changelog]: http://keepachangelog.com/en/1.0.0/
+[semantic-versioning]: http://semver.org/spec/v2.0.0.html
+[v1.0.0-v1.0.1]: https://github.com/hassio-addons/addon-example/compare/v1.0.0...v1.0.1
+[v1.0.0]: https://github.com/hassio-addons/addon-example/tree/v1.0.0
+[v1.0.1-v1.0.2]: https://github.com/hassio-addons/addon-example/compare/v1.0.1...v1.0.2
+[v1.0.1]: https://github.com/hassio-addons/addon-example/tree/v1.0.1
+[v1.0.2-v1.0.3]: https://github.com/hassio-addons/addon-example/compare/v1.0.2...v1.0.3
+[v1.0.2]: https://github.com/hassio-addons/addon-example/tree/v1.0.2
+[v1.0.3-v2.0.0]: https://github.com/hassio-addons/addon-example/compare/v1.0.3...v2.0.0
+[v1.0.3]: https://github.com/hassio-addons/addon-example/tree/v1.0.3
+[v2.0.0]: https://github.com/hassio-addons/addon-example/tree/v2.0.0
