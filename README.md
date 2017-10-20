@@ -66,6 +66,7 @@ comparison to installing any other Hass.io add-on.
 
 1. If you installed the "SSH server" add-on from the built-in add-on, then
     remove that one first.
+1. [Add our Hass.io add-ons repository][repository] to your Hass.io instance.
 1. Install the "SSH - Secure Shell" add-on.
 1. Configure the `username` and `password`/`authorized_keys` options.
 1. Start the "SSH - Secure Shell" add-on.
@@ -127,7 +128,7 @@ SSH add-on configuration:
 }
 ```
 
-***Note**: _This is just an example, don't copy and past it! Create your own!_
+**Note**: _This is just an example, don't copy and past it! Create your own!_
 
 ### Option: `log_level`
 
@@ -321,6 +322,7 @@ SOFTWARE.
 [codeclimate]: https://codeclimate.com/github/hassio-addons/addon-ssh
 [commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/addon-ssh.svg
 [commits]: https://github.com/hassio-addons/addon-ssh/commits/master
+[contributors]: https://github.com/hassio-addons/addon-ssh/graphs/contributors
 [discord-shield]: https://img.shields.io/discord/330944238910963714.svg
 [discord]: https://discord.gg/c5DvZ4e
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg

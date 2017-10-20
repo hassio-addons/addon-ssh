@@ -8,7 +8,7 @@ source /usr/lib/hassio-addons/base.sh
 
 # Check if a username is set
 if ! hass.config.has_value 'username'; then
-    hass.die 'Setting a username in the mandatory!'
+    hass.die 'Setting a username is the mandatory!'
 fi
 
 # We require at least a password or a authorized key
