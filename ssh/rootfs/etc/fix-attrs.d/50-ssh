@@ -1,2 +1,2 @@
 /var/log/btmp false root 0600 0700
-/etc/ssh/authorized_keys false 0644 0755
+/etc/ssh/authorized_keys false root 0644 0755

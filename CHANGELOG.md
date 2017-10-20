@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 ## Unreleased
 
-No are unreleased changes yet.
+### Fixed
+
+- File `authorized_keys` has incorrect permissions
 
 ## [v2.0.0][v2.0.0] (2017-10-20)
 
