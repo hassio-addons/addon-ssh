@@ -63,12 +63,12 @@ No are unreleased changes yet.
 
 [keep-a-changelog]: http://keepachangelog.com/en/1.0.0/
 [semantic-versioning]: http://semver.org/spec/v2.0.0.html
-[v1.0.0-v1.0.1]: https://github.com/hassio-addons/addon-example/compare/v1.0.0...v1.0.1
-[v1.0.0]: https://github.com/hassio-addons/addon-example/tree/v1.0.0
-[v1.0.1-v1.0.2]: https://github.com/hassio-addons/addon-example/compare/v1.0.1...v1.0.2
-[v1.0.1]: https://github.com/hassio-addons/addon-example/tree/v1.0.1
-[v1.0.2-v1.0.3]: https://github.com/hassio-addons/addon-example/compare/v1.0.2...v1.0.3
-[v1.0.2]: https://github.com/hassio-addons/addon-example/tree/v1.0.2
-[v1.0.3-v2.0.0]: https://github.com/hassio-addons/addon-example/compare/v1.0.3...v2.0.0
-[v1.0.3]: https://github.com/hassio-addons/addon-example/tree/v1.0.3
-[v2.0.0]: https://github.com/hassio-addons/addon-example/tree/v2.0.0
+[v1.0.0-v1.0.1]: https://github.com/hassio-addons/addon-ssh/compare/v1.0.0...v1.0.1
+[v1.0.0]: https://github.com/hassio-addons/addon-ssh/tree/v1.0.0
+[v1.0.1-v1.0.2]: https://github.com/hassio-addons/addon-ssh/compare/v1.0.1...v1.0.2
+[v1.0.1]: https://github.com/hassio-addons/addon-ssh/tree/v1.0.1
+[v1.0.2-v1.0.3]: https://github.com/hassio-addons/addon-ssh/compare/v1.0.2...v1.0.3
+[v1.0.2]: https://github.com/hassio-addons/addon-ssh/tree/v1.0.2
+[v1.0.3-v2.0.0]: https://github.com/hassio-addons/addon-ssh/compare/v1.0.3...v2.0.0
+[v1.0.3]: https://github.com/hassio-addons/addon-ssh/tree/v1.0.3
+[v2.0.0]: https://github.com/hassio-addons/addon-ssh/tree/v2.0.0
