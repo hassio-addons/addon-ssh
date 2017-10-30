@@ -9,7 +9,15 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 No unreleased changes yet.
 
-## [v2.0.2][v2.0.2] (2017-10-21)
+## [v2.0.3] (2017-10-30)
+
+[Full Changelog][v2.0.2-v2.0.3]
+
+### Changed
+
+- Updated base images to v1.0.1
+
+## [v2.0.2] (2017-10-21)
 
 [Full Changelog][v2.0.1-v2.0.2]
 
@@ -17,7 +25,7 @@ No unreleased changes yet.
 
 - Directory `/etc/ssh/` has incorrect permissions
 
-## [v2.0.1][v2.0.1] (2017-10-21)
+## [v2.0.1] (2017-10-21)
 
 [Full Changelog][v2.0.0-v2.0.1]
 
@@ -25,7 +33,7 @@ No unreleased changes yet.
 
 - File `authorized_keys` has incorrect permissions
 
-## [v2.0.0][v2.0.0] (2017-10-20)
+## [v2.0.0] (2017-10-20)
 
 [Full Changelog][v1.0.3-v2.0.0]
 
@@ -45,7 +53,7 @@ No unreleased changes yet.
 - Upgraded the hassio CLI tool to the latest version
 - Updated documentation
 
-## [v1.0.3][v1.0.3] - 2017-08-16
+## [v1.0.3] (2017-08-16)
 
 [Full Changelog][v1.0.2-v1.0.3]
 
@@ -54,7 +62,7 @@ No unreleased changes yet.
 - Fix issue: User with key and without password was unable to log in
   This time for real ;)
 
-## [v1.0.2][v1.0.2] - 2017-08-16
+## [v1.0.2] (2017-08-16)
 
 [Full Changelog][v1.0.1-v1.0.2]
 
@@ -62,7 +70,7 @@ No unreleased changes yet.
 
 - Fix issue: User with key and without password was unable to log in
 
-## [v1.0.1][v1.0.1] - 2017-08-16
+## [v1.0.1] (2017-08-16)
 
 [Full Changelog][v1.0.0-v1.0.1]
 
@@ -70,7 +78,7 @@ No unreleased changes yet.
 
 - Fix issue: User with key and without password was unable to log in
 
-## [v1.0.0][v1.0.0] - 2017-08-16
+## [v1.0.0] (2017-08-16)
 
 ### Added
 
@@ -91,4 +99,6 @@ No unreleased changes yet.
 [v2.0.0]: https://github.com/hassio-addons/addon-ssh/tree/v2.0.0
 [v2.0.1-v2.0.2]: https://github.com/hassio-addons/addon-ssh/compare/v2.0.1...v2.0.2
 [v2.0.1]: https://github.com/hassio-addons/addon-ssh/tree/v2.0.1
+[v2.0.2-v2.0.3]: https://github.com/hassio-addons/addon-ssh/compare/v2.0.2...v2.0.3
 [v2.0.2]: https://github.com/hassio-addons/addon-ssh/tree/v2.0.2
+[v2.0.3]: https://github.com/hassio-addons/addon-ssh/tree/v2.0.3
