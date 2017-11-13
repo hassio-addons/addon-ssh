@@ -12,7 +12,6 @@
 [![Discord][discord-shield]][discord]
 [![Community Forum][forum-shield]][forum]
 
-[![Gratipay][gratipay-shield]][gratipay]
 [![Patreon][patreon-shield]][patreon]
 [![PayPal][paypal-shield]][paypal]
 [![Bitcoin][bitcoin-shield]][bitcoin]
@@ -329,8 +328,6 @@ SOFTWARE.
 [forum]: https://community.home-assistant.io/t/repository-community-hass-io-add-ons/24705?u=frenck
 [frenck]: https://github.com/frenck
 [github-ssh]: https://help.github.com/articles/connecting-to-github-with-ssh/
-[gratipay-shield]: https://img.shields.io/badge/donate-gratipay-blue.svg
-[gratipay]: https://gratipay.com/hassio-addons/
 [hass-ssh]: https://home-assistant.io/addons/ssh/
 [home-assistant]: https://home-assistant.io
 [i386-arch-shield]: https://img.shields.io/badge/architecture-i386-blue.svg
