@@ -7,9 +7,20 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 ## Unreleased
 
+No unreleased changes yet.
+
+## [v2.0.4] (2017-11-15)
+
+[Full Changelog][v2.0.3-v2.0.4]
+
+### Fixed
+
+- Preserves environment variables on user change to fix time zone issue
+
 ### Removed
 
 - Removes `repository.json` to prevent user to install wrong repo
+- Removes Gratipay from README, since it is EOL
 
 ## [v2.0.3] (2017-10-30)
 
@@ -103,4 +114,6 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 [v2.0.1]: https://github.com/hassio-addons/addon-ssh/tree/v2.0.1
 [v2.0.2-v2.0.3]: https://github.com/hassio-addons/addon-ssh/compare/v2.0.2...v2.0.3
 [v2.0.2]: https://github.com/hassio-addons/addon-ssh/tree/v2.0.2
+[v2.0.3-v2.0.4]: https://github.com/hassio-addons/addon-ssh/compare/v2.0.3...v2.0.4
 [v2.0.3]: https://github.com/hassio-addons/addon-ssh/tree/v2.0.3
+[v2.0.4]: https://github.com/hassio-addons/addon-ssh/tree/v2.0.4
