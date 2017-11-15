@@ -24,7 +24,7 @@ if [[ "${username}" != "root" ]]; then
         || hass.die 'Failed adding user to wheel group'
 
     # Ensure new user switches to root after login
-    echo 'exec sudo su -l' > "/home/${username}/.profile" \
+    echo 'exec sudo -i' > "/home/${username}/.profile" \
         || hass.die 'Failed configuring user profile'
 fi
 
