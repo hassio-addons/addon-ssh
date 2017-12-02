@@ -4,9 +4,6 @@ FROM ${BUILD_FROM}
 # Add env
 ENV TERM="xterm-256color"
 
-# Copy root filesystem
-COPY rootfs /
-
 # Setup base
 RUN \
     apk add --no-cache \
@@ -35,6 +32,9 @@ RUN \
     && sed -i -e "s/bin\/ash/bin\/zsh/" /etc/passwd \
     \
     && rm -f -r /tmp/*
+
+# Copy root filesystem
+COPY rootfs /
 
 # Build arugments
 ARG BUILD_ARCH
