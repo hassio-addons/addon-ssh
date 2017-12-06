@@ -83,3 +83,26 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+# 
+# Control Homeassistant
+alias hadown=curl -d '{"version": "'$1'"}' http://hassio/homeassistant/update
+alias haup=hassio homeassisant update
+alias halog=hassio homeassisant log
+alias hastop=hassio homeassisant stop
+alias hastart=hassio homeassisant start
+alias harestart=hassio homeassisant restart
+alias hacheck=hassio homeassisant check
+
+# Control Supervisor
+alias supup=hassio supervisor update
+alias suplog=hassio supervisor log
+alias supstop=hassio supervisor stop
+alias supstart=hassio supervisor start
+alias suprestart=hassio supervisor restart
+
+# Control Host
+alias hostup=hassio host update
+alias hostlog=hassio host log
+alias hoststop=hassio host stop
+alias hoststart=hassio host start
+alias hostrestart=hassio host reboot
