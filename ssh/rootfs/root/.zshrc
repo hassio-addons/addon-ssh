@@ -4,9 +4,8 @@ DISABLE_AUTO_UPDATE="true"
 COMPLETION_WAITING_DOTS="true"
 plugins=(extract git tmux nmap rsync)
 source $ZSH/oh-my-zsh.sh
-hadown() {
-  curl -d '{"version": "'$1'"}' http://hassio/homeassistant/update
-}
+alias hainfo='hassio homeassistant info'
+alias hadown='hassio homeassistant downgrade'
 alias haup='hassio homeassistant update'
 alias halog='hassio homeassistant logs'
 alias hastop='hassio homeassistant stop'
