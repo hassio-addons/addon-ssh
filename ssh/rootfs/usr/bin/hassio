@@ -73,7 +73,7 @@ function call_api() {
     if [ "$result" == "error" ]; then
         message="$(echo "$api_ret" | jq --raw-output ".message // empty")"
         echo "Error on $1/$2:" "$message"
-        return 0
+        return 1
     fi
 
     # On success
