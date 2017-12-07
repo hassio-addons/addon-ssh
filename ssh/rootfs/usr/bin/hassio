@@ -90,7 +90,7 @@ function call_api() {
 ######
 # homeassistant functions
 if [ "$1" == "homeassistant" ]; then
-    hass_cmd=('logs' 'restart' 'update' 'check' 'start' 'stop' 'info')
+    hass_cmd=('logs' 'restart' 'update' 'check' 'start' 'stop' 'info' 'downgrade')
     if [[ ! ${hass_cmd[*]} =~ $2 ]]; then
         echo "No homeassistant command '$2' found!"
         exit 1
