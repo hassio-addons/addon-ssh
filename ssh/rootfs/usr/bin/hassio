@@ -46,7 +46,7 @@ function call_api() {
         read -e -p "Downgrade from '${cver}' -> '${NEWVER}'? [y/N]" CONFIRM                         
         if [ "${CONFIRM}" == "y" ]; then                                                            
             echo "Downgrading... DO NOT INTERRUPT!!!"                                               
-            api_ret="$(curl -d '{"version": "'${newver}'"}' http://hassio/homeassistant/update)"    
+            api_ret="$(curl -d '{"version": "'${NEWVER}'"}' http://hassio/homeassistant/update)"    
             ret_code=$?                                                                             
         else                                                                                        
             echo "Aborted"                                                                          
