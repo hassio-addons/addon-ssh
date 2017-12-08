@@ -42,8 +42,8 @@ function call_api() {
     if [ "$2" == "downgrade" ]; then  
         cver_tmp="$(curl -s -X GET "http://hassio/homeassistant/info")"
         cver=$(echo "${cver_tmp}" | jq --raw-output '.data.version')   
-        read -e -p "Current verison is '${cver}', What version do you wish do downgrade to: " NEWVER
-        read -e -p "Downgrade from '${cver}' -> '${NEWVER}'? [y/N]: " CONFIRM                         
+        read -r -e -p "Current verison is '${cver}', What version do you wish do downgrade to: " NEWVER
+        read -r -e -p "Downgrade from '${cver}' -> '${NEWVER}'? [y/N]: " CONFIRM                         
         if [ "${CONFIRM}" == "y" ]; then                                                            
             echo "Downgrading... DO NOT INTERRUPT!!!"                                               
             api_ret="$(curl -d '{"version": "'${NEWVER}'"}' http://hassio/homeassistant/update)"    
