@@ -46,14 +46,14 @@ function call_api() {
         read -r -e -p "Downgrade from '${cver}' -> '${NEWVER}'? [y/N]: " CONFIRM                         
         if [ "${CONFIRM}" == "y" ]; then                                                            
             echo "Downgrading... DO NOT INTERRUPT!!!"                                               
-            api_ret="$(curl -d '{"version": "'"${NEWVER}"'"}' http://hassio/homeassistant/update)"    
+            api_ret="$(curl -sS -d '{"version": "'"${NEWVER}"'"}' http://hassio/homeassistant/update)"    
             ret_code=$?                                                                             
         else                                                                                        
             echo "Aborted"                                                                          
             return 0                                                                                
         fi                                                                                          
     else                                                                                            
-        api_ret="$(curl -s -X $command "http://hassio/$1/$2")"                                      
+        api_ret="$(curl -sS -X $command "http://hassio/$1/$2")"                                      
         ret_code=$?                                                                                 
     fi                                                                                              
                                                                                                     
