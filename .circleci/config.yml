@@ -29,6 +29,7 @@ defaults: &defaults
                   -v "$PWD":/docker \
                   hassioaddons/build-env:latest \
                   --image "hassioaddons/ssh-{arch}" \
+                  --cache-tag test \
                   --git \
                   --target ssh \
                   --${ARCH} \
@@ -40,6 +41,7 @@ defaults: &defaults
                   -v "$PWD":/docker \
                   hassioaddons/build-env:latest \
                   --image "hassioaddons/ssh-{arch}" \
+                  --cache-tag test \
                   --git \
                   --target ssh \
                   --${ARCH}
