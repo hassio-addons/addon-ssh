@@ -24,6 +24,7 @@ defaults: &defaults
               then
                 docker run \
                   --privileged \
+                  -v /var/run/docker.sock:/var/run/docker.sock \
                   -v ~/.docker:/root/.docker \
                   -v "$PWD":/docker \
                   hassioaddons/build-env:latest \
@@ -35,6 +36,7 @@ defaults: &defaults
               else
                 docker run \
                   --privileged \
+                  -v /var/run/docker.sock:/var/run/docker.sock \
                   -v "$PWD":/docker \
                   hassioaddons/build-env:latest \
                   --image "hassioaddons/ssh-{arch}" \
