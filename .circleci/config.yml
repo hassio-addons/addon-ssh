@@ -14,7 +14,7 @@ defaults: &defaults
           command: |
             if [[ "${CIRCLE_BRANCH}" = "master" || ! -z "${CIRCLE_TAG:-}" ]];
             then
-              docker login -u ${DOCKER_LOGIN} -p ${DOCKER_PASSWORD}
+              docker login -u "${DOCKER_LOGIN}" -p "${DOCKER_PASSWORD}"
             fi
       - checkout
       - deploy:
