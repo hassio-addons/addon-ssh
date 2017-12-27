@@ -1,6 +1,6 @@
-ARG BUILD_FROM=hassioaddons/base-amd64:1.2.0
+ARG BUILD_FROM=hassioaddons/base-amd64:1.3.0
 FROM ${BUILD_FROM}
-    
+
 # Add env
 ENV TERM="xterm-256color"
 
