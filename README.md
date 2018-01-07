@@ -114,6 +114,8 @@ SSH add-on configuration:
   ],
   "sftp": false,
   "compatibility_mode": false,
+  "allow_agent_forwarding": false,
+  "allow_tcp_forwarding": false,
   "packages": [
     "python",
     "python-dev",
@@ -198,6 +200,20 @@ Setting this option to `true` will enable the original default set of methods,
 allowing those clients to connect.
 
 **Note**: _Enabling this option, lowers the security of your SSH server!_
+
+### Option: `allow_agent_forwarding`
+
+Specifies whether ssh-agent forwarding is permitted or not.
+
+**Note**: _Enabling this option, lowers the security of your SSH server!
+Nevertheless, this warning is debatable._
+
+### Option: `allow_tcp_forwarding`
+
+Specifies whether TCP forwarding is permitted or not.
+
+**Note**: _Enabling this option, lowers the security of your SSH server!
+Nevertheless, this warning is debatable._
 
 ### Option: `packages`
 

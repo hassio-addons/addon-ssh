@@ -51,3 +51,15 @@ if hass.config.true 'compatibility_mode'; then
     hass.log.warning 'Compatibility mode is less secure!'
     hass.log.warning 'Please only enable it when you know what you are doing!'  
 fi
+
+if hass.config.true 'allow_agent_forwarding'; then
+    sed -i "s/AllowAgentForwarding.*/AllowAgentForwarding\ yes/" \
+        "${SSH_CONFIG_PATH}" \
+          || hass.die 'Failed to setup SSH Agent Forwarding'
+fi
+
+if hass.config.true 'allow_tcp_forwarding'; then
+    sed -i "s/AllowTcpForwarding.*/AllowTcpForwarding\ yes/" \
+        "${SSH_CONFIG_PATH}" \
+          || hass.die 'Failed to setup SSH TCP Forwarding'
+fi

@@ -24,6 +24,8 @@
     "authorized_keys": [],
     "sftp": false,
     "compatibility_mode": false,
+    "allow_agent_forwarding": false,
+    "allow_tcp_forwarding": false,
     "packages": [],
     "init_commands": []
   },
@@ -35,6 +37,8 @@
     "authorized_keys": ["str"],
     "sftp": "bool",
     "compatibility_mode": "bool",
+    "allow_agent_forwarding": "bool",
+    "allow_tcp_forwarding": "bool",
     "packages": ["str"],
     "init_commands": ["str"]
   },
