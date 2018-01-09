@@ -5,6 +5,7 @@ FROM ${BUILD_FROM}
 ENV TERM="xterm-256color"
 
 # Setup base
+ARG BUILD_ARCH
 RUN \
     apk add --no-cache \
         awake \
@@ -28,6 +29,8 @@ RUN \
         zsh \
     \
     && git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh \
+    && curl -L -s -o /usr/bin/hassio \
+        "https://github.com/home-assistant/hassio-cli/releases/download/1.0.1/hassio_${BUILD_ARCH}" \
     \
     && sed -i -e "s/bin\/ash/bin\/zsh/" /etc/passwd \
     \
@@ -37,7 +40,6 @@ RUN \
 COPY rootfs /
 
 # Build arugments
-ARG BUILD_ARCH
 ARG BUILD_DATE
 ARG BUILD_REF
 ARG BUILD_VERSION
