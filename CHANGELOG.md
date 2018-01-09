@@ -9,6 +9,28 @@ and this project adheres to [Semantic Versioning][semantic-versioning].
 
 No unreleased changes yet.
 
+## [v2.2.0] (2018-01-09)
+
+[Full Changelog][v2.1.0-v2.2.0]
+
+### Added
+
+- Adds support for SSH Agent & TCP forwarding #14
+- Added the new Hassio CLI v1.0.1
+
+### Changed
+
+- Prevents possible future Docker login issue
+- Pass local CircleCI Docker socket into the build container
+- Use image tagged as test as a cache resource
+- Upgrades add-on base image to v1.3.1
+- Updated maintenance year, it is 2018
+- Reduces clone depth of Oh My Zsh
+
+### Removed
+
+- Removes Microbadger notification hooks
+
 ## [v2.1.0] (2017-12-02)
 
 [Full Changelog][v2.0.4-v2.1.0]
@@ -129,4 +151,6 @@ No unreleased changes yet.
 [v2.0.3]: https://github.com/hassio-addons/addon-ssh/tree/v2.0.3
 [v2.0.4-v2.1.0]: https://github.com/hassio-addons/addon-ssh/compare/v2.0.4...v2.1.0
 [v2.0.4]: https://github.com/hassio-addons/addon-ssh/tree/v2.0.4
+[v2.1.0-v2.2.0]: https://github.com/hassio-addons/addon-ssh/compare/v2.1.0...v2.2.0
 [v2.1.0]: https://github.com/hassio-addons/addon-ssh/tree/v2.1.0
+[v2.2.0]: https://github.com/hassio-addons/addon-ssh/tree/v2.2.0
