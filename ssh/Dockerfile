@@ -28,7 +28,9 @@ RUN \
         wget \
         zsh \
     \
-    && git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh \
+    && git clone --depth 1 \
+        git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh \
+    \
     && curl -L -s -o /usr/bin/hassio \
         "https://github.com/home-assistant/hassio-cli/releases/download/1.0.1/hassio_${BUILD_ARCH}" \
     \
