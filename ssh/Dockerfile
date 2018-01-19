@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/base-amd64:1.3.1
+ARG BUILD_FROM=hassioaddons/base-amd64:1.3.2
 FROM ${BUILD_FROM}
 
 # Add env
