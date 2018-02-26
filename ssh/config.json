@@ -44,6 +44,6 @@
   },
   "environment": {
     "LOG_FORMAT": "{LEVEL}: {MESSAGE}",
-    "SUPERVISOR_VERSION": ">=0.81.0"
+    "SUPERVISOR_VERSION": ">=0.94.0"
   }
 }
