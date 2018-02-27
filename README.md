@@ -115,6 +115,7 @@ SSH add-on configuration:
   "sftp": false,
   "compatibility_mode": false,
   "allow_agent_forwarding": false,
+  "allow_remote_port_forwarding": false,
   "allow_tcp_forwarding": false,
   "packages": [
     "python",
@@ -207,6 +208,14 @@ Specifies whether ssh-agent forwarding is permitted or not.
 
 **Note**: _Enabling this option, lowers the security of your SSH server!
 Nevertheless, this warning is debatable._
+
+### Option: `allow_remote_port_forwarding`
+
+Specifies whether remote hosts are allowed to connect to ports forwarded
+for the client.
+
+**Note**: _Enabling this affects all remote forwardings, so think carefully
+before doing this._
 
 ### Option: `allow_tcp_forwarding`
 
