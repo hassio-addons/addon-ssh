@@ -49,13 +49,19 @@ if hass.config.true 'compatibility_mode'; then
     sed -i '/KexAlgorithms\.* /s/^/#/g' "${SSH_CONFIG_PATH}"
     hass.log.notice 'SSH is running in compatibility mode!'
     hass.log.warning 'Compatibility mode is less secure!'
-    hass.log.warning 'Please only enable it when you know what you are doing!'  
+    hass.log.warning 'Please only enable it when you know what you are doing!'
 fi
 
 if hass.config.true 'allow_agent_forwarding'; then
     sed -i "s/AllowAgentForwarding.*/AllowAgentForwarding\ yes/" \
         "${SSH_CONFIG_PATH}" \
           || hass.die 'Failed to setup SSH Agent Forwarding'
+fi
+
+if hass.config.true 'allow_remote_port_forwarding'; then
+    sed -i "s/GatewayPorts.*/GatewayPorts\ yes/" \
+        "${SSH_CONFIG_PATH}" \
+          || hass.die 'Failed to setup remote port forwarding'
 fi
 
 if hass.config.true 'allow_tcp_forwarding'; then
