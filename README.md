@@ -244,8 +244,9 @@ single time this add-on starts.
 
 ## Changelog & Releases
 
-This repository keeps a [change log](CHANGELOG.md). The format of the log
-is based on [Keep a Changelog][keepchangelog].
+This repository keeps a change log using [GitHub's releases][releases]
+functionality. The format of the log is based on
+[Keep a Changelog][keepchangelog].
 
 Releases are based on [Semantic Versioning][semver], and use the format
 of ``MAJOR.MINOR.PATCH``. In a nutshell, the version will be incremented
