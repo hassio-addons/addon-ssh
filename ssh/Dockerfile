@@ -22,6 +22,7 @@ RUN \
         openssl \
         pwgen \
         rsync \
+        sqlite \
         sudo \
         tmux \
         vim \
