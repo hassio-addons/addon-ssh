@@ -1,4 +1,5 @@
 ARG BUILD_FROM=hassioaddons/base-amd64:1.3.3
+# hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
 # Add env
@@ -8,27 +9,27 @@ ENV TERM="xterm-256color"
 ARG BUILD_ARCH
 RUN \
     apk add --no-cache \
-        awake \
-        bind-tools \
-        git \
-        libxml2-utils \
-        mariadb-client \
-        mosquitto-clients \
-        nano \
-        ncurses \
-        net-tools \
-        nmap \
-        openssh \
-        openssl \
-        pwgen \
-        rsync \
-        sqlite \
-        sudo \
-        tmux \
-        vim \
-        wget \
-        zip \
-        zsh \
+        awake=1.0-r2 \
+        bind-tools=9.11.2_p1-r0 \
+        git=2.15.0-r1 \
+        libxml2-utils=2.9.7-r0 \
+        mariadb-client=10.1.32-r0 \
+        mosquitto-clients=1.4.15-r0 \
+        nano=2.9.1-r0 \
+        ncurses=6.0_p20171125-r0 \
+        net-tools=1.60_git20140218-r1 \
+        nmap=7.60-r2 \
+        openssh=7.5_p1-r8 \
+        openssl=1.0.2o-r0 \
+        pwgen=2.08-r0 \
+        rsync=3.1.3-r0 \
+        sqlite=3.21.0-r0 \
+        sudo=1.8.21_p2-r1 \
+        tmux=2.6-r0 \
+        vim=8.0.1359-r0 \
+        wget=1.19.2-r1 \
+        zip=3.0-r4 \
+        zsh=5.4.2-r1 \
     \
     && git clone --depth 1 \
         git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh \
@@ -36,7 +37,7 @@ RUN \
     && curl -L -s -o /usr/bin/hassio \
         "https://github.com/home-assistant/hassio-cli/releases/download/1.2.1/hassio_${BUILD_ARCH}" \
     \
-    && sed -i -e "s/bin\/ash/bin\/zsh/" /etc/passwd \
+    && sed -i -e "s#bin/ash#bin/zsh#" /etc/passwd \
     \
     && rm -f -r /tmp/*
 
