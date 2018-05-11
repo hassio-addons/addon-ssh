@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/base-amd64:1.3.3
+ARG BUILD_FROM=hassioaddons/base-amd64:1.4.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -27,7 +27,7 @@ RUN \
         sudo=1.8.21_p2-r1 \
         tmux=2.6-r0 \
         vim=8.0.1359-r0 \
-        wget=1.19.2-r1 \
+        'wget>=1.19.2-r1' \
         zip=3.0-r4 \
         zsh=5.4.2-r1 \
     \
