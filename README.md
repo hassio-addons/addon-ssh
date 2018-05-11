@@ -2,19 +2,17 @@
 
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
-![Project Maintenance][maintenance-shield]
-[![GitHub Activity][commits-shield]][commits]
 [![License][license-shield]](LICENSE.md)
 
-[![CircleCI][circleci-shield]][circleci]
-[![Code Climate][codeclimate-shield]][codeclimate]
+[![GitLab CI][gitlabci-shield]][gitlabci]
+![Project Maintenance][maintenance-shield]
+[![GitHub Activity][commits-shield]][commits]
+
 [![Bountysource][bountysource-shield]][bountysource]
 [![Discord][discord-shield]][discord]
 [![Community Forum][forum-shield]][forum]
 
-[![Patreon][patreon-shield]][patreon]
-[![PayPal][paypal-shield]][paypal]
-[![Bitcoin][bitcoin-shield]][bitcoin]
+[![Buy me a coffee][buymeacoffee-shield]][buymeacoffee]
 
 This add-on allows you to log in to your Hass.io Home Assistant instance using
 SSH.
@@ -81,21 +79,25 @@ comparison to installing any other Hass.io add-on.
 [![Docker Version][armhf-version-shield]][armhf-microbadger]
 [![Docker Layers][armhf-layers-shield]][armhf-microbadger]
 [![Docker Pulls][armhf-pulls-shield]][armhf-dockerhub]
+[![Anchore Image Overview][armhf-anchore-shield]][armhf-anchore]
 
 [![Docker Architecture][aarch64-arch-shield]][aarch64-dockerhub]
 [![Docker Version][aarch64-version-shield]][aarch64-microbadger]
 [![Docker Layers][aarch64-layers-shield]][aarch64-microbadger]
 [![Docker Pulls][aarch64-pulls-shield]][aarch64-dockerhub]
+[![Anchore Image Overview][aarch64-anchore-shield]][aarch64-anchore]
 
 [![Docker Architecture][amd64-arch-shield]][amd64-dockerhub]
 [![Docker Version][amd64-version-shield]][amd64-microbadger]
 [![Docker Layers][amd64-layers-shield]][amd64-microbadger]
 [![Docker Pulls][amd64-pulls-shield]][amd64-dockerhub]
+[![Anchore Image Overview][amd64-anchore-shield]][amd64-anchore]
 
 [![Docker Architecture][i386-arch-shield]][i386-dockerhub]
 [![Docker Version][i386-version-shield]][i386-microbadger]
 [![Docker Layers][i386-layers-shield]][i386-microbadger]
 [![Docker Pulls][i386-pulls-shield]][i386-dockerhub]
+[![Anchore Image Overview][i386-anchore-shield]][i386-anchore]
 
 ## Configuration
 
@@ -318,6 +320,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+[aarch64-anchore-shield]: https://anchore.io/service/badges/image/55e8fa4b227a00fc208f4eeda7d19a1c81e09afc555f88d8c48ffc4ca621cc8c
+[aarch64-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Fssh-aarch64%3Alatest
 [aarch64-arch-shield]: https://img.shields.io/badge/architecture-aarch64-blue.svg
 [aarch64-dockerhub]: https://hub.docker.com/r/hassioaddons/ssh-aarch64
 [aarch64-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/ssh-aarch64.svg
@@ -325,26 +329,26 @@ SOFTWARE.
 [aarch64-pulls-shield]: https://img.shields.io/docker/pulls/hassioaddons/ssh-aarch64.svg
 [aarch64-version-shield]: https://images.microbadger.com/badges/version/hassioaddons/ssh-aarch64.svg
 [alpine-packages]: https://pkgs.alpinelinux.org/packages
+[amd64-anchore-shield]: https://anchore.io/service/badges/image/252449b021bd33788857d0cf74cb6449e062d150c52f132fa9c818ea025b544c
+[amd64-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Fssh-amd64%3Alatest
 [amd64-arch-shield]: https://img.shields.io/badge/architecture-amd64-blue.svg
 [amd64-dockerhub]: https://hub.docker.com/r/hassioaddons/ssh-amd64
 [amd64-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/ssh-amd64.svg
 [amd64-microbadger]: https://microbadger.com/images/hassioaddons/ssh-amd64
 [amd64-pulls-shield]: https://img.shields.io/docker/pulls/hassioaddons/ssh-amd64.svg
 [amd64-version-shield]: https://images.microbadger.com/badges/version/hassioaddons/ssh-amd64.svg
+[armhf-anchore-shield]: https://anchore.io/service/badges/image/e38b126bba8cf350fdabc57d3e27e3fd1f4135c5051dd6653d5eb63a72ba3d3b
+[armhf-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Fssh-armhf%3Alatest
 [armhf-arch-shield]: https://img.shields.io/badge/architecture-armhf-blue.svg
 [armhf-dockerhub]: https://hub.docker.com/r/hassioaddons/ssh-armhf
 [armhf-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/ssh-armhf.svg
 [armhf-microbadger]: https://microbadger.com/images/hassioaddons/ssh-armhf
 [armhf-pulls-shield]: https://img.shields.io/docker/pulls/hassioaddons/ssh-armhf.svg
 [armhf-version-shield]: https://images.microbadger.com/badges/version/hassioaddons/ssh-armhf.svg
-[bitcoin-shield]: https://img.shields.io/badge/donate-bitcoin-blue.svg
-[bitcoin]: https://blockchain.info/payment_request?address=3GVzgN6NpVtfXnyg5dQnaujtqVTEDBCtAH
 [bountysource-shield]: https://img.shields.io/bountysource/team/hassio-addons/activity.svg
 [bountysource]: https://www.bountysource.com/teams/hassio-addons/issues
-[circleci-shield]: https://img.shields.io/circleci/project/github/hassio-addons/addon-ssh.svg
-[circleci]: https://circleci.com/gh/hassio-addons/addon-ssh
-[codeclimate-shield]: https://img.shields.io/badge/code%20climate-protected-brightgreen.svg
-[codeclimate]: https://codeclimate.com/github/hassio-addons/addon-ssh
+[buymeacoffee-shield]: https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg
+[buymeacoffee]: https://www.buymeacoffee.com/frenck
 [commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/addon-ssh.svg
 [commits]: https://github.com/hassio-addons/addon-ssh/commits/master
 [contributors]: https://github.com/hassio-addons/addon-ssh/graphs/contributors
@@ -354,8 +358,12 @@ SOFTWARE.
 [forum]: https://community.home-assistant.io/t/community-hass-io-add-on-ssh/33820?u=frenck
 [frenck]: https://github.com/frenck
 [github-ssh]: https://help.github.com/articles/connecting-to-github-with-ssh/
+[gitlabci-shield]: https://gitlab.com/hassio-addons/addon-ssh/badges/master/pipeline.svg
+[gitlabci]: https://gitlab.com/hassio-addons/addon-ssh/pipelines
 [hass-ssh]: https://home-assistant.io/addons/ssh/
 [home-assistant]: https://home-assistant.io
+[i386-anchore-shield]: https://anchore.io/service/badges/image/64134edf5a306e59e896c127742201c8e7bfccc2e10a622819a569f30e8e56c5
+[i386-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Fssh-i386%3Alatest
 [i386-arch-shield]: https://img.shields.io/badge/architecture-i386-blue.svg
 [i386-dockerhub]: https://hub.docker.com/r/hassioaddons/ssh-i386
 [i386-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/ssh-i386.svg
@@ -368,10 +376,6 @@ SOFTWARE.
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2018.svg
 [ohmyzsh]: http://ohmyz.sh/
 [openssh]: https://www.openssh.com/
-[patreon-shield]: https://img.shields.io/badge/donate-patreon-blue.svg
-[patreon]: https://www.patreon.com/frenck
-[paypal-shield]: https://img.shields.io/badge/donate-paypal-blue.svg
-[paypal]: https://www.paypal.me/FranckNijhof
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
 [reddit]: https://reddit.com/r/homeassistant
 [releases-shield]: https://img.shields.io/github/release/hassio-addons/addon-ssh.svg
