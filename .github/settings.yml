@@ -17,45 +17,35 @@ labels:
   - name: "Priority: Critical"
     color: ee0701
     description: "This should be dealt with ASAP. Not fixing this issue would be a serious error."
-    oldname: "Critical Priority"
   - name: "Priority: High"
     color: b60205
     description: "After critical issues are fixed, these should be dealt with before any further issues."
-    oldname: "High Priority"
   - name: "Priority: Medium"
     color: 0e8a16
     description: "This issue may be useful, and needs some attention."
-    oldname: "Medium Priority"
   - name: "Priority: Low"
     color: e4ea8a
     description: "Nice addition, maybe... someday..."
-    oldname: "Low Priority"
 
   # Type labels
   - name: "Type: Bug"
     color: ee0701
     description: "Inconsistencies or issues which will cause a problem for users or implementors."
-    oldname: "Bug"
   - name: "Type: Documentation"
     color: 0052cc
     description: "Solely about the documentation of the project."
-    oldname: "Documentation"
   - name: "Type: Enhancement"
     color: 1d76db
     description: "Enhancement of the code, not introducing new features."
-    oldname: "Enhancement"
   - name: "Type: Feature"
     color: 0e8a16
     description: "New features or options."
-    oldname: "Feature"
   - name: "Type: Support"
     color: 5319e7
     description: "Marks an issue as an support ticket."
-    oldname: "Question"
   - name: "Type: Discussion"
     color: d4c5f9
     description: "Marks an issue as an generic discussion ticket."
-    oldname: "Discussion"
   - name: "Type: Maintaince"
     color: 2af79e
     description: "Generic maintaince tasks, e.g., package updates."
@@ -87,66 +77,52 @@ labels:
   - name: "Status: Triage"
     color: fbca04
     description: "This issue needs to be triaged."
-    oldname: "triage"
   - name: "Status: On hold"
     color: cccccc
     description: "Issue or PR that has been placed on hold for now."
-    oldname: "On hold"
   - name: "Status: In progress"
     color: fbca04
     description: "Issue is currently being resolved by a developer."
   - name: "Status: Stale"
     color: fef2c0
     description: "There has not been activity on this issue or PR for quite some time."
-    oldname: "stale"
   - name: "Status: Awaiting response"
     color: fef2c0
     description: "Issue or PR awaits response from the creator."
-    oldname: "Awaiting Response"
   - name: "Status: Blocked"
     color: fef2c0
     description: "Progress on this issue is currently not possible."
-    oldname: "Blocked"
 
   # Closing status labels
   - name: "Closed: Known limitation"
     color: e6e6e6
     description: "Issue is closed, it is a known limitation."
-    oldname: "Known Limitation"
   - name: "Closed: Expected behavior"
     color: e6e6e6
     description: "Issues is closed, it is expected behavior."
-    oldname: "Expected behavior"
   - name: "Closed: Duplicate"
     color: e6e6e6
     description: "Issue is closed, duplicate of an existing issue."
-    oldname: "Duplicate"
   - name: "Closed: Invalid"
     color: e6e6e6
     description: "Issue is closed, marked as not a valid issue (e.g., an user error)."
-    oldname: "Invalid"
   - name: "Closed: Wrong repository"
     color: e6e6e6
     description: "Issue is closed, was created in the wrong repository."
-    oldname: "Wrong repository"
   - name: "Closed: Won't Fix"
     color: e6e6e6
     description: "Issue is closed, it won't be fixed."
-    oldname: "Won't fix"
   - name: "Closed: Done"
     color: c2e0c6
     description: "Issue closed, work on this issue has been marked complete."
-    oldname: "Done"
 
   # Others
   - name: "Beginner Friendly"
     color: 0e8a16
     description: "Good first issue for people wanting to contribute to the project."
-    oldname: "Good first issue"
   - name: "Help wanted"
     color: 0e8a16
     description: "We need some extra helping hands or expertise in order to resolve this."
-    oldname: "Help Wanted"
   - name: "Hacktoberfest"
     description: "Issues/PRs are participating in the Hacktoberfest"
     color: fbca04
