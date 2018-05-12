@@ -51,7 +51,6 @@
     "init_commands": ["str"]
   },
   "environment": {
-    "LOG_FORMAT": "{LEVEL}: {MESSAGE}",
-    "SUPERVISOR_VERSION": ">=0.94.0"
+    "LOG_FORMAT": "{LEVEL}: {MESSAGE}"
   }
 }
