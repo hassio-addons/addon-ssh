@@ -23,7 +23,7 @@ RUN \
         openssl=1.0.2o-r0 \
         pwgen=2.08-r0 \
         rsync=3.1.3-r0 \
-        sqlite=3.21.0-r0 \
+        sqlite=3.21.0-r1 \
         sudo=1.8.21_p2-r1 \
         tmux=2.6-r0 \
         vim=8.0.1359-r0 \
