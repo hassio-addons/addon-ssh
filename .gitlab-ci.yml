@@ -39,7 +39,7 @@ stages:
         --privileged \
         --volume /var/run/docker.sock:/var/run/docker.sock \
         --volume "$PWD":/docker \
-        hassioaddons/build-env:test \
+        hassioaddons/build-env:latest \
           --image "addon" \
           --cache-from "${DOCKER_HUB_ORG}/${ADDON_SLUG}-${ADDON_ARCH}" \
           --cache-tag "test" \
@@ -108,14 +108,14 @@ stages:
     - docker info
     - docker login -u gitlab-ci-token -p "${CI_JOB_TOKEN}" registry.gitlab.com
     - docker pull "registry.gitlab.com/${CI_PROJECT_PATH}/${ADDON_ARCH}:${CI_COMMIT_SHA}"
-    - docker pull hassioaddons/build-env:test
+    - docker pull hassioaddons/build-env:latest
   script:
     - |
       docker run \
         --privileged \
         --volume /var/run/docker.sock:/var/run/docker.sock \
         --volume "$PWD":/docker \
-        hassioaddons/build-env:test \
+        hassioaddons/build-env:latest \
           --image "${DOCKER_HUB_ORG}/${ADDON_SLUG}-${ADDON_ARCH}" \
           --cache-from "registry.gitlab.com/${CI_PROJECT_PATH}/${ADDON_ARCH}" \
           --cache-tag "${CI_COMMIT_SHA}" \
