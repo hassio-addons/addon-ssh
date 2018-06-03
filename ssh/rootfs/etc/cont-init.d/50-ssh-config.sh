@@ -13,10 +13,10 @@ declare port
 # Port
 port=$(hass.config.get 'port')
 if hass.config.has_value 'port'; then
-    sed -i "s/Port\ .*/Port\ ${port}/" "${SSH_CONFIG_PATH}" \
+    sed -i "s/Port\\ .*/Port\\ ${port}/" "${SSH_CONFIG_PATH}" \
         || hass.die 'Failed configuring port'
 else
-    sed -i "s/Port\ .*/Port\ 22/" "${SSH_CONFIG_PATH}" \
+    sed -i "s/Port\\ .*/Port\\ 22/" "${SSH_CONFIG_PATH}" \
         || hass.die 'Failed configuring port'
 fi
 
@@ -29,16 +29,16 @@ fi
 # Allow specified user to log in
 username=$(hass.config.get 'username')
 if [[ "${username}" != "root" ]]; then
-    sed -i "s/AllowUsers\ .*/AllowUsers\ ${username}/" "${SSH_CONFIG_PATH}" \
+    sed -i "s/AllowUsers\\ .*/AllowUsers\\ ${username}/" "${SSH_CONFIG_PATH}" \
         || hass.die 'Failed opening SSH for the configured user'
 else
-    sed -i "s/PermitRootLogin\ .*/PermitRootLogin\ yes/" "${SSH_CONFIG_PATH}" \
+    sed -i "s/PermitRootLogin\\ .*/PermitRootLogin\\ yes/" "${SSH_CONFIG_PATH}" \
         || hass.die 'Failed opening SSH for the root user'
 fi
 
 # Enable password authentication when password is set
 if hass.config.has_value 'password'; then
-    sed -i "s/PasswordAuthentication.*/PasswordAuthentication\ yes/" \
+    sed -i "s/PasswordAuthentication.*/PasswordAuthentication\\ yes/" \
         "${SSH_CONFIG_PATH}" \
           || hass.die 'Failed to setup SSH password authentication'
 fi
@@ -53,19 +53,19 @@ if hass.config.true 'compatibility_mode'; then
 fi
 
 if hass.config.true 'allow_agent_forwarding'; then
-    sed -i "s/AllowAgentForwarding.*/AllowAgentForwarding\ yes/" \
+    sed -i "s/AllowAgentForwarding.*/AllowAgentForwarding\\ yes/" \
         "${SSH_CONFIG_PATH}" \
           || hass.die 'Failed to setup SSH Agent Forwarding'
 fi
 
 if hass.config.true 'allow_remote_port_forwarding'; then
-    sed -i "s/GatewayPorts.*/GatewayPorts\ yes/" \
+    sed -i "s/GatewayPorts.*/GatewayPorts\\ yes/" \
         "${SSH_CONFIG_PATH}" \
           || hass.die 'Failed to setup remote port forwarding'
 fi
 
 if hass.config.true 'allow_tcp_forwarding'; then
-    sed -i "s/AllowTcpForwarding.*/AllowTcpForwarding\ yes/" \
+    sed -i "s/AllowTcpForwarding.*/AllowTcpForwarding\\ yes/" \
         "${SSH_CONFIG_PATH}" \
           || hass.die 'Failed to setup SSH TCP Forwarding'
 fi
