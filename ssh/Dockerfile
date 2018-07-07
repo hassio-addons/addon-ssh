@@ -29,7 +29,7 @@ RUN \
         vim=8.1.0115-r0 \
         wget=1.19.5-r0 \
         zip=3.0-r5 \
-        zsh=5.4.2-r1 \
+        zsh=5.5.1-r0 \
     \
     && git clone --depth 1 \
         git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh \
