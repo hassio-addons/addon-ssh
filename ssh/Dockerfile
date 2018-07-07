@@ -14,7 +14,7 @@ RUN \
         git=2.18.0-r0 \
         libxml2-utils=2.9.8-r0 \
         mariadb-client=10.2.15-r0 \
-        mosquitto-clients=1.4.15-r0 \
+        mosquitto-clients=1.4.15-r3 \
         nano=2.9.1-r0 \
         ncurses=6.0_p20171125-r0 \
         net-tools=1.60_git20140218-r1 \
