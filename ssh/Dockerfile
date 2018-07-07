@@ -24,7 +24,7 @@ RUN \
         pwgen=2.08-r0 \
         rsync=3.1.3-r1 \
         sqlite=3.24.0-r0 \
-        sudo=1.8.21_p2-r1 \
+        sudo=1.8.23-r2 \
         tmux=2.6-r0 \
         vim=8.0.1359-r0 \
         wget=1.19.5-r0 \
