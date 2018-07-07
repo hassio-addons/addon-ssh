@@ -19,7 +19,7 @@ RUN \
         ncurses=6.1-r0 \
         net-tools=1.60_git20140218-r2 \
         nmap=7.70-r1 \
-        openssh=7.5_p1-r8 \
+        openssh=7.7_p1-r2 \
         openssl=1.0.2o-r0 \
         pwgen=2.08-r0 \
         rsync=3.1.3-r0 \
