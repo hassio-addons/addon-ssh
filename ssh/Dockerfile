@@ -28,7 +28,7 @@ RUN \
         tmux=2.7-r0 \
         vim=8.1.0115-r0 \
         wget=1.19.5-r0 \
-        zip=3.0-r4 \
+        zip=3.0-r5 \
         zsh=5.4.2-r1 \
     \
     && git clone --depth 1 \
