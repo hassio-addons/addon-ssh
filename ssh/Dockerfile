@@ -12,7 +12,7 @@ RUN \
         awake=1.0-r2 \
         bind-tools=9.12.1_p2-r0 \
         git=2.18.0-r0 \
-        libxml2-utils=2.9.7-r0 \
+        libxml2-utils=2.9.8-r0 \
         mariadb-client=10.1.32-r0 \
         mosquitto-clients=1.4.15-r0 \
         nano=2.9.1-r0 \
