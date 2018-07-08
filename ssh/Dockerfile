@@ -7,6 +7,7 @@ ENV TERM="xterm-256color"
 
 # Setup base
 ARG BUILD_ARCH
+# hadolint ignore=DL3003
 RUN \
     echo '@legacy http://dl-cdn.alpinelinux.org/alpine/v3.7/main' >> /etc/apk/repositories \
     \
