@@ -54,6 +54,7 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(extract git tmux nmap rsync)
 
 source $ZSH/oh-my-zsh.sh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # User configuration
 

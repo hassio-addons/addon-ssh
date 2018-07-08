@@ -15,8 +15,8 @@ RUN \
         libxml2-utils=2.9.8-r0 \
         mariadb-client=10.2.15-r0 \
         mosquitto-clients=1.4.15-r3 \
-        nano=2.9.8-r0 \
         nano-syntax=2.9.8-r0 \
+        nano=2.9.8-r0 \
         ncurses=6.1-r0 \
         net-tools=1.60_git20140218-r2 \
         nmap=7.70-r1 \
@@ -30,6 +30,7 @@ RUN \
         vim=8.1.0115-r0 \
         wget=1.19.5-r0 \
         zip=3.0-r5 \
+        zsh-autosuggestions=0.4.2-r0 \
         zsh=5.5.1-r0 \
     \
     && git clone --depth 1 \
