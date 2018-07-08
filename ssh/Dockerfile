@@ -16,6 +16,7 @@ RUN \
         mariadb-client=10.2.15-r0 \
         mosquitto-clients=1.4.15-r3 \
         nano=2.9.8-r0 \
+        nano-syntax=2.9.8-r0 \
         ncurses=6.1-r0 \
         net-tools=1.60_git20140218-r2 \
         nmap=7.70-r1 \
