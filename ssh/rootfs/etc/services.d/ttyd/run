@@ -1,0 +1,42 @@
+#!/usr/bin/with-contenv bash
+# ==============================================================================
+# Community Hass.io Add-ons: Terminal
+# Runs the ttyd daemon
+# ==============================================================================
+# shellcheck disable=SC1091
+source /usr/lib/hassio-addons/base.sh
+
+readonly TTYD_COMMAND=(tmux new -A -s hassio zsh)
+declare -a ttyd_options
+
+hass.log.info 'Starting the ttyd daemon'
+
+# Set daemon debug level
+if hass.debug; then
+    ttyd_options+=(-d7)
+else
+    ttyd_options+=(-d1)
+fi
+
+# Add default options
+ttyd_options+=(--reconnect 30)
+ttyd_options+=(--port 7681)
+
+# Add SSL, when enabled.
+if hass.config.true 'ssl'; then
+    ttyd_options+=(--ssl)
+    ttyd_options+=(--ssl-cert "/ssl/$(hass.config.get 'certfile')")
+    ttyd_options+=(--ssl-key "/ssl/$(hass.config.get 'keyfile')")
+fi
+
+# Add login credentials, when enabled.
+if hass.config.has_value 'username' && hass.config.has_value 'password'; then
+    ttyd_options+=(--credential)
+    ttyd_options+=("$(hass.config.get 'username'):$(hass.config.get 'password')")
+fi
+
+# Change working directory
+cd /root || hass.die 'Unable to change working directory'
+
+# Run the ttyd daemon
+exec ttyd "${ttyd_options[@]}" "${TTYD_COMMAND[@]}"

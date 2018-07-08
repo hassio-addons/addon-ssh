@@ -8,10 +8,23 @@ ENV TERM="xterm-256color"
 # Setup base
 ARG BUILD_ARCH
 RUN \
-    apk add --no-cache \
+    echo '@legacy http://dl-cdn.alpinelinux.org/alpine/v3.7/main' >> /etc/apk/repositories \
+    \
+    && apk add --no-cache --virtual .build-dependencies \
+        bsd-compat-headers=0.7.1-r0 \
+        build-base=0.5-r1 \
+        cmake=3.11.1-r2 \
+        json-c-dev=0.13.1-r0 \
+        libressl-dev=2.7.4-r0 \
+        zlib-dev=1.2.11-r1 \
+    \
+    && apk add --no-cache \
         awake=1.0-r2 \
         bind-tools=9.12.1_p2-r0 \
         git=2.18.0-r0 \
+        json-c=0.13.1-r0 \
+        libwebsockets@legacy=2.4.0-r1 \
+        libwebsockets-dev@legacy=2.4.0-r1 \
         libxml2-utils=2.9.8-r0 \
         mariadb-client=10.2.15-r0 \
         mosquitto-clients=1.4.15-r3 \
@@ -42,7 +55,21 @@ RUN \
     \
     && sed -i -e "s#bin/ash#bin/zsh#" /etc/passwd \
     \
-    && rm -f -r /tmp/*
+    && git clone --branch "1.4.0" --depth=1 \
+        https://github.com/tsl0922/ttyd.git /tmp/ttyd \
+    \
+    && mkdir -p /tmp/ttyd/build \
+    && cd /tmp/ttyd/build \
+    && cmake .. \
+        -DCMAKE_BUILD_TYPE=MinSizeRel \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_VERBOSE_MAKEFILE=TRUE \
+    && make \
+    && make install \
+    \
+    && rm -f -r /tmp/* \
+    && apk del --purge libwebsockets-dev \
+    && apk del --purge .build-dependencies
 
 # Copy root filesystem
 COPY rootfs /
