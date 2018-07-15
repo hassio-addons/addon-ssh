@@ -1,2 +1,3 @@
-tmux new -A -s hassio zsh
-exit
+if ! { [[ "$TERM" = "screen" ]] && [[ -n "$TMUX" ]]; } then
+  exec tmux -u new -A -s hassio zsh
+fi

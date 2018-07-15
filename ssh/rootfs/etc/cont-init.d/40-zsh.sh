@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bash
 # ==============================================================================
-# Community Hass.io Add-ons: SSH
+# Community Hass.io Add-ons: SSH & Web Terminal
 # Sets up ZSH shell
 # ==============================================================================
 # shellcheck disable=SC1091

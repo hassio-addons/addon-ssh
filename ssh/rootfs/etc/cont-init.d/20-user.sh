@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bash
 # ==============================================================================
-# Community Hass.io Add-ons: SSH
+# Community Hass.io Add-ons: SSH & Web Terminal
 # Sets up a user account
 # ==============================================================================
 # shellcheck disable=SC1091
@@ -9,7 +9,12 @@ source /usr/lib/hassio-addons/base.sh
 declare username
 declare password
 
-username=$(hass.config.get 'username')
+# Don't execute this when SSH is disabled
+if hass.config.false 'ssh.enable'; then
+    exit 0
+fi
+
+username=$(hass.config.get 'ssh.username')
 username=$(hass.string.lower "${username}")
 
 # Create user account if the user isn't root
@@ -29,8 +34,8 @@ if [[ "${username}" != "root" ]]; then
 fi
 
 # We need to set a password for the user account
-if hass.config.has_value 'password'; then
-    password=$(hass.config.get 'password')
+if hass.config.has_value 'ssh.password'; then
+    password=$(hass.config.get 'ssh.password')
 else
     # Use a random password in case none is set
     password=$(pwgen 64 1)

@@ -1,13 +1,17 @@
 #!/usr/bin/with-contenv bash
 # ==============================================================================
-# Community Hass.io Add-ons: Terminal
+# Community Hass.io Add-ons: SSH & Web Terminal
 # Runs the ttyd daemon
 # ==============================================================================
 # shellcheck disable=SC1091
 source /usr/lib/hassio-addons/base.sh
 
-readonly TTYD_COMMAND=(tmux new -A -s hassio zsh)
+readonly TTYD_COMMAND=(tmux -u new -A -s hassio zsh)
 declare -a ttyd_options
+
+if hass.config.false 'web.enable'; then
+    exec sleep 86400
+fi
 
 hass.log.info 'Starting the ttyd daemon'
 
@@ -20,19 +24,24 @@ fi
 
 # Add default options
 ttyd_options+=(--reconnect 30)
-ttyd_options+=(--port 7681)
+ttyd_options+=(--port "$(hass.config.get 'web.port')")
 
 # Add SSL, when enabled.
 if hass.config.true 'ssl'; then
     ttyd_options+=(--ssl)
-    ttyd_options+=(--ssl-cert "/ssl/$(hass.config.get 'certfile')")
-    ttyd_options+=(--ssl-key "/ssl/$(hass.config.get 'keyfile')")
+    ttyd_options+=(--ssl-cert "/ssl/$(hass.config.get 'web.certfile')")
+    ttyd_options+=(--ssl-key "/ssl/$(hass.config.get 'web.keyfile')")
 fi
 
+
 # Add login credentials, when enabled.
-if hass.config.has_value 'username' && hass.config.has_value 'password'; then
+if hass.config.has_value 'web.username' \
+    && hass.config.has_value 'web.password';
+then
+    username=$(hass.config.get 'web.username')
+    password=$(hass.config.get 'web.password')
     ttyd_options+=(--credential)
-    ttyd_options+=("$(hass.config.get 'username'):$(hass.config.get 'password')")
+    ttyd_options+=("${username}:${password}")
 fi
 
 # Change working directory

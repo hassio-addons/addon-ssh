@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bash
 # ==============================================================================
-# Community Hass.io Add-ons: SSH
+# Community Hass.io Add-ons: SSH & Web Terminal
 # Executes user configured/requested commands on startup
 # ==============================================================================
 # shellcheck disable=SC1091

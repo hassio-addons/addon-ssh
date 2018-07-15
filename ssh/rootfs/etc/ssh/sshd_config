@@ -59,11 +59,11 @@ GatewayPorts no
 # Messages
 # ===================
 Banner none
-PrintMotd yes
+PrintMotd no
 
 # SFTP
 =====================
-Subsystem sftp /usr/lib/ssh/sftp-server
+#Subsystem sftp /usr/lib/ssh/sftp-server
 
 # Misc
 # ===================

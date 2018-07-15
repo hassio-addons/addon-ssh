@@ -1,14 +1,16 @@
 #!/usr/bin/with-contenv bash
 # ==============================================================================
 # Community Hass.io Add-ons: SSH & Web Terminal
-# Links some common directories to the user's home folder for convenience
+# Displays a simple notice in the logs as soon as the web terminal or
+# SSH daemon is disabled.
 # ==============================================================================
 # shellcheck disable=SC1091
 source /usr/lib/hassio-addons/base.sh
 
-readonly -a directories=(addons backup config share ssl)
+if hass.config.false 'web.enable'; then
+    hass.log.notice 'The Web Terminal has been disabled!'
+fi
 
-for dir in "${directories[@]}"; do
-    ln -s "/${dir}" "${HOME}/${dir}" \
-        || hass.log.warning "Failed linking common directory: ${dir}"
-done
+if hass.config.false 'ssh.enable'; then
+    hass.log.notice 'The SSH daemon has been disabled!'
+fi

@@ -1,10 +1,14 @@
 #!/usr/bin/with-contenv bash
 # ==============================================================================
-# Community Hass.io Add-ons: SSH
+# Community Hass.io Add-ons: SSH & Web Terminal
 # This files check if all user configuration requirements are met
 # ==============================================================================
 # shellcheck disable=SC1091
 source /usr/lib/hassio-addons/base.sh
+
+if hass.config.false 'ssh.enable'; then
+    exec sleep 86400
+fi
 
 hass.log.info 'Starting the SSH daemon'
 
