@@ -20,6 +20,7 @@ RUN \
         zlib-dev=1.2.11-r1 \
     \
     && apk add --no-cache \
+        ack=2.24-r0 \
         awake=1.0-r2 \
         bind-tools=9.12.1_p2-r0 \
         git=2.18.0-r0 \
