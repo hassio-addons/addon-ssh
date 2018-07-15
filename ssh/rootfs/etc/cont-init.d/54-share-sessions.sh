@@ -1,14 +1,13 @@
 #!/usr/bin/with-contenv bash
 # ==============================================================================
 # Community Hass.io Add-ons: SSH & Web Terminal
-# Links some common directories to the user's home folder for convenience
+# Sets up shared sessions between the SSH & Web terminal
 # ==============================================================================
 # shellcheck disable=SC1091
 source /usr/lib/hassio-addons/base.sh
 
-readonly -a directories=(addons backup config share ssl)
-
-for dir in "${directories[@]}"; do
-    ln -s "/${dir}" "${HOME}/${dir}" \
-        || hass.log.warning "Failed linking common directory: ${dir}"
-done
+# Disable SSH & Web Terminal session sharing if configured
+if hass.config.false 'share_sessions'; then
+    hass.log.notice 'Session sharing has been disabled!'
+    rm /root/.zprofile
+fi
