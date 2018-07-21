@@ -33,7 +33,6 @@ if hass.config.true 'web.ssl'; then
     ttyd_options+=(--ssl-key "/ssl/$(hass.config.get 'web.keyfile')")
 fi
 
-
 # Add login credentials, when enabled.
 if hass.config.has_value 'web.username' \
     && hass.config.has_value 'web.password';
