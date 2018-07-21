@@ -27,7 +27,7 @@ ttyd_options+=(--reconnect 30)
 ttyd_options+=(--port "$(hass.config.get 'web.port')")
 
 # Add SSL, when enabled.
-if hass.config.true 'ssl'; then
+if hass.config.true 'web.ssl'; then
     ttyd_options+=(--ssl)
     ttyd_options+=(--ssl-cert "/ssl/$(hass.config.get 'web.certfile')")
     ttyd_options+=(--ssl-key "/ssl/$(hass.config.get 'web.keyfile')")
