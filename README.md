@@ -1,4 +1,4 @@
-# Community Hass.io Add-ons: SSH - Secure Shell
+# Community Hass.io Add-ons: SSH & Web Terminal
 
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
@@ -15,23 +15,28 @@
 [![Buy me a coffee][buymeacoffee-shield]][buymeacoffee]
 
 This add-on allows you to log in to your Hass.io Home Assistant instance using
-SSH.
+SSH or by using the Web Terminal.
+
+![Web Terminal in the Home Assistant Frontend](images/screenshot.png)
 
 ## About
 
 This add-on allows you to log in to your Hass.io Home Assistant instance using
-SSH, giving you to access your Hass.io folders and also includes a
-command-line tool to do things like restart, update, and check your instance.
+SSH or a Web Terminal, giving you to access your Hass.io folders and
+also includes a command-line tool to do things like restart, update,
+and check your instance.
 
 This is an enhanced version of the provided
 [SSH add-on by Home Assistant][hass-ssh] and focusses on security,
-usability and flexibility.
+usability, flexibility and also provides access using a web interface.
 
 ## Features
 
-This add-on, of course, provides an SSH server, based on [OpenSSH][openssh].
-Additionally, it comes out of the box with the following:
+This add-on, of course, provides an SSH server, based on [OpenSSH][openssh] and
+a web-based Terminal (which can be included in your Home Assistant frontend) as
+well. Additionally, it comes out of the box with the following:
 
+- Access your command line right from the Home Assistant frontend!
 - A secure default configuration of SSH:
   - Only allows login by the configured user, even if more users are created.
   - Only uses known secure ciphers and algorithms.
@@ -39,7 +44,7 @@ Additionally, it comes out of the box with the following:
   - Many more security tweaks, *this addon passes all [ssh-audit] checks
     without warnings!*
     ![Result of SSH-Audit](images/ssh-audit.png)
-- Comes with compatibility mode option to allow older clients to connect.
+- Comes with an SSH compatibility mode option to allow older clients to connect.
 - SFTP support is disabled by default but is user configurable.
 - Compatible if Hass.io was installed via the generic Linux installer.
 - Username is configurable, so `root` is no longer mandatory.
@@ -64,10 +69,11 @@ comparison to installing any other Hass.io add-on.
 1. If you installed the "SSH server" add-on from the built-in add-on, then
     remove that one first.
 1. [Add our Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install the "SSH - Secure Shell" add-on.
+1. Install the "SSH & Web Terminal" add-on.
 1. Configure the `username` and `password`/`authorized_keys` options.
-1. Start the "SSH - Secure Shell" add-on.
-1. Check the logs of the "SSH - Secure Shell" add-on to see if everything
+1. Activate `ssl` on the Web Terminal if you use it.
+1. Start the "SSH & Web Terminal" add-on.
+1. Check the logs of the "SSH & Web Terminal" add-on to see if everything
     went well.
 
 **NOTE**: Do not add this repository to Hass.io, please use:
@@ -108,17 +114,30 @@ SSH add-on configuration:
 ```json
 {
   "log_level": "info",
-  "port": 22,
-  "username": "hassio",
-  "password": "",
-  "authorized_keys": [
-    "ssh-rsa AASDJKJKJFWJFAFLCNALCMLAK234234....."
-  ],
-  "sftp": false,
-  "compatibility_mode": false,
-  "allow_agent_forwarding": false,
-  "allow_remote_port_forwarding": false,
-  "allow_tcp_forwarding": false,
+  "ssh": {
+    "enable": true,
+    "port": 22,
+    "username": "hassio",
+    "password": "",
+    "authorized_keys": [
+      "ssh-rsa AASDJKJKJFWJFAFLCNALCMLAK234234....."
+    ],
+    "sftp": false,
+    "compatibility_mode": false,
+    "allow_agent_forwarding": false,
+    "allow_remote_port_forwarding": false,
+    "allow_tcp_forwarding": false
+  },
+  "web": {
+    "enable": true,
+    "port": 7681,
+    "username": "hassio",
+    "password": "changeme",
+    "ssl": true,
+    "certfile": "fullchain.pem",
+    "keyfile": "privkey.pem"
+  },
+  "share_sessions": true,
   "packages": [
     "python",
     "python-dev",
@@ -152,18 +171,23 @@ more severe level, e.g., `debug` also shows `info` messages. By default,
 the `log_level` is set to `info`, which is the recommended setting unless
 you are troubleshooting.
 
-Using `trace` or `debug` log levels puts the SSH daemon into debug mode.
-While SSH is running in debug mode, it will be only able to accept one
-single connection at the time.
+Using `trace` or `debug` log levels puts the SSH and Terminal daemons into
+debug mode. While SSH is running in debug mode, it will be only able to
+accept one single connection at the time.
 
-### Option: `port`
+### Option group `ssh`
+
+The following options are for the option group: `ssh`. These settings
+only apply to the SSH daemon.
+
+#### Option: `port`
 
 The default port for SSH is `22`, some security guides recommend to
 change the port to something else. Sometimes you'd just like to have it on
 another port. Remember, if you change to port, be sure it is not in use
 already!
 
-### Option: `username`
+#### Option: `username`
 
 This option allows you to change to username the use when you log in via SSH.
 It is only utilized for the authentication; you will be the `root` user after
@@ -173,13 +197,13 @@ recommended.
 **Note**: _Due to limitations, you will need to set this option to `root` in
 order to be able to enable the SFTP capabilities._
 
-### Option: `password`
+#### Option: `password`
 
 Sets the password to log in with. Leaving it empty would disable the possibility
 to authenticate with a password. We would highly recommend not to use this
 option from a security point of view.
 
-### Option: `authorized_keys`
+#### Option: `authorized_keys`
 
 Add one or more public keys to your SSH server to use with authentication.
 This is the recommended over setting a password.
@@ -187,7 +211,7 @@ This is the recommended over setting a password.
 Please take a look at the awesome [documentation created by GitHub][github-ssh]
 about using public/private key pairs and how to create them.
 
-### Option: `sftp`
+#### Option: `sftp`
 
 When set to `true` the addon will enable SFTP support on the SSH daemon.
 Please only enable it when you plan on using it.
@@ -195,23 +219,23 @@ Please only enable it when you plan on using it.
 **Note**: _Due to limitations, you will need to set the username to `root` in
 order to be able to enable the SFTP capabilities._
 
-### Option: `compatibility_mode`
+#### Option: `compatibility_mode`
 
 This SSH add-on focusses on security and has therefore only enabled known
-secure encryption methods. However, some older clients does not support these.
+secure encryption methods. However, some older clients do not support these.
 Setting this option to `true` will enable the original default set of methods,
 allowing those clients to connect.
 
 **Note**: _Enabling this option, lowers the security of your SSH server!_
 
-### Option: `allow_agent_forwarding`
+#### Option: `allow_agent_forwarding`
 
 Specifies whether ssh-agent forwarding is permitted or not.
 
 **Note**: _Enabling this option, lowers the security of your SSH server!
 Nevertheless, this warning is debatable._
 
-### Option: `allow_remote_port_forwarding`
+#### Option: `allow_remote_port_forwarding`
 
 Specifies whether remote hosts are allowed to connect to ports forwarded
 for the client.
@@ -219,14 +243,56 @@ for the client.
 **Note**: _Enabling this affects all remote forwardings, so think carefully
 before doing this._
 
-### Option: `allow_tcp_forwarding`
+#### Option: `allow_tcp_forwarding`
 
 Specifies whether TCP forwarding is permitted or not.
 
 **Note**: _Enabling this option, lowers the security of your SSH server!
 Nevertheless, this warning is debatable._
 
-### Option: `packages`
+### Option group `web`
+
+The following options are for the option group: `web`. These settings
+only apply to the Web Terminal.
+
+#### Option: `username`
+
+This option allows you to enable authentication on accessing the terminal.
+It is only used for the authentication; you will be the `root` user after
+you have authenticated. Using `root` as the username is possible, but not
+recommended. Leaving it empty would disable the authentication completely.
+
+**Note**: _If you set an `username`, `password` becomes mandatory as well._
+
+#### Option: `password`
+
+Sets the password to authenticate with. Leaving it empty would disable the
+authentication completely.
+
+**Note**: _If you set a `password`, `username` becomes mandatory as well._
+
+#### Option: `ssl`
+
+Enables/Disables SSL (HTTPS) on the web terminal. Set it `true` to enable it,
+`false` otherwise.
+
+#### Option: `certfile`
+
+The certificate file to use for SSL.
+
+**Note**: _The file MUST be stored in `/ssl/`, which is default for Hass.io_
+
+#### Option: `keyfile`
+
+The private key file to use for SSL.
+
+**Note**: _The file MUST be stored in `/ssl/`, which is default for Hass.io_
+
+### Shared settings
+
+The following options are shared between both the SSH and the Web Terminal.
+
+#### Option: `packages`
 
 Allows you to specify additional [Alpine packages][alpine-packages] to be
 installed in your shell environment (e.g., Python, Joe, Irssi).
@@ -234,7 +300,7 @@ installed in your shell environment (e.g., Python, Joe, Irssi).
 **Note**: _Adding many packages will result in a longer start-up
 time for the add-on._
 
-### Option: `init_commands`
+#### Option: `init_commands`
 
 Customize your shell environment even more with the `init_commands` option.
 Add one or more shell commands to the list, and they will be executed every

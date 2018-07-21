@@ -83,15 +83,15 @@ ARG BUILD_VERSION
 
 # Labels
 LABEL \
-    io.hass.name="SSH - Secure Shell" \
-    io.hass.description="Allows SSH connections to your Home Assistant instance" \
+    io.hass.name="SSH & Web Terminal" \
+    io.hass.description="SSH & Web Terminal access to your Home Assistant instance" \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
     maintainer="Franck Nijhof <frenck@addons.community>" \
-    org.label-schema.description="Allows SSH connections to your Home Assistant instance" \
+    org.label-schema.description="SSH & Web Terminal access to your Home Assistant instance" \
     org.label-schema.build-date=${BUILD_DATE} \
-    org.label-schema.name="SSH - Secure Shell" \
+    org.label-schema.name="SSH & Web Terminal" \
     org.label-schema.schema-version="1.0" \
     org.label-schema.url="https://community.home-assistant.io/t/community-hass-io-add-on-ssh/33820?u=frenck" \
     org.label-schema.usage="https://github.com/hassio-addons/addon-ssh/tree/master/README.md" \
