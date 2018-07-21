@@ -177,17 +177,19 @@ accept one single connection at the time.
 
 ### Option group `ssh`
 
+---
+
 The following options are for the option group: `ssh`. These settings
 only apply to the SSH daemon.
 
-#### Option: `port`
+#### Option `ssh`: `port`
 
 The default port for SSH is `22`, some security guides recommend to
 change the port to something else. Sometimes you'd just like to have it on
 another port. Remember, if you change to port, be sure it is not in use
 already!
 
-#### Option: `username`
+#### Option `ssh`: `username`
 
 This option allows you to change to username the use when you log in via SSH.
 It is only utilized for the authentication; you will be the `root` user after
@@ -197,13 +199,13 @@ recommended.
 **Note**: _Due to limitations, you will need to set this option to `root` in
 order to be able to enable the SFTP capabilities._
 
-#### Option: `password`
+#### Option `ssh`: `password`
 
 Sets the password to log in with. Leaving it empty would disable the possibility
 to authenticate with a password. We would highly recommend not to use this
 option from a security point of view.
 
-#### Option: `authorized_keys`
+#### Option `ssh` `authorized_keys`
 
 Add one or more public keys to your SSH server to use with authentication.
 This is the recommended over setting a password.
@@ -211,7 +213,7 @@ This is the recommended over setting a password.
 Please take a look at the awesome [documentation created by GitHub][github-ssh]
 about using public/private key pairs and how to create them.
 
-#### Option: `sftp`
+#### Option `ssh`: `sftp`
 
 When set to `true` the addon will enable SFTP support on the SSH daemon.
 Please only enable it when you plan on using it.
@@ -219,7 +221,7 @@ Please only enable it when you plan on using it.
 **Note**: _Due to limitations, you will need to set the username to `root` in
 order to be able to enable the SFTP capabilities._
 
-#### Option: `compatibility_mode`
+#### Option `ssh`: `compatibility_mode`
 
 This SSH add-on focusses on security and has therefore only enabled known
 secure encryption methods. However, some older clients do not support these.
@@ -228,14 +230,14 @@ allowing those clients to connect.
 
 **Note**: _Enabling this option, lowers the security of your SSH server!_
 
-#### Option: `allow_agent_forwarding`
+#### Option `ssh`: `allow_agent_forwarding`
 
 Specifies whether ssh-agent forwarding is permitted or not.
 
 **Note**: _Enabling this option, lowers the security of your SSH server!
 Nevertheless, this warning is debatable._
 
-#### Option: `allow_remote_port_forwarding`
+#### Option `ssh`: `allow_remote_port_forwarding`
 
 Specifies whether remote hosts are allowed to connect to ports forwarded
 for the client.
@@ -243,7 +245,7 @@ for the client.
 **Note**: _Enabling this affects all remote forwardings, so think carefully
 before doing this._
 
-#### Option: `allow_tcp_forwarding`
+#### Option `ssh`: `allow_tcp_forwarding`
 
 Specifies whether TCP forwarding is permitted or not.
 
@@ -252,10 +254,12 @@ Nevertheless, this warning is debatable._
 
 ### Option group `web`
 
+---
+
 The following options are for the option group: `web`. These settings
 only apply to the Web Terminal.
 
-#### Option: `username`
+#### Option `web`: `username`
 
 This option allows you to enable authentication on accessing the terminal.
 It is only used for the authentication; you will be the `root` user after
@@ -264,31 +268,33 @@ recommended. Leaving it empty would disable the authentication completely.
 
 **Note**: _If you set an `username`, `password` becomes mandatory as well._
 
-#### Option: `password`
+#### Option `web`: `password`
 
 Sets the password to authenticate with. Leaving it empty would disable the
 authentication completely.
 
 **Note**: _If you set a `password`, `username` becomes mandatory as well._
 
-#### Option: `ssl`
+#### Option `web`: `ssl`
 
 Enables/Disables SSL (HTTPS) on the web terminal. Set it `true` to enable it,
 `false` otherwise.
 
-#### Option: `certfile`
+#### Option `web`: `certfile`
 
 The certificate file to use for SSL.
 
 **Note**: _The file MUST be stored in `/ssl/`, which is default for Hass.io_
 
-#### Option: `keyfile`
+#### Option `web`: `keyfile`
 
 The private key file to use for SSL.
 
 **Note**: _The file MUST be stored in `/ssl/`, which is default for Hass.io_
 
 ### Shared settings
+
+---
 
 The following options are shared between both the SSH and the Web Terminal.
 
