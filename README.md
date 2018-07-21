@@ -316,12 +316,34 @@ Customize your shell environment even more with the `init_commands` option.
 Add one or more shell commands to the list, and they will be executed every
 single time this add-on starts.
 
+## Embedding into Home Assistant
+
+It is possible to embed the Web Terminal directly into Home Assistant, allowing
+you to access your terminal through the Home Assistant frontend.
+
+Home Assistant provides the `panel_iframe` component, for these purposes.
+
+Example configuration:
+
+```yaml
+panel_iframe:
+  terminal:
+    title: Terminal
+    icon: mdi:console
+    url: https://addres.to.your.hass.io:7681
+```
+
 ## Known issues and limitations
 
 - When SFTP is enabled, the username MUST be set to `root`.
 - It is impossible to access the GPIO pins at this moment.
   There is currently an issue open for fixing this:
   <https://github.com/home-assistant/hassio/issues/432>
+- The following error may occur in your add-on log, and can be safely ignored:
+
+  ```txt
+  ERR: lws_context_init_server_ssl: SSL_CTX_load_verify_locations unhappy
+  ```
 
 ## Changelog & Releases
 
