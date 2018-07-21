@@ -18,6 +18,16 @@
   "host_network": true,
   "auto_uart": true,
   "audio": true,
+  "devicetree": true,
+  "apparmor": false,
+  "host_dbus": true,
+  "privileged": [
+    "NET_ADMIN",
+    "SYS_ADMIN",
+    "SYS_RAWIO",
+    "SYS_TIME",
+    "SYS_NICE"
+  ],
   "map": [
     "config:rw",
     "ssl:rw",

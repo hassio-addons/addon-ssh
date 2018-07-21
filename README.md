@@ -50,6 +50,10 @@ well. Additionally, it comes out of the box with the following:
 - Username is configurable, so `root` is no longer mandatory.
 - Persists custom SSH client settings & keys between add-on restarts
 - Log levels for allowing you to triage issues easier.
+- Hardware access to your audio and uart/serial devices.
+- Runs with more privileges, allowing you to debug and test more situations.
+- Has access to the dbus of the host system.
+- Runs on host level network, allowing you to open ports or run little daemons.
 - Have custom Alpine packages installed on start. This allows you to install
   your favorite tools, which will be available every single time you log in.
 - Execute custom commands on add-on start so that you can customize the
@@ -315,6 +319,9 @@ single time this add-on starts.
 ## Known issues and limitations
 
 - When SFTP is enabled, the username MUST be set to `root`.
+- It is impossible to access the GPIO pins at this moment.
+  There is currently an issue open for fixing this:
+  <https://github.com/home-assistant/hassio/issues/432>
 
 ## Changelog & Releases
 
