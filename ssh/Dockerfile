@@ -23,6 +23,7 @@ RUN \
         ack=2.24-r0 \
         awake=1.0-r2 \
         bind-tools=9.12.1_p2-r0 \
+        bluez=5.49-r2 \
         git=2.18.0-r0 \
         json-c=0.13.1-r0 \
         libwebsockets@legacy=2.4.0-r1 \
