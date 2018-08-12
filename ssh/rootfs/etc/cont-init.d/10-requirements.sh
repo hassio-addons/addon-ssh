@@ -22,6 +22,7 @@ if hass.config.true 'ssh.enable'; then
     if ! hass.config.has_value 'ssh.username'; then
         hass.die 'Setting a SSH username is the mandatory, when SSH is enabled!'
     fi
+
     # We require at least a password or a authorized key
     if ! hass.config.has_value 'ssh.authorized_keys' \
         && ! hass.config.has_value 'ssh.password';
@@ -34,6 +35,12 @@ if hass.config.true 'ssh.enable'; then
         hass.log.warning \
             'Logging in with a SSH password is security wise, a bad idea!'
         hass.log.warning 'Please, consider using a public/private key pair'
+    fi
+
+    # Require a secure password
+    if hass.config.has_value 'ssh.password' \
+        && ! hass.config.is_safe_password 'ssh.password'; then
+        hass.die "Please choose a different SSH password, this one is unsafe!"
     fi
 
     # SFTP only works if the user is root
@@ -58,6 +65,12 @@ if hass.config.true 'web.enable'; then
         && ! hass.config.has_value 'web.password';
     then
         hass.die 'You have set a web username, but no web password!'
+    fi
+
+    # Require a secure password
+    if hass.config.has_value 'web.password' \
+        && ! hass.config.is_safe_password 'web.password'; then
+        hass.die "Please choose a different web password, this one is unsafe!"
     fi
 
     # When Web Terminal has authentication disabled, warn!

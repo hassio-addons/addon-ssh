@@ -87,7 +87,8 @@
     },
     "share_sessions": "bool",
     "packages": ["str"],
-    "init_commands": ["str"]
+    "init_commands": ["str"],
+    "i_like_to_be_pwned": "bool?",
   },
   "environment": {
     "LOG_FORMAT": "{LEVEL}: {MESSAGE}"
