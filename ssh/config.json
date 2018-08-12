@@ -17,6 +17,7 @@
   "homeassistant_api": true,
   "host_network": true,
   "auto_uart": true,
+  "gpio": true,
   "audio": true,
   "apparmor": false,
   "host_dbus": true,
