@@ -53,6 +53,25 @@ if hass.config.true 'ssh.enable'; then
 fi
 
 if hass.config.true 'web.enable'; then
+
+    if ! hass.config.has_value 'web.username' \
+        && ! ( \
+            hass.config.exists 'leave_front_door_open' \
+            && hass.config.true 'leave_front_door_open' \
+        );
+    then
+        hass.die 'You need to set a username!'
+    fi
+
+    if ! hass.config.has_value 'web.password' \
+        && ! ( \
+            hass.config.exists 'leave_front_door_open' \
+            && hass.config.true 'leave_front_door_open' \
+        );
+    then
+        hass.die 'You need to set a password!';
+    fi
+
     # We need a username to go with the password
     if ! hass.config.has_value 'web.username' \
         && hass.config.has_value 'web.password';
