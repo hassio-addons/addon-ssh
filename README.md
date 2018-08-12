@@ -14,6 +14,8 @@
 
 [![Buy me a coffee][buymeacoffee-shield]][buymeacoffee]
 
+[![Support my work on Patreon][patreon-shield]][patreon]
+
 This add-on allows you to log in to your Hass.io Home Assistant instance using
 SSH or by using the Web Terminal.
 
@@ -44,13 +46,15 @@ well. Additionally, it comes out of the box with the following:
   - Many more security tweaks, *this addon passes all [ssh-audit] checks
     without warnings!*
     ![Result of SSH-Audit](images/ssh-audit.png)
+- Passwords are checked with HaveIBeenPwned using K-anonymity.
 - Comes with an SSH compatibility mode option to allow older clients to connect.
+- Support for Mosh allowing roaming and supports intermittent connectivity.
 - SFTP support is disabled by default but is user configurable.
 - Compatible if Hass.io was installed via the generic Linux installer.
 - Username is configurable, so `root` is no longer mandatory.
 - Persists custom SSH client settings & keys between add-on restarts
 - Log levels for allowing you to triage issues easier.
-- Hardware access to your audio and uart/serial devices.
+- Hardware access to your audio, uart/serial devices and GPIO pins.
 - Runs with more privileges, allowing you to debug and test more situations.
 - Has access to the dbus of the host system.
 - Runs on host level network, allowing you to open ports or run little daemons.
@@ -209,6 +213,9 @@ Sets the password to log in with. Leaving it empty would disable the possibility
 to authenticate with a password. We would highly recommend not to use this
 option from a security point of view.
 
+**Note**: _The password will be checked against HaveIBeenPwned. If it is
+listed, the add-on will not start._
+
 #### Option `ssh` `authorized_keys`
 
 Add one or more public keys to your SSH server to use with authentication.
@@ -268,16 +275,15 @@ only apply to the Web Terminal.
 This option allows you to enable authentication on accessing the terminal.
 It is only used for the authentication; you will be the `root` user after
 you have authenticated. Using `root` as the username is possible, but not
-recommended. Leaving it empty would disable the authentication completely.
-
-**Note**: _If you set an `username`, `password` becomes mandatory as well._
+recommended. If you set a `username`, `password` becomes mandatory as well.
 
 #### Option `web`: `password`
 
-Sets the password to authenticate with. Leaving it empty would disable the
-authentication completely.
+Sets the password to authenticate with. If you set a `password`,
+`username` becomes mandatory as well.
 
-**Note**: _If you set a `password`, `username` becomes mandatory as well._
+**Note**: _The password will be checked against HaveIBeenPwned. If it is
+listed, the add-on will not start._
 
 #### Option `web`: `ssl`
 
@@ -316,6 +322,23 @@ Customize your shell environment even more with the `init_commands` option.
 Add one or more shell commands to the list, and they will be executed every
 single time this add-on starts.
 
+#### Option: `i_like_to_be_pwned`
+
+Adding this option to the add-on configuration allows to you bypass the
+HaveIBeenPwned password requirement by setting it to `true`.
+
+**Note**: _We STRONGLY suggest picking a stronger/safer password instead of
+using this option! USE AT YOUR OWN RISK!_
+
+#### Option: `leave_front_door_open`
+
+Adding this option to the add-on configuration allows you to disable
+authentication on the Web Terminal by setting it to `true` and leaving the
+username and password empty.
+
+**Note**: _We STRONGLY suggest, not to use this, even if this add-on is
+only exposed to your internal network. USE AT YOUR OWN RISK!_
+
 ## Embedding into Home Assistant
 
 It is possible to embed the Web Terminal directly into Home Assistant, allowing
@@ -335,10 +358,11 @@ panel_iframe:
 
 ## Known issues and limitations
 
+- The add-on fails to start when a password that is listed by HaveIBeenPwned
+  is used. This is actually not a limitation, but a security feature.
+- My browser throws an `ERR_SSL_PROTOCOL_ERROR`. The OPEN WEB UI button only
+  works when SSL is enabled.
 - When SFTP is enabled, the username MUST be set to `root`.
-- It is impossible to access the GPIO pins at this moment.
-  There is currently an issue open for fixing this:
-  <https://github.com/home-assistant/hassio/issues/432>
 - The following error may occur in your add-on log, and can be safely ignored:
 
   ```txt
@@ -367,8 +391,10 @@ You have several options to get them answered:
 
 - The Home Assistant [Community Forum][forum], we have a
   [dedicated topic][forum] on that forum regarding this add-on.
-- The Home Assistant [Discord Chat Server][discord] for general Home Assistant
-  discussions and questions.
+- The Community Hass.io Add-ons [Discord Chat server][discord] for add-on
+  support and feature requests.
+- The Home Assistant [Discord Chat Server][discord-ha] for general Home
+  Assistant discussions and questions.
 - Join the [Reddit subreddit][reddit] in [/r/homeassistant][reddit]
 
 You could also [open an issue here][issue] GitHub.
@@ -453,8 +479,9 @@ SOFTWARE.
 [commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/addon-ssh.svg
 [commits]: https://github.com/hassio-addons/addon-ssh/commits/master
 [contributors]: https://github.com/hassio-addons/addon-ssh/graphs/contributors
-[discord-shield]: https://img.shields.io/discord/330944238910963714.svg
-[discord]: https://discord.gg/c5DvZ4e
+[discord-ha]: https://discord.gg/c5DvZ4e
+[discord-shield]: https://img.shields.io/discord/478094546522079232.svg
+[discord]: https://discord.me/hassioaddons
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
 [forum]: https://community.home-assistant.io/t/community-hass-io-add-on-ssh-web-terminal/33820?u=frenck
 [frenck]: https://github.com/frenck
@@ -477,6 +504,8 @@ SOFTWARE.
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2018.svg
 [ohmyzsh]: http://ohmyz.sh/
 [openssh]: https://www.openssh.com/
+[patreon-shield]: https://www.frenck.nl/images/patreon.png
+[patreon]: https://www.patreon.com/frenck
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
 [reddit]: https://reddit.com/r/homeassistant
 [releases-shield]: https://img.shields.io/github/release/hassio-addons/addon-ssh.svg
