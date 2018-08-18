@@ -215,6 +215,8 @@ recommended.
 **Note**: _Due to limitations, you will need to set this option to `root` in
 order to be able to enable the SFTP capabilities._
 
+**Note**: _This option support secrets, e.g., `!secret ssh_username`._
+
 #### Option `ssh`: `password`
 
 Sets the password to log in with. Leaving it empty would disable the possibility
@@ -223,6 +225,8 @@ option from a security point of view.
 
 **Note**: _The password will be checked against HaveIBeenPwned. If it is
 listed, the add-on will not start._
+
+**Note**: _This option support secrets, e.g., `!secret ssh_password`._
 
 #### Option `ssh` `authorized_keys`
 
@@ -283,7 +287,9 @@ only apply to the Web Terminal.
 This option allows you to enable authentication on accessing the terminal.
 It is only used for the authentication; you will be the `root` user after
 you have authenticated. Using `root` as the username is possible, but not
-recommended. If you set a `username`, `password` becomes mandatory as well.
+recommended.
+
+**Note**: _This option support secrets, e.g., `!secret terminal_username`._
 
 #### Option `web`: `password`
 
@@ -292,6 +298,8 @@ Sets the password to authenticate with. If you set a `password`,
 
 **Note**: _The password will be checked against HaveIBeenPwned. If it is
 listed, the add-on will not start._
+
+**Note**: _This option support secrets, e.g., `!secret terminal_password`._
 
 #### Option `web`: `ssl`
 
