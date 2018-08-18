@@ -65,6 +65,7 @@ well. Additionally, it comes out of the box with the following:
 - Hardware access to your audio, uart/serial devices and GPIO pins.
 - Runs with more privileges, allowing you to debug and test more situations.
 - Has access to the dbus of the host system.
+- Has the option to access the Docker instance running Hass.io host system.
 - Runs on host level network, allowing you to open ports or run little daemons.
 - Have custom Alpine packages installed on start. This allows you to install
   your favorite tools, which will be available every single time you log in.

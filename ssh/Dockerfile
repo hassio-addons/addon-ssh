@@ -18,6 +18,7 @@ RUN \
         bsd-compat-headers=0.7.1-r0 \
         build-base=0.5-r1 \
         cmake=3.11.1-r2 \
+        docker=18.03.1-r0 \
         json-c-dev=0.13.1-r0 \
         libressl-dev=2.7.4-r0 \
         zlib-dev=1.2.11-r1 \
@@ -28,8 +29,10 @@ RUN \
         bind-tools=9.12.1_p2-r0 \
         bluez=5.49-r2 \
         colordiff=1.0.18-r0 \
+        device-mapper-libs=2.02.178-r0 \
         git=2.18.0-r0 \
         json-c=0.13.1-r0 \
+        libltdl=2.4.6-r5 \
         libwebsockets-dev@legacy=2.4.0-r1 \
         libwebsockets@legacy=2.4.0-r1 \
         libxml2-utils=2.9.8-r0 \
@@ -74,6 +77,8 @@ RUN \
         -DCMAKE_VERBOSE_MAKEFILE=TRUE \
     && make \
     && make install \
+    \
+    && cp /usr/bin/docker /usr/local/bin/.undocked \
     \
     && rm -f -r /tmp/* \
     && apk del --purge libwebsockets-dev \
