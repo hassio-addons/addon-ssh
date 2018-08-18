@@ -28,6 +28,9 @@
     "SYS_TIME",
     "SYS_NICE"
   ],
+  "devices": [
+    "/dev/mem:/dev/mem:rwm"
+  ],
   "map": [
     "config:rw",
     "ssl:rw",
