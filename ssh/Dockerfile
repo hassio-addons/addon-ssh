@@ -18,7 +18,7 @@ RUN \
         bsd-compat-headers=0.7.1-r0 \
         build-base=0.5-r1 \
         cmake=3.11.1-r2 \
-        docker=18.03.1-r0 \
+        docker=18.06.1-r0 \
         json-c-dev=0.13.1-r0 \
         libressl-dev=2.7.4-r0 \
         zlib-dev=1.2.11-r1 \
