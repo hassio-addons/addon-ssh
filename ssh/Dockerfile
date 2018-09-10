@@ -41,7 +41,7 @@ RUN \
         mosquitto-clients=1.4.15-r3 \
         nano-syntax=2.9.8-r0 \
         nano=2.9.8-r0 \
-        ncurses=6.1-r0 \
+        ncurses=6.1_p20180818-r1 \
         net-tools=1.60_git20140218-r2 \
         nmap=7.70-r1 \
         openssh=7.7_p1-r2 \
