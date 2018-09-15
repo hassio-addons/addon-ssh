@@ -12,15 +12,14 @@ ENV TERM="xterm-256color"
 ARG BUILD_ARCH
 # hadolint ignore=DL3003
 RUN \
-    echo '@legacy http://dl-cdn.alpinelinux.org/alpine/v3.7/main' >> /etc/apk/repositories \
-    \
-    && apk add --no-cache --virtual .build-dependencies \
+    apk add --no-cache --virtual .build-dependencies \
         bsd-compat-headers=0.7.1-r0 \
         build-base=0.5-r1 \
         cmake=3.11.1-r2 \
         docker=18.06.1-r0 \
         json-c-dev=0.13.1-r0 \
         libressl-dev=2.7.4-r0 \
+        libwebsockets-dev=3.0.0-r0 \
         zlib-dev=1.2.11-r1 \
     \
     && apk add --no-cache \
@@ -33,8 +32,7 @@ RUN \
         git=2.18.0-r0 \
         json-c=0.13.1-r0 \
         libltdl=2.4.6-r5 \
-        libwebsockets-dev@legacy=2.4.0-r1 \
-        libwebsockets@legacy=2.4.0-r1 \
+        libwebsockets=3.0.0-r0 \
         libxml2-utils=2.9.8-r0 \
         mariadb-client=10.2.15-r0 \
         mosh=1.3.2-r5 \
@@ -66,7 +64,7 @@ RUN \
     \
     && sed -i -e "s#bin/ash#bin/zsh#" /etc/passwd \
     \
-    && git clone --branch "1.4.0" --depth=1 \
+    && git clone --branch "1.4.2" --depth=1 \
         https://github.com/tsl0922/ttyd.git /tmp/ttyd \
     \
     && mkdir -p /tmp/ttyd/build \
@@ -81,7 +79,6 @@ RUN \
     && cp /usr/bin/docker /usr/local/bin/.undocked \
     \
     && rm -f -r /tmp/* \
-    && apk del --purge libwebsockets-dev \
     && apk del --purge .build-dependencies
 
 # Copy root filesystem
