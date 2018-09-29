@@ -325,6 +325,14 @@ The private key file to use for SSL.
 
 The following options are shared between both the SSH and the Web Terminal.
 
+#### Option: `share_sessions`
+
+By default, the terminal session between the web client and SSH is shared.
+This allows you to pick up where you left your terminal from either of those.
+
+This option allows you to disable this behavior by setting it to `false`, which
+effectively sets SSH to behave as it used to be.
+
 #### Option: `packages`
 
 Allows you to specify additional [Alpine packages][alpine-packages] to be
