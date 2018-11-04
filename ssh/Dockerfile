@@ -29,7 +29,7 @@ RUN \
         bluez=5.49-r2 \
         colordiff=1.0.18-r0 \
         device-mapper-libs=2.02.178-r0 \
-        git=2.18.0-r0 \
+        git=2.18.1-r0 \
         json-c=0.13.1-r0 \
         libltdl=2.4.6-r5 \
         libwebsockets=3.0.0-r0 \
