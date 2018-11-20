@@ -1,17 +1,25 @@
 #!/usr/bin/with-contenv bash
 # ==============================================================================
 # Community Hass.io Add-ons: SSH & Web Terminal
-# Unprotects this add-on in order to gain access to the Docker socket
+# This script gives the user instructions on how to enable Docker access.
 # ==============================================================================
 # shellcheck disable=SC1091
 source /usr/lib/hassio-addons/base.sh
 
-hass.log.warning "This command used to work, unfortunately, due to changes"
-hass.log.warning "in Hass.io, it is no longer possible to gain access to"
-hass.log.warning "Docker."
+hass.log.warning "PROTECTION MODE ENABLED!"
 hass.log.warning ""
-hass.log.warning "There is a solution, but this awaits changes to be"
-hass.log.warning "implemented in the Home Assistant/Hass.io front-end".
+hass.log.warning "To be able to use this command, you'll need to disable"
+hass.log.warning "protection mode on this add-on. Without it, the add-on"
+hass.log.warning "is unable to acccess Docker."
 hass.log.warning ""
-hass.log.warning "Hopefully, it will return soon."
+hass.log.warning "Steps:"
+hass.log.warning " - Go to the Hass.io Panel."
+hass.log.warning " - Click on the SSH & Web Terminal add-on."
+hass.log.warning " - Set the 'Protection mode' switch to off."
+hass.log.warning " - Restart the add-on."
+hass.log.warning ""
+hass.log.warning "Access to Docker allows you to do really powerful things"
+hass.log.warning "including complete destruction of your system."
+hass.log.warning "Please, be sure you know what you are doing before enabling"
+hass.log.warning "this feature!"
 hass.log.warning ""
