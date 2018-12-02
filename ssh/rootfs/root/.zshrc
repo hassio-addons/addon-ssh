@@ -92,5 +92,10 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Home Assistant CLI
+export HASS_SERVER="http://hassio/homeassistant"
+export HASS_TOKEN="${HASSIO_TOKEN}"
+eval "$(_HASS_CLI_COMPLETE=source_zsh hass-cli)"
+
 # Show motd on start
 cat /etc/motd

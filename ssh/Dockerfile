@@ -18,8 +18,10 @@ RUN \
         cmake=3.11.1-r2 \
         docker=18.06.1-r0 \
         json-c-dev=0.13.1-r0 \
+        libffi-dev=3.2.1-r4 \
         libressl-dev=2.7.4-r0 \
         libwebsockets-dev=3.0.0-r0 \
+        python3-dev=3.6.6-r0 \
         zlib-dev=1.2.11-r1 \
     \
     && apk add --no-cache \
@@ -45,6 +47,7 @@ RUN \
         openssh=7.7_p1-r3 \
         openssl=1.0.2q-r0 \
         pwgen=2.08-r0 \
+        python3=3.6.6-r0 \
         rsync=3.1.3-r1 \
         sqlite=3.24.0-r0 \
         sudo=1.8.23-r2 \
@@ -77,6 +80,9 @@ RUN \
     && make install \
     \
     && cp /usr/bin/docker /usr/local/bin/.undocked \
+    \
+    && pip3 install --no-cache-dir \
+        homeassistant_cli==0.1.0 \
     \
     && rm -f -r /tmp/* \
     && apk del --purge .build-dependencies
