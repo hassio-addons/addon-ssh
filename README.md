@@ -77,6 +77,8 @@ well. Additionally, it comes out of the box with the following:
 - Contains a sensible set of tools right out of the box: curl, Wget, RSync, GIT,
   Nmap, Mosquitto client, MariaDB/MySQL client, Awake (“wake on LAN”), Nano,
   Vim, tmux, and a bunch commonly used networking tools.
+- Has the Home Assistant CLI (`hass-cli`) commandline tool pre-installed and
+  pre-configured.
 
 ## Installation
 
