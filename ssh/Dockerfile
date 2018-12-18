@@ -82,7 +82,7 @@ RUN \
     && cp /usr/bin/docker /usr/local/bin/.undocked \
     \
     && pip3 install --no-cache-dir \
-        homeassistant_cli==0.2.0 \
+        homeassistant_cli==0.3.0 \
     \
     && rm -f -r /tmp/* \
     && apk del --purge .build-dependencies
