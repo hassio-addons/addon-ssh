@@ -83,6 +83,7 @@ RUN \
     \
     && pip3 install --no-cache-dir \
         homeassistant_cli==0.3.0 \
+        yamllint==1.13.0 \
     \
     && rm -f -r /tmp/* \
     && apk del --purge .build-dependencies
