@@ -63,7 +63,7 @@ RUN \
         git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh \
     \
     && curl -L -s -o /usr/bin/hassio \
-        "https://github.com/home-assistant/hassio-cli/releases/download/1.4.0/hassio_${BUILD_ARCH}" \
+        "https://github.com/home-assistant/hassio-cli/releases/download/2.0.0/hassio_${BUILD_ARCH}" \
     \
     && sed -i -e "s#bin/ash#bin/zsh#" /etc/passwd \
     \
