@@ -8,6 +8,9 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Add env
 ENV TERM="xterm-256color"
 
+# Copy Python requirements file
+COPY requirements.txt /tmp/
+
 # Setup base
 ARG BUILD_ARCH
 # hadolint ignore=DL3003
@@ -81,9 +84,7 @@ RUN \
     \
     && cp /usr/bin/docker /usr/local/bin/.undocked \
     \
-    && pip3 install --no-cache-dir \
-        homeassistant_cli==0.3.0 \
-        yamllint==1.13.0 \
+    && pip3 install --no-cache-dir -r /tmp/requirements.txt \
     \
     && rm -f -r /tmp/* \
     && apk del --purge .build-dependencies
