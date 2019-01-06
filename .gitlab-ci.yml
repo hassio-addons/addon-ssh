@@ -14,4 +14,3 @@ variables:
   ADDON_ARMHF_BASE: "hassioaddons/base-armhf:2.3.0"
   ADDON_I386_BASE: "hassioaddons/base-i386:2.3.0"
 
-  SNYK_PIP: "true"
