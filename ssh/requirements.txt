@@ -1,2 +1,2 @@
-homeassistant_cli==0.3.0
+homeassistant_cli==0.3.1
 yamllint==1.13.0
