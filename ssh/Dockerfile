@@ -39,7 +39,7 @@ RUN \
         libltdl=2.4.6-r5 \
         libwebsockets=3.0.0-r0 \
         libxml2-utils=2.9.8-r1 \
-        mariadb-client=10.2.15-r0 \
+        mariadb-client=10.2.19-r1 \
         mosh=1.3.2-r5 \
         mosquitto-clients=1.4.15-r3 \
         nano-syntax=2.9.8-r0 \
