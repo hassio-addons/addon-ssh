@@ -56,7 +56,7 @@ RUN \
         sudo=1.8.23-r2 \
         tmux=2.7-r0 \
         vim=8.1.0115-r0 \
-        wget=1.19.5-r0 \
+        wget=1.20.1-r0 \
         zip=3.0-r6 \
         zsh-autosuggestions=0.4.2-r0 \
         zsh-syntax-highlighting=0.6.0-r0 \
