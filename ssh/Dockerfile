@@ -22,7 +22,7 @@ RUN \
         docker=18.06.1-r0 \
         json-c-dev=0.13.1-r0 \
         libffi-dev=3.2.1-r4 \
-        libressl-dev=2.7.4-r0 \
+        libressl-dev=2.7.5-r0 \
         libwebsockets-dev=3.0.0-r0 \
         python3-dev=3.6.6-r0 \
         zlib-dev=1.2.11-r1 \
