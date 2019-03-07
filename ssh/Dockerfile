@@ -48,7 +48,7 @@ RUN \
         net-tools=1.60_git20140218-r2 \
         nmap=7.70-r1 \
         openssh=7.7_p1-r3 \
-        openssl=1.0.2q-r0 \
+        openssl=1.0.2r-r0 \
         pwgen=2.08-r0 \
         python3=3.6.6-r0 \
         rsync=3.1.3-r1 \
