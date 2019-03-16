@@ -20,12 +20,12 @@ RUN \
         build-base=0.5-r1 \
         cmake=3.11.1-r2 \
         json-c-dev=0.13.1-r0 \
-        libffi-dev=3.2.1-r4 \
         libressl-dev=2.7.5-r0 \
         libwebsockets-dev=3.0.0-r0 \
         python3-dev=3.6.6-r0 \
         zlib-dev=1.2.11-r1 \
         docker=18.09.1-r0 \
+        libffi-dev=3.2.1-r6 \
     \
     && apk add --no-cache \
         ack=2.24-r0 \
