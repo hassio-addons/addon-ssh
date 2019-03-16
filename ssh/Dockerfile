@@ -53,10 +53,10 @@ RUN \
         pwgen=2.08-r0 \
         python3=3.6.8-r1 \
         rsync=3.1.3-r1 \
-        sqlite=3.25.3-r0 \
         sudo=1.8.23-r2 \
         tmux=2.7-r0 \
         vim=8.1.0115-r0 \
+        sqlite=3.26.0-r3 \
         wget=1.20.1-r0 \
         zip=3.0-r6 \
         zsh-autosuggestions=0.4.2-r0 \
