@@ -31,7 +31,7 @@ RUN \
         ack=2.24-r0 \
         awake=1.0-r2 \
         bind-tools=9.12.3-r0 \
-        bluez=5.49-r2 \
+        bluez=5.50-r0 \
         colordiff=1.0.18-r0 \
         device-mapper-libs=2.02.178-r0 \
         git=2.18.1-r0 \
