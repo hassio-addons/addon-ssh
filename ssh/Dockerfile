@@ -36,7 +36,6 @@ RUN \
         json-c=0.13.1-r0 \
         libltdl=2.4.6-r5 \
         libwebsockets=3.0.0-r0 \
-        mosh=1.3.2-r5 \
         mosquitto-clients=1.4.15-r3 \
         nano-syntax=2.9.8-r0 \
         nano=2.9.8-r0 \
@@ -45,6 +44,7 @@ RUN \
         git=2.20.1-r0 \
         libxml2-utils=2.9.9-r1 \
         mariadb-client=10.3.13-r0 \
+        mosh=1.3.2-r7 \
         net-tools=1.60_git20140218-r2 \
         openssl=1.0.2r-r0 \
         nmap=7.70-r3 \
