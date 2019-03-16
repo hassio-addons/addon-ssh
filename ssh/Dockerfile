@@ -33,7 +33,6 @@ RUN \
         bind-tools=9.12.3-r0 \
         bluez=5.50-r0 \
         colordiff=1.0.18-r0 \
-        git=2.18.1-r0 \
         json-c=0.13.1-r0 \
         libltdl=2.4.6-r5 \
         libwebsockets=3.0.0-r0 \
@@ -45,6 +44,7 @@ RUN \
         nano=2.9.8-r0 \
         ncurses=6.1_p20180818-r1 \
         device-mapper-libs=2.02.182-r0 \
+        git=2.20.1-r0 \
         net-tools=1.60_git20140218-r2 \
         nmap=7.70-r1 \
         openssh=7.7_p1-r4 \
