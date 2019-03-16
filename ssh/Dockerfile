@@ -16,13 +16,7 @@ ARG BUILD_ARCH
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache --virtual .build-dependencies \
-        bsd-compat-headers=0.7.1-r0 \
         build-base=0.5-r1 \
-        cmake=3.11.1-r2 \
-        json-c-dev=0.13.1-r0 \
-        libressl-dev=2.7.5-r0 \
-        libwebsockets-dev=3.0.0-r0 \
-        zlib-dev=1.2.11-r1 \
         docker=18.09.1-r0 \
         libffi-dev=3.2.1-r6 \
         openssl-dev=1.1.1b-r1 \
@@ -34,9 +28,6 @@ RUN \
         bind-tools=9.12.3-r0 \
         bluez=5.50-r0 \
         colordiff=1.0.18-r0 \
-        json-c=0.13.1-r0 \
-        libltdl=2.4.6-r5 \
-        libwebsockets=3.0.0-r0 \
         device-mapper-libs=2.02.182-r0 \
         git=2.20.1-r0 \
         libxml2-utils=2.9.9-r1 \
@@ -56,6 +47,7 @@ RUN \
         sqlite=3.26.0-r3 \
         sudo=1.8.25_p1-r2 \
         tmux=2.8-r0 \
+        ttyd=1.4.2-r1 \
         vim=8.1.0630-r0 \
         wget=1.20.1-r0 \
         zip=3.0-r7 \
@@ -70,18 +62,6 @@ RUN \
         "https://github.com/home-assistant/hassio-cli/releases/download/2.1.0/hassio_${BUILD_ARCH}" \
     \
     && sed -i -e "s#bin/ash#bin/zsh#" /etc/passwd \
-    \
-    && git clone --branch "1.4.2" --depth=1 \
-        https://github.com/tsl0922/ttyd.git /tmp/ttyd \
-    \
-    && mkdir -p /tmp/ttyd/build \
-    && cd /tmp/ttyd/build \
-    && cmake .. \
-        -DCMAKE_BUILD_TYPE=MinSizeRel \
-        -DCMAKE_INSTALL_PREFIX=/usr \
-        -DCMAKE_VERBOSE_MAKEFILE=TRUE \
-    && make \
-    && make install \
     \
     && cp /usr/bin/docker /usr/local/bin/.undocked \
     \
