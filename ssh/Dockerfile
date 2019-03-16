@@ -58,8 +58,8 @@ RUN \
         tmux=2.8-r0 \
         vim=8.1.0630-r0 \
         wget=1.20.1-r0 \
-        zip=3.0-r6 \
         zsh-autosuggestions=0.4.2-r0 \
+        zip=3.0-r7 \
         zsh-syntax-highlighting=0.6.0-r0 \
         zsh=5.5.1-r0 \
     \
