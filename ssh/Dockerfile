@@ -36,7 +36,6 @@ RUN \
         json-c=0.13.1-r0 \
         libltdl=2.4.6-r5 \
         libwebsockets=3.0.0-r0 \
-        nano=2.9.8-r0 \
         ncurses=6.1_p20180818-r1 \
         device-mapper-libs=2.02.182-r0 \
         git=2.20.1-r0 \
@@ -45,6 +44,7 @@ RUN \
         mosh=1.3.2-r7 \
         mosquitto-clients=1.5.6-r0 \
         nano-syntax=3.2-r0 \
+        nano=3.2-r0 \
         net-tools=1.60_git20140218-r2 \
         openssl=1.0.2r-r0 \
         nmap=7.70-r3 \
