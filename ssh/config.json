@@ -43,7 +43,6 @@
     "backup:rw"
   ],
   "options": {
-    "log_level": "info",
     "ssh": {
       "enable": true,
       "port": 22,
@@ -70,7 +69,7 @@
     "init_commands": []
   },
   "schema": {
-    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)",
+    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)?",
     "ssh": {
       "enable": "bool",
       "port": "port",
