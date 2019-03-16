@@ -22,10 +22,10 @@ RUN \
         json-c-dev=0.13.1-r0 \
         libressl-dev=2.7.5-r0 \
         libwebsockets-dev=3.0.0-r0 \
-        python3-dev=3.6.6-r0 \
         zlib-dev=1.2.11-r1 \
         docker=18.09.1-r0 \
         libffi-dev=3.2.1-r6 \
+        python3-dev=3.6.8-r1 \
     \
     && apk add --no-cache \
         ack=2.24-r0 \
@@ -50,7 +50,7 @@ RUN \
         openssh=7.7_p1-r4 \
         openssl=1.0.2r-r0 \
         pwgen=2.08-r0 \
-        python3=3.6.6-r0 \
+        python3=3.6.8-r1 \
         rsync=3.1.3-r1 \
         sqlite=3.25.3-r0 \
         sudo=1.8.23-r2 \
