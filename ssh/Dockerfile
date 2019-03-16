@@ -46,9 +46,9 @@ RUN \
         device-mapper-libs=2.02.182-r0 \
         git=2.20.1-r0 \
         net-tools=1.60_git20140218-r2 \
-        nmap=7.70-r1 \
         openssh=7.7_p1-r4 \
         openssl=1.0.2r-r0 \
+        nmap=7.70-r3 \
         pwgen=2.08-r0 \
         python3=3.6.8-r1 \
         rsync=3.1.3-r1 \
