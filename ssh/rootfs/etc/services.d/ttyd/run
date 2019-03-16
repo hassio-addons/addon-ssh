@@ -1,50 +1,48 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Community Hass.io Add-ons: SSH & Web Terminal
 # Runs the ttyd daemon
 # ==============================================================================
-# shellcheck disable=SC1091
-source /usr/lib/hassio-addons/base.sh
-
 readonly TTYD_COMMAND=(tmux -u new -A -s hassio zsh)
-declare -a ttyd_options
+declare -a options
 
-if hass.config.false 'web.enable'; then
+# If Web Terminal has been disabled, sleep a little
+if bashio::config.false 'web.enable'; then
     exec sleep 86400
 fi
 
-hass.log.info 'Starting the ttyd daemon'
-
-# Set daemon debug level
-if hass.debug; then
-    ttyd_options+=(-d7)
-else
-    ttyd_options+=(-d1)
-fi
+bashio::log.info 'Starting the ttyd daemon...'
 
 # Add default options
-ttyd_options+=(--reconnect 30)
-ttyd_options+=(--port "$(hass.config.get 'web.port')")
+options+=(--reconnect 30)
+options+=(--port "$(bashio::config 'web.port')")
+
+# Set daemon debug level
+if bashio::debug; then
+    options+=(-d7)
+else
+    options+=(-d1)
+fi
 
 # Add SSL, when enabled.
-if hass.config.true 'web.ssl'; then
-    ttyd_options+=(--ssl)
-    ttyd_options+=(--ssl-cert "/ssl/$(hass.config.get 'web.certfile')")
-    ttyd_options+=(--ssl-key "/ssl/$(hass.config.get 'web.keyfile')")
+if bashio::config.true 'web.ssl'; then
+    options+=(--ssl)
+    options+=(--ssl-cert "/ssl/$(bashio::config 'web.certfile')")
+    options+=(--ssl-key "/ssl/$(bashio::config 'web.keyfile')")
 fi
 
 # Add login credentials, when enabled.
-if hass.config.has_value 'web.username' \
-    && hass.config.has_value 'web.password';
+if bashio::config.has_value 'web.username' \
+    && bashio::config.has_value 'web.password';
 then
-    username=$(hass.config.get 'web.username')
-    password=$(hass.config.get 'web.password')
-    ttyd_options+=(--credential)
-    ttyd_options+=("${username}:${password}")
+    username=$(bashio::config 'web.username')
+    password=$(bashio::config 'web.password')
+    options+=(--credential)
+    options+=("${username}:${password}")
 fi
 
 # Change working directory
-cd /root || hass.die 'Unable to change working directory'
+cd /root || bashio::exit.nok 'Unable to change working directory'
 
 # Run the ttyd daemon
-exec ttyd "${ttyd_options[@]}" "${TTYD_COMMAND[@]}"
+exec ttyd "${options[@]}" "${TTYD_COMMAND[@]}"

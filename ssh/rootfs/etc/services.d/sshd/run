@@ -1,19 +1,25 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Community Hass.io Add-ons: SSH & Web Terminal
 # This files check if all user configuration requirements are met
 # ==============================================================================
-# shellcheck disable=SC1091
-source /usr/lib/hassio-addons/base.sh
+declare -a options
 
-if hass.config.false 'ssh.enable'; then
+# If SSH is disabled, use a fake sleep process
+if bashio::config.false 'ssh.enable'; then
     exec sleep 86400
 fi
 
-hass.log.info 'Starting the SSH daemon'
+bashio::log.info 'Starting the SSH daemon...'
 
-if hass.debug; then
-  exec /usr/sbin/sshd -D -d -e < /dev/null
-else
-  exec /usr/sbin/sshd -D -e < /dev/null
+# Default options
+options+=(-D)
+options+=(-e)
+
+# Enable debug mode on the SSH daemon
+if bashio::debug; then
+  options+=(-d)
 fi
+
+# Start the SSH daemon
+exec /usr/sbin/sshd "${options[@]}" < /dev/null

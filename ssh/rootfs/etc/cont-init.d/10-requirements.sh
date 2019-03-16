@@ -1,121 +1,141 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Community Hass.io Add-ons: SSH & Web Terminal
 # This files check if all user configuration requirements are met
 # ==============================================================================
-# shellcheck disable=SC1091
-source /usr/lib/hassio-addons/base.sh
 
 # Ensure not both web & ssh are disabled
-if hass.config.false 'web.enable' && hass.config.false 'ssh.enable'; then
-    hass.die 'Both SSH & Web Terminal are disabled. Aborting.'
+if  bashio::config.false 'web.enable' && bashio::config.false 'ssh.enable'; then
+    bashio::exit.nok 'Both SSH & Web Terminal are disabled. Aborting.'
 fi
 
 # Warn about using the root user
-if [[ "$(hass.config.get 'ssh.username')" = 'root' ]] \
-    || [[ "$(hass.config.get 'web.username')" = 'root' ]]; then
-    hass.log.warning 'Logging in with root use is security wise, a bad idea!'
+if bashio::config.equals 'ssh.username' 'root' \
+    || bashio::config.equals 'web.username' 'root'; then
+    bashio::log.warning
+    bashio::log.warning 'Logging in with "root" as the username,'
+    bashio::log.warning 'is security wise a bad idea!'
+    bashio::log.warning
+    bashio::log.warning 'Most attacks against SSH are attempts to login'
+    bashio::log.warning 'using the "root" username.'
+    bashio::log.warning
 fi
 
-if hass.config.true 'ssh.enable'; then
+if bashio::config.true 'ssh.enable'; then
     # Check if a username is set
-    if ! hass.config.has_value 'ssh.username'; then
-        hass.die 'Setting a SSH username is the mandatory, when SSH is enabled!'
-    fi
+    bashio::config.require.username 'ssh.username'
 
     # We require at least a password or a authorized key
-    if ! hass.config.has_value 'ssh.authorized_keys' \
-        && ! hass.config.has_value 'ssh.password';
+    if bashio::config.is_empty 'ssh.authorized_keys' \
+        && bashio::config.is_empty 'ssh.password';
     then
-        hass.die 'Configuring a SSH password or authorized keys is mandatory!'
-    fi
-
-    # Warn about password login
-    if hass.config.has_value 'ssh.password'; then
-        hass.log.warning \
-            'Logging in with a SSH password is security wise, a bad idea!'
-        hass.log.warning 'Please, consider using a public/private key pair'
+        bashio::log.fatal
+        bashio::log.fatal 'Configuration of this add-on is incomplete.'
+        bashio::log.fatal
+        bashio::log.fatal 'Please be sure to set a least a SSH password'
+        bashio::log.fatal 'or at least one authorized key!'
+        bashio::log.fatal
+        bashio::log.fatal 'You can configure this using the "ssh.password"'
+        bashio::log.fatal 'or the "ssh.authorized_keys" option in the'
+        bashio::log.fatal 'add-on configuration.'
+        bashio::log.fatal
+        bashio::exit.nok
     fi
 
     # Require a secure password
-    if hass.config.has_value 'ssh.password' \
-        && ! hass.config.is_safe_password 'ssh.password'; then
-        hass.die "Please choose a different SSH password, this one is unsafe!"
+    if bashio::config.has_value 'ssh.password' \
+        && ! bashio::config.true 'i_like_to_be_pwned'; then
+        bashio::config.require.safe_password 'ssh.password'
     fi
 
     # SFTP only works if the user is root
-    if hass.config.true 'ssh.sftp' \
-        && [[ "$(hass.config.get 'ssh.username')" != 'root' ]];
+    if bashio::config.true 'ssh.sftp' \
+        && ! bashio::config.equals 'ssh.username' 'root';
     then
-        hass.die \
-            'You can only enable SFTP when the SSH username is set to "root"'
+        bashio::log.fatal
+        bashio::log.fatal 'You have enabled SFTP using the "ssh.sftp" add-on'
+        bashio::log.fatal 'option. Unfortunately, this requires "ssh.username"'
+        bashio::log.fatal 'to be "root".'
+        bashio::log.fatal
+        bashio::log.fatal 'Please change "ssh.username" to "root" or disable'
+        bashio::log.fatal 'SFTP by setting "ssh.sftp" to false.'
+        bashio::log.fatal
+        bashio::exit.nok
     fi
 fi
 
-if hass.config.true 'web.enable'; then
+if bashio::config.true 'web.enable'; then
 
-    if ! hass.config.has_value 'web.username' \
-        && ! ( \
-            hass.config.exists 'leave_front_door_open' \
-            && hass.config.true 'leave_front_door_open' \
-        );
-    then
-        hass.die 'You need to set a username!'
-    fi
-
-    if ! hass.config.has_value 'web.password' \
-        && ! ( \
-            hass.config.exists 'leave_front_door_open' \
-            && hass.config.true 'leave_front_door_open' \
-        );
-    then
-        hass.die 'You need to set a password!';
+    if ! bashio::config.true 'leave_front_door_open'; then
+        bashio::config.require.username 'web.username';
+        bashio::config.require.password 'web.password';
     fi
 
     # We need a username to go with the password
-    if ! hass.config.has_value 'web.username' \
-        && hass.config.has_value 'web.password';
+    if bashio::config.is_empty 'web.username' \
+        && bashio::config.has_value 'web.password';
     then
-        hass.die 'You have set a web password, but no web username!'
+        bashio::log.fatal
+        bashio::log.fatal 'You have set a Web Terminal password using the'
+        bashio::log.fatal '"web.password" option, but the "web.username" option'
+        bashio::log.fatal 'is left empty. Login without a username but with a'
+        bashio::log.fatal 'password is not possible.'
+        bashio::log.fatal
+        bashio::log.fatal 'Please set a username in the "web.username" option.'
+        bashio::log.fatal
+        bashio::exit.nok
     fi
 
     # We need a password to go with the username
-    if hass.config.has_value 'web.username' \
-        && ! hass.config.has_value 'web.password';
+    if bashio::config.has_value 'web.username' \
+        && bashio::config.is_empty 'web.password';
     then
-        hass.die 'You have set a web username, but no web password!'
+        bashio::log.fatal
+        bashio::log.fatal 'You have set a Web Terminal username using the'
+        bashio::log.fatal '"web.username" option, but the "web.password" option'
+        bashio::log.fatal 'is left empty. Login without a password but with a'
+        bashio::log.fatal 'username is not possible.'
+        bashio::log.fatal
+        bashio::log.fatal 'Please set a password in the "web.password" option.'
+        bashio::log.fatal
+        bashio::exit.nok
     fi
 
     # Require a secure password
-    if hass.config.has_value 'web.password' \
-        && ! hass.config.is_safe_password 'web.password'; then
-        hass.die "Please choose a different web password, this one is unsafe!"
+    if bashio::config.has_value 'web.password' \
+        && ! bashio::config.true 'i_like_to_be_pwned'; then
+        bashio::config.require.safe_password 'web.password'
     fi
 
+    bashio::config.require.ssl 'web.ssl' 'web.certfile' 'web.keyfile'
+fi
+
+if bashio::config.false 'web.enable'; then
+    bashio::log.notice 'The Web Terminal has been disabled!'
+fi
+
+if bashio::config.false 'ssh.enable'; then
+    bashio::log.notice 'The SSH daemon has been disabled!'
+fi
+
+if bashio::config.true 'web.enable'; then
     # When Web Terminal has authentication disabled, warn!
-    if ! hass.config.has_value 'web.username' \
-        && ! hass.config.has_value 'web.password';
+    if bashio::config.is_empty 'web.username' \
+        && bashio::config.is_empty 'web.password';
     then
-        hass.log.warning 'Web Terminal authentication has been disabled!'
-        hass.log.warning 'Generally, this is a bad idea!'
+        bashio::log.warning
+        bashio::log.warning 'Web Terminal authentication has been disabled!'
+        bashio::log.warning 'Generally, this is a bad idea!'
+        bashio::log.warning
     fi
+fi
 
-    # Check SSL requirements, if enabled
-    if hass.config.true 'web.ssl'; then
-        if ! hass.config.has_value 'web.certfile'; then
-            hass.die 'SSL is enabled, but no certfile was specified'
-        fi
-
-        if ! hass.config.has_value 'web.keyfile'; then
-            hass.die 'SSL is enabled, but no keyfile was specified'
-        fi
-
-        if ! hass.file_exists "/ssl/$(hass.config.get 'web.certfile')"; then
-            hass.die 'The configured certfile is not found'
-        fi
-
-        if ! hass.file_exists "/ssl/$(hass.config.get 'web.keyfile')"; then
-            hass.die 'The configured keyfile is not found'
-        fi
-    fi
+# Warn about password login
+if bashio::config.has_value 'ssh.password'; then
+    bashio::log.warning
+    bashio::log.warning \
+        'Logging in with a SSH password is security wise, a bad idea!'
+    bashio::log.warning 'Please, consider using a public/private key pair.'
+    bashio::log.warning 'What is this? https://kb.iu.edu/d/aews'
+    bashio::log.warning
 fi

@@ -1,17 +1,14 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Community Hass.io Add-ons: SSH & Web Terminal
 # Install user configured/requested packages
 # ==============================================================================
-# shellcheck disable=SC1091
-source /usr/lib/hassio-addons/base.sh
-
-if hass.config.has_value 'packages'; then
+if bashio::config.has_value 'packages'; then
     apk update \
-        || hass.die 'Failed updating Alpine packages repository indexes'
+        || bashio::exit.nok 'Failed updating Alpine packages repository indexes'
 
-    for package in $(hass.config.get 'packages'); do
+    for package in $(bashio::config 'packages'); do
         apk add "$package" \
-            || hass.die "Failed installing package ${package}"
+            || bashio::exit.nok "Failed installing package ${package}"
     done
 fi
