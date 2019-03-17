@@ -30,6 +30,7 @@ RUN \
         colordiff=1.0.18-r0 \
         device-mapper-libs=2.02.182-r0 \
         git=2.20.1-r0 \
+        libltdl=2.4.6-r5 \
         libxml2-utils=2.9.9-r1 \
         mariadb-client=10.3.13-r0 \
         mosh=1.3.2-r7 \

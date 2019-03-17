@@ -1,25 +1,22 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Community Hass.io Add-ons: SSH & Web Terminal
 # This script gives the user instructions on how to enable Docker access.
 # ==============================================================================
-# shellcheck disable=SC1091
-source /usr/lib/hassio-addons/base.sh
-
-hass.log.warning "PROTECTION MODE ENABLED!"
-hass.log.warning ""
-hass.log.warning "To be able to use this command, you'll need to disable"
-hass.log.warning "protection mode on this add-on. Without it, the add-on"
-hass.log.warning "is unable to access Docker."
-hass.log.warning ""
-hass.log.warning "Steps:"
-hass.log.warning " - Go to the Hass.io Panel."
-hass.log.warning " - Click on the SSH & Web Terminal add-on."
-hass.log.warning " - Set the 'Protection mode' switch to off."
-hass.log.warning " - Restart the add-on."
-hass.log.warning ""
-hass.log.warning "Access to Docker allows you to do really powerful things"
-hass.log.warning "including complete destruction of your system."
-hass.log.warning "Please, be sure you know what you are doing before enabling"
-hass.log.warning "this feature!"
-hass.log.warning ""
+bashio::log.yellow "PROTECTION MODE ENABLED!"
+bashio::log.yellow ""
+bashio::log.yellow "To be able to use this command, you'll need to disable"
+bashio::log.yellow "protection mode on this add-on. Without it, the add-on"
+bashio::log.yellow "is unable to access Docker."
+bashio::log.yellow ""
+bashio::log.yellow "Steps:"
+bashio::log.yellow " - Go to the Hass.io Panel."
+bashio::log.yellow " - Click on the SSH & Web Terminal add-on."
+bashio::log.yellow " - Set the 'Protection mode' switch to off."
+bashio::log.yellow " - Restart the add-on."
+bashio::log.yellow ""
+bashio::log.yellow "Access to Docker allows you to do really powerful things"
+bashio::log.yellow "including complete destruction of your system."
+bashio::log.yellow "Please, be sure you know what you are doing before enabling"
+bashio::log.yellow "this feature!"
+bashio::log.yellow ""
