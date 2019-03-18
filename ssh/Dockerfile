@@ -15,12 +15,18 @@ COPY requirements.txt /tmp/
 ARG BUILD_ARCH
 # hadolint ignore=DL3003
 RUN \
-    apk add --no-cache --virtual .build-dependencies \
+    echo "@legacy http://dl-cdn.alpinelinux.org/alpine/v3.8/main" >> /etc/apk/repositories \
+    \
+    && apk add --no-cache --virtual .build-dependencies \
+        bsd-compat-headers=0.7.1-r0 \
         build-base=0.5-r1 \
+        cmake=3.13.0-r0 \
         docker=18.09.1-r0 \
+        json-c-dev=0.13.1-r0 \
         libffi-dev=3.2.1-r6 \
-        openssl-dev=1.1.1b-r1 \
+        libressl-dev=2.7.5-r0 \
         python3-dev=3.6.8-r1 \
+        zlib-dev=1.2.11-r1 \
     \
     && apk add --no-cache \
         ack=2.24-r0 \
@@ -30,7 +36,10 @@ RUN \
         colordiff=1.0.18-r0 \
         device-mapper-libs=2.02.182-r0 \
         git=2.20.1-r0 \
+        json-c=0.13.1-r0 \
         libltdl=2.4.6-r5 \
+        libwebsockets-dev@legacy=3.0.0-r0 \
+        libwebsockets@legacy=3.0.0-r0 \
         libxml2-utils=2.9.9-r1 \
         mariadb-client=10.3.13-r0 \
         mosh=1.3.2-r7 \
@@ -48,7 +57,6 @@ RUN \
         sqlite=3.26.0-r3 \
         sudo=1.8.25_p1-r2 \
         tmux=2.8-r0 \
-        ttyd=1.4.2-r1 \
         vim=8.1.0630-r0 \
         wget=1.20.1-r0 \
         zip=3.0-r7 \
@@ -64,12 +72,26 @@ RUN \
     \
     && sed -i -e "s#bin/ash#bin/zsh#" /etc/passwd \
     \
+    && git clone --branch "1.4.2" --depth=1 \
+        https://github.com/tsl0922/ttyd.git /tmp/ttyd \
+    \
+    && mkdir -p /tmp/ttyd/build \
+    && cd /tmp/ttyd/build \
+    && cmake .. \
+        -DCMAKE_BUILD_TYPE=MinSizeRel \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_VERBOSE_MAKEFILE=TRUE \
+    && make \
+    && make install \
+    \
     && cp /usr/bin/docker /usr/local/bin/.undocked \
     \
     && pip3 install --no-cache-dir -r /tmp/requirements.txt \
     \
     && rm -f -r /tmp/* \
-    && apk del --purge .build-dependencies
+    && apk del --no-cache --purge \
+        .build-dependencies \
+        libwebsockets-dev
 
 # Copy root filesystem
 COPY rootfs /
