@@ -15,16 +15,14 @@ COPY requirements.txt /tmp/
 ARG BUILD_ARCH
 # hadolint ignore=DL3003
 RUN \
-    echo "@legacy http://dl-cdn.alpinelinux.org/alpine/v3.8/main" >> /etc/apk/repositories \
-    \
-    && apk add --no-cache --virtual .build-dependencies \
+    apk add --no-cache --virtual .build-dependencies \
         bsd-compat-headers=0.7.1-r0 \
         build-base=0.5-r1 \
         cmake=3.13.0-r0 \
         docker=18.09.1-r0 \
         json-c-dev=0.13.1-r0 \
         libffi-dev=3.2.1-r6 \
-        libressl-dev=2.7.5-r0 \
+        openssl-dev=1.1.1b-r1 \
         python3-dev=3.6.8-r1 \
         zlib-dev=1.2.11-r1 \
     \
@@ -38,8 +36,6 @@ RUN \
         git=2.20.1-r0 \
         json-c=0.13.1-r0 \
         libltdl=2.4.6-r5 \
-        libwebsockets-dev@legacy=3.0.0-r0 \
-        libwebsockets@legacy=3.0.0-r0 \
         libxml2-utils=2.9.9-r1 \
         mariadb-client=10.3.13-r0 \
         mosh=1.3.2-r7 \
@@ -72,6 +68,18 @@ RUN \
     \
     && sed -i -e "s#bin/ash#bin/zsh#" /etc/passwd \
     \
+    && git clone --branch "v3.0.1" --depth=1 \
+        https://github.com/warmcat/libwebsockets.git /tmp/libwebsockets \
+    \
+    && mkdir -p /tmp/libwebsockets/build \
+    && cd /tmp/libwebsockets/build \
+    && cmake .. \
+        -DCMAKE_BUILD_TYPE=MinSizeRel \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_VERBOSE_MAKEFILE=TRUE \
+    && make \
+    && make install \
+    \
     && git clone --branch "1.4.2" --depth=1 \
         https://github.com/tsl0922/ttyd.git /tmp/ttyd \
     \
@@ -89,9 +97,7 @@ RUN \
     && pip3 install --no-cache-dir -r /tmp/requirements.txt \
     \
     && rm -f -r /tmp/* \
-    && apk del --no-cache --purge \
-        .build-dependencies \
-        libwebsockets-dev
+    && apk del --no-cache --purge .build-dependencies
 
 # Copy root filesystem
 COPY rootfs /
