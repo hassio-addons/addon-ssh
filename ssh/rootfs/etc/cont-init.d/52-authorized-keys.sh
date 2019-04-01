@@ -13,6 +13,9 @@ fi
 
 if bashio::config.has_value 'ssh.authorized_keys'; then
     while read -r key; do
+        if bashio::is_secret "${key}"; then
+            key=$(bashio::secret "${key}")
+        fi
         echo "${key}" >> "${SSH_AUTHORIZED_KEYS_PATH}"
     done <<< "$(bashio::config 'ssh.authorized_keys')"
 fi
