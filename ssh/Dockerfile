@@ -94,8 +94,17 @@ RUN \
     \
     && pip3 install --no-cache-dir -r /tmp/requirements.txt \
     \
-    && rm -f -r /tmp/* \
-    && apk del --no-cache --purge .build-dependencies
+    && apk del --no-cache --purge .build-dependencies \
+    \
+    && find /usr/local \
+        \( -type d -a -name test -o -name tests -o -name '__pycache__' \) \
+        -o \( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
+        -exec rm -rf '{}' + \
+    \
+    && rm -f -r \
+        /root/.cache \
+        /root/.cmake \
+        /tmp/*
 
 # Copy root filesystem
 COPY rootfs /
