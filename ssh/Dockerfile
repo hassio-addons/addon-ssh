@@ -36,6 +36,7 @@ RUN \
         json-c=0.13.1-r0 \
         libltdl=2.4.6-r5 \
         libxml2-utils=2.9.9-r1 \
+        lua-resty-http=0.12-r1 \
         mariadb-client=10.3.13-r0 \
         mosh=1.3.2-r7 \
         mosquitto-clients=1.5.6-r0 \
@@ -43,6 +44,8 @@ RUN \
         nano=3.2-r0 \
         ncurses=6.1_p20190105-r0 \
         net-tools=1.60_git20140218-r2 \
+        nginx-mod-http-lua=1.14.2-r0 \
+        nginx=1.14.2-r0 \
         nmap=7.70-r3 \
         openssh=7.9_p1-r4 \
         openssl=1.1.1b-r1 \
@@ -75,6 +78,7 @@ RUN \
         -DCMAKE_BUILD_TYPE=MinSizeRel \
         -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_VERBOSE_MAKEFILE=TRUE \
+        -DLWS_UNIX_SOCK=ON \
     && make \
     && make install \
     \
@@ -102,6 +106,7 @@ RUN \
         -exec rm -rf '{}' + \
     \
     && rm -f -r \
+        /etc/nginx \
         /root/.cache \
         /root/.cmake \
         /tmp/*

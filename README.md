@@ -66,7 +66,6 @@ well. Additionally, it comes out of the box with the following:
 - Compatible if Hass.io was installed via the generic Linux installer.
 - Username is configurable, so `root` is no longer mandatory.
 - Persists custom SSH client settings & keys between add-on restarts
-- Log levels for allowing you to triage issues easier.
 - Hardware access to your audio, uart/serial devices and GPIO pins.
 - Runs with more privileges, allowing you to debug and test more situations.
 - Has access to the dbus of the host system.
@@ -90,14 +89,11 @@ well. Additionally, it comes out of the box with the following:
 The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Hass.io add-on.
 
-1. If you installed the "SSH server" add-on from the built-in add-on, then
-    remove that one first.
 1. [Add our Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install the "SSH & Web Terminal" add-on.
-1. Configure the `username` and `password`/`authorized_keys` options.
-1. Activate `ssl` on the Web Terminal if you use it.
-1. Start the "SSH & Web Terminal" add-on.
-1. Check the logs of the "SSH & Web Terminal" add-on to see if everything
+2. Install the "SSH & Web Terminal" add-on.
+3. Configure the `username` and `password`/`authorized_keys` options.
+4. Start the "SSH & Web Terminal" add-on.
+5. Check the logs of the "SSH & Web Terminal" add-on to see if everything
     went well.
 
 **NOTE**: Do not add this repository to Hass.io, please use:
@@ -113,8 +109,6 @@ SSH add-on configuration:
 {
   "log_level": "info",
   "ssh": {
-    "enable": true,
-    "port": 22,
     "username": "hassio",
     "password": "",
     "authorized_keys": [
@@ -127,24 +121,16 @@ SSH add-on configuration:
     "allow_tcp_forwarding": false
   },
   "web": {
-    "enable": true,
-    "port": 7681,
-    "username": "hassio",
-    "password": "changeme",
     "ssl": true,
     "certfile": "fullchain.pem",
     "keyfile": "privkey.pem"
   },
   "share_sessions": true,
   "packages": [
-    "python",
-    "python-dev",
-    "py-pip",
     "build-base"
   ],
   "init_commands": [
-    "pip install virtualenv",
-    "pip install yamllint"
+    "ls -la"
   ]
 }
 ```
@@ -179,13 +165,6 @@ accept one single connection at the time.
 
 The following options are for the option group: `ssh`. These settings
 only apply to the SSH daemon.
-
-#### Option `ssh`: `port`
-
-The default port for SSH is `22`, some security guides recommend to
-change the port to something else. Sometimes you'd just like to have it on
-another port. Remember, if you change to port, be sure it is not in use
-already!
 
 #### Option `ssh`: `username`
 
@@ -264,29 +243,13 @@ Nevertheless, this warning is debatable._
 The following options are for the option group: `web`. These settings
 only apply to the Web Terminal.
 
-#### Option `web`: `username`
-
-This option allows you to enable authentication on accessing the terminal.
-It is only used for the authentication; you will be the `root` user after
-you have authenticated. Using `root` as the username is possible, but not
-recommended.
-
-**Note**: _This option support secrets, e.g., `!secret terminal_username`._
-
-#### Option `web`: `password`
-
-Sets the password to authenticate with. If you set a `password`,
-`username` becomes mandatory as well.
-
-**Note**: _The password will be checked against HaveIBeenPwned. If it is
-listed, the add-on will not start._
-
-**Note**: _This option support secrets, e.g., `!secret terminal_password`._
-
 #### Option `web`: `ssl`
 
 Enables/Disables SSL (HTTPS) on the web terminal. Set it `true` to enable it,
 `false` otherwise.
+
+**Note**: _The SSL settings only apply to direct access and has no effect
+on the Hass.io Ingress service._
 
 #### Option `web`: `certfile`
 

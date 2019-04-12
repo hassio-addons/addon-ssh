@@ -6,16 +6,10 @@
 readonly TTYD_COMMAND=(tmux -u new -A -s hassio zsh)
 declare -a options
 
-# If Web Terminal has been disabled, sleep a little
-if bashio::config.false 'web.enable'; then
-    exec sleep 86400
-fi
-
 bashio::log.info 'Starting the ttyd daemon...'
 
 # Add default options
 options+=(--reconnect 30)
-options+=(--port "$(bashio::config 'web.port')")
 
 # Set daemon debug level
 if bashio::debug; then
@@ -24,22 +18,8 @@ else
     options+=(-d1)
 fi
 
-# Add SSL, when enabled.
-if bashio::config.true 'web.ssl'; then
-    options+=(--ssl)
-    options+=(--ssl-cert "/ssl/$(bashio::config 'web.certfile')")
-    options+=(--ssl-key "/ssl/$(bashio::config 'web.keyfile')")
-fi
-
-# Add login credentials, when enabled.
-if bashio::config.has_value 'web.username' \
-    && bashio::config.has_value 'web.password';
-then
-    username=$(bashio::config 'web.username')
-    password=$(bashio::config 'web.password')
-    options+=(--credential)
-    options+=("${username}:${password}")
-fi
+# Listen on socket
+options+=(-i /var/run/ttyd.sock)
 
 # Change working directory
 cd /root || bashio::exit.nok 'Unable to change working directory'

@@ -1,13 +1,13 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Community Hass.io Add-ons: SSH & Web Terminal
-# This files check if all user configuration requirements are met
+# Starts the SSH service
 # ==============================================================================
 declare -a options
 
 # If SSH is disabled, use a fake sleep process
-if bashio::config.false 'ssh.enable'; then
-    exec sleep 86400
+if ! bashio::var.has_value "$(bashio::addon.port 22)"; then
+    exec sleep 864000
 fi
 
 bashio::log.info 'Starting the SSH daemon...'

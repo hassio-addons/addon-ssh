@@ -1,0 +1,17 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Community Hass.io Add-ons: SSH & Web Terminal
+# Runs the Nginx daemon
+# ==============================================================================
+
+# Wait for ttyd to become available
+s6-svwait -u -t 5000 /var/run/s6/services/ttyd
+
+bashio::log.info "Starting NGinx..."
+
+# Disable HA Authentication if front door is open
+if bashio::config.true 'leave_front_door_open'; then
+    export DISABLE_HA_AUTHENTICATION=true
+fi
+
+exec nginx
