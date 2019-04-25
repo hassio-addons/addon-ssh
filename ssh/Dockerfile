@@ -28,7 +28,7 @@ RUN \
     && apk add --no-cache \
         ack=2.24-r0 \
         awake=1.0-r2 \
-        bind-tools=9.12.3_p4-r0 \
+        bind-tools=9.12.3_p4-r2 \
         bluez=5.50-r0 \
         colordiff=1.0.18-r0 \
         device-mapper-libs=2.02.182-r0 \
