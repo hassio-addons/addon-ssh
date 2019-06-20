@@ -1,11 +1,11 @@
 {
     "squash": false,
     "build_from": {
-        "aarch64": "hassioaddons/base-python:1.1.2",
-        "amd64": "hassioaddons/base-python:1.1.2",
-        "armhf": "hassioaddons/base-python:1.1.2",
-        "armv7": "hassioaddons/base-python:1.1.2",
-        "i386": "hassioaddons/base-python:1.1.2"
+        "aarch64": "hassioaddons/base:4.0.0",
+        "amd64": "hassioaddons/base:4.0.0",
+        "armhf": "hassioaddons/base:4.0.0",
+        "armv7": "hassioaddons/base:4.0.0",
+        "i386": "hassioaddons/base:4.0.0"
     },
     "args": {}
 }
