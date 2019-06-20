@@ -22,7 +22,7 @@ RUN \
         docker=18.09.6-r0 \
         json-c-dev=0.13.1-r0 \
         libffi-dev=3.2.1-r6 \
-        openssl-dev=1.1.1b-r1 \
+        openssl-dev=1.1.1c-r0 \
         zlib-dev=1.2.11-r1 \
     \
     && apk add --no-cache \
