@@ -37,12 +37,12 @@ RUN \
         libltdl=2.4.6-r6 \
         libxml2-utils=2.9.9-r2 \
         lua-resty-http=0.13-r0 \
-        mariadb-client=10.3.15-r0 \
         mosh=1.3.2-r7 \
         mosquitto-clients=1.5.6-r0 \
         nano-syntax=3.2-r0 \
         nano=3.2-r0 \
         ncurses=6.1_p20190105-r0 \
+        mariadb-client=10.3.16-r0 \
         net-tools=1.60_git20140218-r2 \
         nginx-mod-http-lua=1.14.2-r1 \
         nginx=1.14.2-r1 \
