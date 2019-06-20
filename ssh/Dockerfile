@@ -47,8 +47,8 @@ RUN \
         nginx-mod-http-lua=1.16.0-r2 \
         nginx=1.16.0-r2 \
         nmap=7.70-r3 \
-        openssh=7.9_p1-r5 \
         openssl=1.1.1b-r1 \
+        openssh=8.0_p1-r0 \
         pwgen=2.08-r0 \
         rsync=3.1.3-r1 \
         sqlite=3.28.0-r0 \
