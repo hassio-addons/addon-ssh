@@ -18,8 +18,8 @@ RUN \
     apk add --no-cache --virtual .build-dependencies \
         bsd-compat-headers=0.7.1-r0 \
         build-base=0.5-r1 \
-        docker=18.09.1-r0 \
         cmake=3.14.5-r0 \
+        docker=18.09.6-r0 \
         json-c-dev=0.13.1-r0 \
         libffi-dev=3.2.1-r6 \
         openssl-dev=1.1.1b-r1 \
