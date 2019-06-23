@@ -84,7 +84,7 @@ RUN \
     && make \
     && make install \
     \
-    && git clone --branch "1.4.4" --depth=1 \
+    && git clone --branch "1.5.0" --depth=1 \
         https://github.com/tsl0922/ttyd.git /tmp/ttyd \
     \
     && mkdir -p /tmp/ttyd/build \
