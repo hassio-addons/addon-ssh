@@ -45,6 +45,7 @@ RUN \
         nano=4.3-r0 \
         ncurses=6.1_p20190518-r0 \
         net-tools=1.60_git20140218-r2 \
+        networkmanager=1.18.1-r2 \
         nginx-mod-http-lua=1.16.0-r2 \
         nginx=1.16.0-r2 \
         nmap=7.70-r3 \
