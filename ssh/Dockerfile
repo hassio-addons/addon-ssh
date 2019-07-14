@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/base:4.0.1
+ARG BUILD_FROM=hassioaddons/base:4.0.2
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -85,7 +85,7 @@ RUN \
     && make \
     && make install \
     \
-    && git clone --branch "1.5.0" --depth=1 \
+    && git clone --branch "1.5.1" --depth=1 \
         https://github.com/tsl0922/ttyd.git /tmp/ttyd \
     \
     && mkdir -p /tmp/ttyd/build \
