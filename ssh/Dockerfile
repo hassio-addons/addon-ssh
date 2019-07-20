@@ -12,7 +12,7 @@ ENV TERM="xterm-256color"
 COPY requirements.txt /tmp/
 
 # Setup base
-ARG BUILD_ARCH
+ARG BUILD_ARCH=amd64
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache --virtual .build-dependencies \
@@ -99,7 +99,10 @@ RUN \
     \
     && cp /usr/bin/docker /usr/local/bin/.undocked \
     \
-    && pip3 install --no-cache-dir -r /tmp/requirements.txt \
+    && pip3 install \
+        --no-cache-dir \
+        --find-links "https://wheels.home-assistant.io/alpine-3.10/${BUILD_ARCH}/" \
+        -r /tmp/requirements.txt \
     \
     && apk del --no-cache --purge .build-dependencies \
     \
