@@ -45,9 +45,8 @@ ln -s "${SSH_USER_PATH}" ~/.ssh
 if ! bashio::fs.file_exists "${GIT_CONFIG}"; then
     touch "${GIT_CONFIG}" \
         || bashio::exit.nok 'Failed to create .gitconfig file'
-
-    ln -s "${GIT_CONFIG}" ~/.gitconfig
 fi
+ln -s "${GIT_CONFIG}" ~/.gitconfig
 
 # Disable SSH & Web Terminal session sharing if configured
 if bashio::config.false 'share_sessions'; then
