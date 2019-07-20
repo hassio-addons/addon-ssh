@@ -8,6 +8,7 @@ readonly SSH_USER_PATH=/data/.ssh
 readonly ZSH_ENVIRONMENT_FILE=/root/.zshenv
 readonly ZSH_HISTORY_FILE=/root/.zsh_history
 readonly ZSH_HISTORY_PERSISTANT_FILE=/data/.zsh_history
+readonly GIT_CONFIG=/data/.gitconfig
 
 # Links some common directories to the user's home folder for convenience
 for dir in "${DIRECTORIES[@]}"; do
@@ -39,6 +40,14 @@ if ! bashio::fs.directory_exists "${SSH_USER_PATH}"; then
             'Failed setting permissions on persistent .ssh folder'
 fi
 ln -s "${SSH_USER_PATH}" ~/.ssh
+
+# Sets up the user .gitconfig file to be persistent
+if ! bashio::fs.file_exists "${GIT_CONFIG}"; then
+    touch "${GIT_CONFIG}" \
+        || bashio::exit.nok 'Failed to create .gitconfig file'
+
+    ln -s "${GIT_CONFIG}" ~/.gitconfig
+fi
 
 # Disable SSH & Web Terminal session sharing if configured
 if bashio::config.false 'share_sessions'; then
