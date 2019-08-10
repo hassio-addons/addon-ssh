@@ -6,6 +6,7 @@
 
 bashio::log.info 'Starting the Home Assistant STDIN service...'
 
+# shellcheck disable=SC2162
 while read cmd; do
   cmd="${cmd%\"}"
   cmd="${cmd#\"}"
