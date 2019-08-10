@@ -37,6 +37,7 @@
   "audio": true,
   "apparmor": false,
   "host_dbus": true,
+  "stdin": true,
   "docker_api": true,
   "full_access": true,
   "privileged": [

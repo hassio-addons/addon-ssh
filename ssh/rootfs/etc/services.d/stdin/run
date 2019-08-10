@@ -1,0 +1,21 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Community Hass.io Add-ons: SSH & Web Terminal
+# Starts the STDIN service
+# ==============================================================================
+
+bashio::log.info 'Starting the Home Assistant STDIN service...'
+
+while read cmd; do
+  cmd="${cmd%\"}"
+  cmd="${cmd#\"}"
+
+  bashio::log.info 'Received external command to execute:'
+  bashio::log.info "> ${cmd}"
+
+  if bash --login -c "${cmd}"; then
+    bashio::log.info "Command complete successfully."
+  else
+    bashio::log.error "Command exited with a failure status."
+  fi
+done < /proc/1/fd/0

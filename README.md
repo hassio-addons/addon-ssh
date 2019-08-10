@@ -83,6 +83,8 @@ well. Additionally, it comes out of the box with the following:
   Vim, tmux, and a bunch commonly used networking tools.
 - Has the Home Assistant CLI (`hass-cli`) commandline tool pre-installed and
   pre-configured.
+- Support executing commands inside using a Home Assistant service call, e.g.,
+  for use with automations.
 
 ## Installation
 
@@ -323,6 +325,31 @@ panel_iframe:
     title: Terminal
     icon: mdi:console
     url: https://addres.to.your.hass.io:7681
+```
+
+## Executing commands in this add-on using a Home Assistant service call
+
+This add-on uses the `hassio.addon_stdin` service to expose a shell interface
+to Home Assistant. This allows you to execute commands and scripts within
+the SSH & Web Terminal add-on, straight from Home Assistant.
+
+This is particularly helpful when you want to execute custom scripts or
+commands from automations.
+
+Example automation running `my_command`:
+
+```yaml
+automation:
+- alias: 'Example my script'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.motion_sensor
+    to: 'ON'
+  action:
+    service: hassio.addon_stdin
+    data:
+      addon: a0d7b954_ssh
+      input: "/config/scripts/my_command"
 ```
 
 ## Known issues and limitations

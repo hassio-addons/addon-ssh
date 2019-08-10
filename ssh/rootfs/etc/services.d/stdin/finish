@@ -1,0 +1,7 @@
+#!/usr/bin/with-contenv bashio
+# ==============================================================================
+# Community Hass.io Add-ons: SSH & Web Terminal
+# Restarts the STDIN service
+# ==============================================================================
+
+bashio::log.info 'STDIN service was stopped, restarting...'
