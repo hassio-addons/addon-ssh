@@ -1,3 +1,5 @@
 if [[ -z "$TMUX" ]]; then
-  exec tmux -u new -A -s hassio zsh
+	if [[ -o interactive ]]; then
+                  exec tmux -u new -A -s hassio zsh
+	fi
 fi
