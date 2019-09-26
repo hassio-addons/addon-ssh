@@ -22,7 +22,7 @@ RUN \
         docker=18.09.8-r0 \
         json-c-dev=0.13.1-r0 \
         libffi-dev=3.2.1-r6 \
-        openssl-dev=1.1.1c-r0 \
+        openssl-dev=1.1.1d-r0 \
         python3-dev=3.7.3-r0 \
         zlib-dev=1.2.11-r1 \
     \
@@ -50,7 +50,7 @@ RUN \
         nginx=1.16.1-r0 \
         nmap=7.70-r3 \
         openssh=8.0_p1-r0 \
-        openssl=1.1.1c-r0 \
+        openssl=1.1.1d-r0 \
         pwgen=2.08-r0 \
         python3=3.7.3-r0 \
         rsync=3.1.3-r1 \
