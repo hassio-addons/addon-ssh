@@ -178,8 +178,6 @@ recommended.
 **Note**: _Due to limitations, you will need to set this option to `root` in
 order to be able to enable the SFTP capabilities._
 
-**Note**: _This option support secrets, e.g., `!secret ssh_username`._
-
 #### Option `ssh`: `password`
 
 Sets the password to log in with. Leaving it empty would disable the possibility
@@ -188,8 +186,6 @@ option from a security point of view.
 
 **Note**: _The password will be checked against HaveIBeenPwned. If it is
 listed, the add-on will not start._
-
-**Note**: _This option support secrets, e.g., `!secret ssh_password`._
 
 #### Option `ssh` `authorized_keys`
 
