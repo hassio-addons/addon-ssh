@@ -306,23 +306,6 @@ username and password empty.
 **Note**: _We STRONGLY suggest, not to use this, even if this add-on is
 only exposed to your internal network. USE AT YOUR OWN RISK!_
 
-## Embedding into Home Assistant
-
-It is possible to embed the Web Terminal directly into Home Assistant, allowing
-you to access your terminal through the Home Assistant frontend.
-
-Home Assistant provides the `panel_iframe` component, for these purposes.
-
-Example configuration:
-
-```yaml
-panel_iframe:
-  terminal:
-    title: Terminal
-    icon: mdi:console
-    url: https://addres.to.your.hass.io:7681
-```
-
 ## Executing commands in this add-on using a Home Assistant service call
 
 This add-on uses the `hassio.addon_stdin` service to expose a shell interface
