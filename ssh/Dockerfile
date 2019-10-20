@@ -49,7 +49,7 @@ RUN \
         nginx-mod-http-lua=1.16.1-r0 \
         nginx=1.16.1-r0 \
         nmap=7.70-r3 \
-        openssh=8.0_p1-r0 \
+        openssh=8.1_p1-r0 \
         openssl=1.1.1d-r0 \
         pwgen=2.08-r0 \
         python3=3.7.5-r1 \
