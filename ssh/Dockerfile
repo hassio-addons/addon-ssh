@@ -54,7 +54,7 @@ RUN \
         pwgen=2.08-r0 \
         python3=3.7.5-r1 \
         rsync=3.1.3-r1 \
-        sqlite=3.28.0-r0 \
+        sqlite=3.28.0-r1 \
         sudo=1.8.27-r0 \
         tmux=2.9a-r0 \
         vim=8.1.1365-r0 \
