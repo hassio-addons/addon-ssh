@@ -15,7 +15,7 @@ while read cmd; do
   bashio::log.info "> ${cmd}"
 
   if bash --login -c "${cmd}"; then
-    bashio::log.info "Command complete successfully."
+    bashio::log.info "Command completed successfully."
   else
     bashio::log.error "Command exited with a failure status."
   fi
