@@ -48,7 +48,7 @@ RUN \
         networkmanager=1.18.1-r2 \
         nginx-mod-http-lua=1.16.1-r1 \
         nginx=1.16.1-r1 \
-        nmap=7.70-r3 \
+        nmap=7.70-r4 \
         openssh=8.1_p1-r0 \
         openssl=1.1.1d-r0 \
         pwgen=2.08-r0 \
