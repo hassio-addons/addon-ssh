@@ -33,7 +33,7 @@ RUN \
         bluez=5.50-r3 \
         colordiff=1.0.18-r1 \
         device-mapper-libs=2.02.184-r0 \
-        git=2.22.0-r0 \
+        git=2.22.2-r0 \
         json-c=0.13.1-r0 \
         libltdl=2.4.6-r6 \
         libxml2-utils=2.9.9-r2 \
