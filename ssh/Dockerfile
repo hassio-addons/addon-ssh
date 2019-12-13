@@ -38,7 +38,7 @@ RUN \
         libltdl=2.4.6-r6 \
         libxml2-utils=2.9.9-r2 \
         lua-resty-http=0.13-r0 \
-        mariadb-client=10.3.18-r0 \
+        mariadb-client=10.3.20-r0 \
         mosh=1.3.2-r8 \
         mosquitto-clients=1.6.3-r0 \
         nano-syntax=4.3-r0 \
