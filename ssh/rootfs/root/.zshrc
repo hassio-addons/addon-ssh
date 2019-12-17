@@ -96,4 +96,4 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 eval "$(_HASS_CLI_COMPLETE=source_zsh hass-cli)"
 
 # Show motd on start
-cat /etc/motd
+[[ -o interactive ]] && cat /etc/motd
