@@ -360,7 +360,7 @@ automation:
   works when SSL is enabled.
 - When SFTP is enabled, the username MUST be set to `root`.
 - If you want to use rsync for file transfer, the username MUST be set to
-  `root` to let HA config foldfer be updated.
+  `root`.
 - The following error may occur in your add-on log, and can be safely ignored:
 
   ```txt
