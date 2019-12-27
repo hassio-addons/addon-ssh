@@ -7,7 +7,7 @@ readonly -a DIRECTORIES=(addons backup config share ssl)
 readonly SSH_USER_PATH=/data/.ssh
 readonly ZSH_ENVIRONMENT_FILE=/root/.zshenv
 readonly ZSH_HISTORY_FILE=/root/.zsh_history
-readonly ZSH_HISTORY_PERSISTANT_FILE=/data/.zsh_history
+readonly ZSH_HISTORY_PERSISTENT_FILE=/data/.zsh_history
 readonly GIT_CONFIG=/data/.gitconfig
 
 # Links some common directories to the user's home folder for convenience
@@ -17,15 +17,15 @@ for dir in "${DIRECTORIES[@]}"; do
 done
 
 # Sets up ZSH shell
-touch "${ZSH_HISTORY_PERSISTANT_FILE}" \
+touch "${ZSH_HISTORY_PERSISTENT_FILE}" \
     || bashio::exit.nok 'Failed creating a persistent ZSH history file'
 
-chmod 600 "$ZSH_HISTORY_PERSISTANT_FILE" \
+chmod 600 "$ZSH_HISTORY_PERSISTENT_FILE" \
     || bashio::exit.nok \
         'Failed setting the correct permissions to the ZSH history file'
 
-ln -s -f "$ZSH_HISTORY_PERSISTANT_FILE" "$ZSH_HISTORY_FILE" \
-    || bashio::exit.nok 'Failed linking the persistant ZSH history file'
+ln -s -f "$ZSH_HISTORY_PERSISTENT_FILE" "$ZSH_HISTORY_FILE" \
+    || bashio::exit.nok 'Failed linking the persistent ZSH history file'
 
 echo "export HASSIO_TOKEN=\"${HASSIO_TOKEN}\"" > "${ZSH_ENVIRONMENT_FILE}" \
     || bashio::exit.nok 'Failed to export Hassio API token'

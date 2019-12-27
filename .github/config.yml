@@ -34,7 +34,7 @@ requestInfoUserstoExclude: []
 newIssueWelcomeComment: >
   :wave: Thanks for opening your first issue here!
   If you're reporting a :bug: bug, please make sure you include steps to reproduce it.
-  Also, logs, error messages and information about your hardware might be usefull.
+  Also, logs, error messages and information about your hardware might be useful.
 
 # Configuration for new-pr-welcome - https://github.com/behaviorbot/new-pr-welcome
 
