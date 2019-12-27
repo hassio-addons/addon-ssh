@@ -139,7 +139,7 @@ SSH add-on configuration:
 ### Option: `log_level`
 
 The `log_level` option controls the level of log output by the addon and can
-be changed to be more or less verbose, which might be useful when you are
+be changed to be more or less verbose, which migh./.github/settings.ymlt be useful when you are
 dealing with an unknown issue. Possible values are:
 
 - `trace`: Show every detail, like all called internal functions.
@@ -302,6 +302,37 @@ username and password empty.
 
 **Note**: _We STRONGLY suggest, not to use this, even if this add-on is
 only exposed to your internal network. USE AT YOUR OWN RISK!_
+
+### Using some other shell instead of zsh
+
+Changing to another shell instead of zsh can be implemented locally
+using `packages` and `init_commands`. Note however that some features
+described in the add-on documentation are implemented in shell
+initialization files and may not thus be available if the shell is
+changed, or things relying on their existence, for example in form of
+environment set-up, may misbehave.
+
+The add-on maintainers do not deliberately make it harder to set up
+other shells to a state equivalent with zsh, but it is also something
+to which not a lot of support time or careful consideration will be
+spent on for the time being, as there are bigger fish to fry
+[pun intended] :)
+
+Bearing that in mind, here's an small example that changes the default
+to bash, and installs and enables a bunch of command completions,
+including for `hassio`.
+
+```json
+  ...
+  "packages": [
+    "bash-completion"
+  ],
+  "init_commands": [
+    "sed -i -e 's|/zsh$|/bash|' /etc/passwd*",
+    "hassio completion >/usr/share/bash-completion/completions/hassio"
+  ]
+  ...
+```
 
 ## Executing commands in this add-on using a Home Assistant service call
 
