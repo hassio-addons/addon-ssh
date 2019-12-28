@@ -33,7 +33,7 @@ if bashio::config.equals 'ssh.username' 'root' \
     bashio::log.warning
 fi
 
-# We require at least a password or a authorized key
+# We require at least a password or an authorized key
 if bashio::config.is_empty 'ssh.authorized_keys' \
     && bashio::config.is_empty 'ssh.password';
 then
