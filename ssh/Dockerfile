@@ -28,7 +28,7 @@ RUN \
     \
     && apk add --no-cache \
         ack=3.2.0-r0 \
-        awake=1.0-r3 \
+        awake=1.0-r4 \
         bind-tools=9.14.8-r0 \
         bluez=5.50-r3 \
         colordiff=1.0.18-r1 \
