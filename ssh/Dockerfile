@@ -27,7 +27,7 @@ RUN \
         zlib-dev=1.2.11-r3 \
     \
     && apk add --no-cache \
-        ack=3.0.0-r0 \
+        ack=3.2.0-r0 \
         awake=1.0-r3 \
         bind-tools=9.14.8-r0 \
         bluez=5.50-r3 \
