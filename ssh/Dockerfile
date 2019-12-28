@@ -16,7 +16,7 @@ ARG BUILD_ARCH=amd64
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache --virtual .build-dependencies \
-        bsd-compat-headers=0.7.1-r0 \
+        bsd-compat-headers=0.7.2-r0 \
         build-base=0.5-r1 \
         cmake=3.14.5-r0 \
         docker=18.09.8-r0 \
