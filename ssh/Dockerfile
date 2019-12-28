@@ -36,7 +36,7 @@ RUN \
         git=2.24.1-r0 \
         json-c=0.13.1-r0 \
         libltdl=2.4.6-r7 \
-        libxml2-utils=2.9.9-r2 \
+        libxml2-utils=2.9.10-r1 \
         lua-resty-http=0.13-r0 \
         mariadb-client=10.3.20-r0 \
         mosh=1.3.2-r8 \
