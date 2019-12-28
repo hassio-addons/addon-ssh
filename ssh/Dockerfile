@@ -24,7 +24,7 @@ RUN \
         libffi-dev=3.2.1-r6 \
         openssl-dev=1.1.1d-r3 \
         python3-dev=3.8.0-r0 \
-        zlib-dev=1.2.11-r1 \
+        zlib-dev=1.2.11-r3 \
     \
     && apk add --no-cache \
         ack=3.0.0-r0 \
