@@ -37,7 +37,7 @@ RUN \
         json-c=0.13.1-r0 \
         libltdl=2.4.6-r7 \
         libxml2-utils=2.9.10-r1 \
-        lua-resty-http=0.13-r0 \
+        lua-resty-http=0.15-r0 \
         mariadb-client=10.4.10-r0 \
         mosh=1.3.2-r13 \
         mosquitto-clients=1.6.8-r0 \
