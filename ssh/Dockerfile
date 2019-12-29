@@ -38,7 +38,6 @@ RUN \
         json-c=0.13.1-r0 \
         libltdl=2.4.6-r7 \
         libxml2-utils=2.9.10-r1 \
-        lua-resty-http=0.15-r0 \
         mariadb-client=10.4.10-r0 \
         mosh=1.3.2-r13 \
         mosquitto-clients=1.6.8-r0 \
@@ -47,8 +46,6 @@ RUN \
         ncurses=6.1_p20191130-r0 \
         net-tools=1.60_git20140218-r2 \
         networkmanager=1.20.8-r0 \
-        nginx-mod-http-lua=1.16.1-r4 \
-        nginx=1.16.1-r4 \
         nmap=7.80-r1 \
         openssh=8.1_p1-r0 \
         openssl=1.1.1d-r3 \
@@ -113,7 +110,6 @@ RUN \
         -exec rm -rf '{}' + \
     \
     && rm -f -r \
-        /etc/nginx \
         /root/.cache \
         /root/.cmake \
         /tmp/*

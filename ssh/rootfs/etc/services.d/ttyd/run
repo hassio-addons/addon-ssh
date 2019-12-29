@@ -18,8 +18,12 @@ else
     options+=(-d1)
 fi
 
-# Listen on socket
-options+=(-i /var/run/ttyd.sock)
+# Listen on hassio interface only
+options+=(-i hassio)
+
+# Get assigned Ingress port
+ingress_port=$(bashio::addon.ingress_port)
+options+=(-p "${ingress_port}")
 
 # Change working directory
 cd /root || bashio::exit.nok 'Unable to change working directory'

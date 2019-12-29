@@ -19,17 +19,14 @@
     "i386"
   ],
   "ports": {
-    "22/tcp": 22,
-    "80/tcp": null
+    "22/tcp": 22
   },
   "ports_description": {
-    "22/tcp": "SSH server port (make empty to disable)",
-    "80/tcp": "Web Terminal (Not required for Hass.io Ingress)"
+    "22/tcp": "SSH server port (make empty to disable)"
   },
   "boot": "auto",
   "hassio_api": true,
   "hassio_role": "manager",
-  "auth_api": true,
   "homeassistant_api": true,
   "host_network": true,
   "auto_uart": true,
@@ -68,11 +65,6 @@
       "allow_remote_port_forwarding": false,
       "allow_tcp_forwarding": false
     },
-    "web": {
-      "ssl": true,
-      "certfile": "fullchain.pem",
-      "keyfile": "privkey.pem"
-    },
     "share_sessions": true,
     "packages": [],
     "init_commands": []
@@ -88,11 +80,6 @@
       "allow_agent_forwarding": "bool",
       "allow_remote_port_forwarding": "bool",
       "allow_tcp_forwarding": "bool"
-    },
-    "web": {
-      "ssl": "bool",
-      "certfile": "str",
-      "keyfile": "str"
     },
     "share_sessions": "bool",
     "packages": ["str"],
