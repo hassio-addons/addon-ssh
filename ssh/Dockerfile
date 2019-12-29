@@ -22,6 +22,7 @@ RUN \
         docker=19.03.5-r0 \
         json-c-dev=0.13.1-r0 \
         libffi-dev=3.2.1-r6 \
+        libuv-dev=1.34.0-r0 \
         openssl-dev=1.1.1d-r3 \
         python3-dev=3.8.0-r0 \
         zlib-dev=1.2.11-r3 \
@@ -37,6 +38,7 @@ RUN \
         htop=2.2.0-r0 \
         json-c=0.13.1-r0 \
         libltdl=2.4.6-r7 \
+        libuv=1.34.0-r0 \
         libxml2-utils=2.9.10-r1 \
         mariadb-client=10.4.10-r0 \
         mosh=1.3.2-r13 \
@@ -70,7 +72,7 @@ RUN \
     \
     && sed -i -e "s#bin/ash#bin/zsh#" /etc/passwd \
     \
-    && git clone --branch "v3.0.1" --depth=1 \
+    && git clone --branch "v3.2.1" --depth=1 \
         https://github.com/warmcat/libwebsockets.git /tmp/libwebsockets \
     \
     && mkdir -p /tmp/libwebsockets/build \
@@ -79,7 +81,12 @@ RUN \
         -DCMAKE_BUILD_TYPE=MinSizeRel \
         -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_VERBOSE_MAKEFILE=TRUE \
-        -DLWS_UNIX_SOCK=ON \
+        -DLWS_IPV6=ON \
+        -DLWS_STATIC_PIC=ON \
+        -DLWS_UNIX_SOCK=OFF \
+        -DLWS_WITH_LIBUV=ON \
+        -DLWS_WITH_SHARED=ON \
+        -DLWS_WITHOUT_TESTAPPS=ON \
     && make \
     && make install \
     \
