@@ -78,10 +78,12 @@ well. Additionally, it comes out of the box with the following:
 - [ZSH][zsh] as its default shell. Easier to use for the beginner, more advanced
   for the more experienced user. It even comes preloaded with
   ["Oh My ZSH"][ohmyzsh], with some plugins enabled as well.
+- Bash: If ZSH is not your cup of tea, Bash can be enabled again, which
+  includes Bash completion for both the Hass.io and the Home Assistant CLI.
 - Contains a sensible set of tools right out of the box: curl, Wget, RSync, GIT,
   Nmap, Mosquitto client, MariaDB/MySQL client, Awake (“wake on LAN”), Nano,
   Vim, tmux, and a bunch commonly used networking tools.
-- Has the Home Assistant CLI (`hass-cli`) commandline tool pre-installed and
+- Has the Home Assistant CLI (`hass-cli`) command line tool pre-installed and
   pre-configured.
 - Support executing commands inside using a Home Assistant service call, e.g.,
   for use with automations.
@@ -119,11 +121,7 @@ SSH add-on configuration:
     "allow_remote_port_forwarding": false,
     "allow_tcp_forwarding": false
   },
-  "web": {
-    "ssl": true,
-    "certfile": "fullchain.pem",
-    "keyfile": "privkey.pem"
-  },
+  "zsh": true,
   "share_sessions": true,
   "packages": [
     "build-base"
@@ -231,38 +229,17 @@ Specifies whether TCP forwarding is permitted or not.
 **Note**: _Enabling this option, lowers the security of your SSH server!
 Nevertheless, this warning is debatable._
 
-### Option group `web`
-
----
-
-The following options are for the option group: `web`. These settings
-only apply to the Web Terminal.
-
-#### Option `web`: `ssl`
-
-Enables/Disables SSL (HTTPS) on the web terminal. Set it `true` to enable it,
-`false` otherwise.
-
-**Note**: _The SSL settings only apply to direct access and has no effect
-on the Hass.io Ingress service._
-
-#### Option `web`: `certfile`
-
-The certificate file to use for SSL.
-
-**Note**: _The file MUST be stored in `/ssl/`, which is default for Hass.io_
-
-#### Option `web`: `keyfile`
-
-The private key file to use for SSL.
-
-**Note**: _The file MUST be stored in `/ssl/`, which is default for Hass.io_
-
 ### Shared settings
 
 ---
 
 The following options are shared between both the SSH and the Web Terminal.
+
+#### Option: `zsh`
+
+The add-on has ZSH pre-installed and configured as the default shell.
+However, ZSH might not be your preferred choice. By setting this option to
+`false`, you will disable ZSH and the add-on will fallback to Bash instead.
 
 #### Option: `share_sessions`
 
@@ -294,15 +271,6 @@ HaveIBeenPwned password requirement by setting it to `true`.
 **Note**: _We STRONGLY suggest picking a stronger/safer password instead of
 using this option! USE AT YOUR OWN RISK!_
 
-#### Option: `leave_front_door_open`
-
-Adding this option to the add-on configuration allows you to disable
-authentication on the Web Terminal by setting it to `true` and leaving the
-username and password empty.
-
-**Note**: _We STRONGLY suggest, not to use this, even if this add-on is
-only exposed to your internal network. USE AT YOUR OWN RISK!_
-
 ## Executing commands in this add-on using a Home Assistant service call
 
 This add-on uses the `hassio.addon_stdin` service to expose a shell interface
@@ -332,16 +300,9 @@ automation:
 
 - The add-on fails to start when a password that is listed by HaveIBeenPwned
   is used. This is actually not a limitation, but a security feature.
-- My browser throws an `ERR_SSL_PROTOCOL_ERROR`. The OPEN WEB UI button only
-  works when SSL is enabled.
 - When SFTP is enabled, the username MUST be set to `root`.
 - If you want to use rsync for file transfer, the username MUST be set to
   `root`.
-- The following error may occur in your add-on log, and can be safely ignored:
-
-  ```txt
-  ERR: lws_context_init_server_ssl: SSL_CTX_load_verify_locations unhappy
-  ```
 
 ## Changelog & Releases
 
