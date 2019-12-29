@@ -65,7 +65,7 @@
       "allow_remote_port_forwarding": false,
       "allow_tcp_forwarding": false
     },
-    "share_sessions": true,
+    "share_sessions": false,
     "packages": [],
     "init_commands": []
   },

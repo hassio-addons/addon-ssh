@@ -49,7 +49,7 @@ fi
 ln -s "${GIT_CONFIG}" ~/.gitconfig
 
 # Disable SSH & Web Terminal session sharing if configured
-if bashio::config.false 'share_sessions'; then
+if ! bashio::config.true 'share_sessions'; then
     bashio::log.notice 'Session sharing has been disabled!'
     rm /root/.zprofile
 fi
