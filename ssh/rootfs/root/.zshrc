@@ -94,6 +94,3 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # Home Assistant CLI
 eval "$(_HASS_CLI_COMPLETE=source_zsh hass-cli)"
-
-# Show motd on start
-[[ -o interactive ]] && cat /etc/motd

@@ -4,11 +4,13 @@
 # Executes configured customizations & persists user settings
 # ==============================================================================
 readonly -a DIRECTORIES=(addons backup config share ssl)
+readonly BASH_HISTORY_FILE=/root/.bash_history
+readonly BASH_HISTORY_PERSISTENT_FILE=/data/.bash_history
+readonly GIT_CONFIG=/data/.gitconfig
+readonly HASSIO_PROFILE_D_FILE=/etc/profile.d/hassio.sh
 readonly SSH_USER_PATH=/data/.ssh
-readonly ZSH_ENVIRONMENT_FILE=/root/.zshenv
 readonly ZSH_HISTORY_FILE=/root/.zsh_history
 readonly ZSH_HISTORY_PERSISTENT_FILE=/data/.zsh_history
-readonly GIT_CONFIG=/data/.gitconfig
 
 # Links some common directories to the user's home folder for convenience
 for dir in "${DIRECTORIES[@]}"; do
@@ -16,18 +18,36 @@ for dir in "${DIRECTORIES[@]}"; do
         || bashio::log.warning "Failed linking common directory: ${dir}"
 done
 
-# Sets up ZSH shell
-touch "${ZSH_HISTORY_PERSISTENT_FILE}" \
-    || bashio::exit.nok 'Failed creating a persistent ZSH history file'
+# Sets up ZSH or Bash shell history
+if bashio::config.true "zsh"; then
+    touch "${ZSH_HISTORY_PERSISTENT_FILE}" \
+        || bashio::exit.nok 'Failed creating a persistent ZSH history file'
 
-chmod 600 "$ZSH_HISTORY_PERSISTENT_FILE" \
-    || bashio::exit.nok \
-        'Failed setting the correct permissions to the ZSH history file'
+    chmod 600 "${ZSH_HISTORY_PERSISTENT_FILE}" \
+        || bashio::exit.nok \
+            'Failed setting the correct permissions to the ZSH history file'
 
-ln -s -f "$ZSH_HISTORY_PERSISTENT_FILE" "$ZSH_HISTORY_FILE" \
-    || bashio::exit.nok 'Failed linking the persistent ZSH history file'
+    ln -s -f "${ZSH_HISTORY_PERSISTENT_FILE}" "${ZSH_HISTORY_FILE}" \
+        || bashio::exit.nok 'Failed linking the persistent ZSH history file'
+else
+    touch "${BASH_HISTORY_PERSISTENT_FILE}" \
+        || bashio::exit.nok 'Failed creating a persistent Bash history file'
 
-echo "export HASSIO_TOKEN=\"${HASSIO_TOKEN}\"" > "${ZSH_ENVIRONMENT_FILE}" \
+    chmod 600 "${BASH_HISTORY_PERSISTENT_FILE}" \
+        || bashio::exit.nok \
+            'Failed setting the correct permissions to the Bash history file'
+
+    ln -s -f "${BASH_HISTORY_PERSISTENT_FILE}" "${BASH_HISTORY_FILE}" \
+        || bashio::exit.nok 'Failed linking the persistent Bash history file'
+fi
+
+# Set up Bash
+if ! bashio::config.true "zsh"; then
+    sed -i -e 's|/zsh$|/bash|' /etc/passwd*
+    sed -i -e 's|/zsh$|/bash|' /root/.tmux.conf
+fi
+
+echo "export HASSIO_TOKEN=\"${HASSIO_TOKEN}\"" >> "${HASSIO_PROFILE_D_FILE}" \
     || bashio::exit.nok 'Failed to export Hassio API token'
 
 # Sets up the users .ssh folder to be persistent
@@ -51,6 +71,7 @@ ln -s "${GIT_CONFIG}" ~/.gitconfig
 # Disable SSH & Web Terminal session sharing if configured
 if ! bashio::config.true 'share_sessions'; then
     bashio::log.notice 'Session sharing has been disabled!'
+    rm /root/.bash_profile
     rm /root/.zprofile
 fi
 

@@ -65,6 +65,7 @@
       "allow_remote_port_forwarding": false,
       "allow_tcp_forwarding": false
     },
+    "zsh": true,
     "share_sessions": false,
     "packages": [],
     "init_commands": []
@@ -81,6 +82,7 @@
       "allow_remote_port_forwarding": "bool",
       "allow_tcp_forwarding": "bool"
     },
+    "zsh": "bool",
     "share_sessions": "bool",
     "packages": ["str"],
     "init_commands": ["str"],

@@ -3,8 +3,9 @@
 # Community Hass.io Add-ons: SSH & Web Terminal
 # Runs the ttyd daemon
 # ==============================================================================
-readonly TTYD_COMMAND=(tmux -u new -A -s hassio zsh)
+declare ttyd_command
 declare -a options
+declare ingress_port
 
 bashio::log.info 'Starting the ttyd daemon...'
 
@@ -22,8 +23,13 @@ options+=(-i hassio)
 ingress_port=$(bashio::addon.ingress_port)
 options+=(-p "${ingress_port}")
 
+ttyd_command=(tmux -u new -A -s hassio zsh -l)
+if ! bashio::config.true "zsh"; then
+    ttyd_command=(tmux -u new -A -s hassio bash -l)
+fi
+
 # Change working directory
 cd /root || bashio::exit.nok 'Unable to change working directory'
 
 # Run the ttyd daemon
-exec ttyd "${options[@]}" "${TTYD_COMMAND[@]}"
+exec ttyd "${options[@]}" "${ttyd_command[@]}"
