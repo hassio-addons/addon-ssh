@@ -30,6 +30,7 @@ RUN \
     && apk add --no-cache \
         ack=3.2.0-r0 \
         awake=1.0-r4 \
+        bash-completion=2.9-r0 \
         bind-tools=9.14.8-r5 \
         bluez=5.52-r0 \
         colordiff=1.0.18-r1 \
@@ -70,6 +71,9 @@ RUN \
     && curl -L -s -o /usr/bin/hassio \
         "https://github.com/home-assistant/hassio-cli/releases/download/3.1.2/hassio_${BUILD_ARCH}" \
     \
+    && chmod a+x /usr/bin/hassio \
+    && hassio completion > /usr/share/bash-completion/completions/hassio \
+    \
     && sed -i -e "s#bin/ash#bin/zsh#" /etc/passwd \
     \
     && git clone --branch "v3.2.1" --depth=1 \
@@ -109,6 +113,8 @@ RUN \
         --no-cache-dir \
         --find-links "https://wheels.home-assistant.io/alpine-3.11/${BUILD_ARCH}/" \
         -r /tmp/requirements.txt \
+    \
+    && hass-cli completion bash > /usr/share/bash-completion/completions/hass-cli \
     \
     && apk del --no-cache --purge .build-dependencies \
     \
