@@ -90,8 +90,9 @@ RUN \
     && make \
     && make install \
     \
-    && git clone --branch "1.5.0" --depth=1 \
+    && git clone --branch master --single-branch \
         https://github.com/tsl0922/ttyd.git /tmp/ttyd \
+    && git -C /tmp/ttyd checkout aed3faa38dd20e8b377484ff7ac3da1826f21524 \
     \
     && mkdir -p /tmp/ttyd/build \
     && cd /tmp/ttyd/build \

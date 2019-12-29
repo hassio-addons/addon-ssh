@@ -8,9 +8,6 @@ declare -a options
 
 bashio::log.info 'Starting the ttyd daemon...'
 
-# Add default options
-options+=(--reconnect 30)
-
 # Set daemon debug level
 if bashio::debug; then
     options+=(-d7)
