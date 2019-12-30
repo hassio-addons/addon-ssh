@@ -1,6 +1,7 @@
 /etc false root 0644 0755
 /etc/ssh false root 0644 0755
 /etc/ssh/authorized_keys false root 0644 0755
+/etc/sudo.conf false root 0640 0750
 /etc/sudoers.d true root 0640 0750
 /usr/bin/hassio false root 0755 0755
 /usr/local/bin/docker false root 0755 0755
