@@ -92,8 +92,8 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# Home Assistant CLI
+# Home Assistant Core CLI
 eval "$(_HASS_CLI_COMPLETE=source_zsh hass-cli)"
 
-# Hassio CLI
-source <(hassio completion --zsh)
+# Home Assistant CLI
+source <(ha completion --zsh)

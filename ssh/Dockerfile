@@ -68,11 +68,11 @@ RUN \
     && git clone --depth 1 \
         git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh \
     \
-    && curl -L -s -o /usr/bin/hassio \
-        "https://github.com/home-assistant/hassio-cli/releases/download/3.1.2/hassio_${BUILD_ARCH}" \
+    && curl -L -s -o /usr/bin/ha \
+        "https://github.com/home-assistant/cli/releases/download/4.0.1/ha_${BUILD_ARCH}" \
     \
-    && chmod a+x /usr/bin/hassio \
-    && hassio completion > /usr/share/bash-completion/completions/hassio \
+    && chmod a+x /usr/bin/ha \
+    && ha completion > /usr/share/bash-completion/completions/ha \
     \
     && sed -i -e "s#bin/ash#bin/zsh#" /etc/passwd \
     \

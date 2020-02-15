@@ -7,7 +7,7 @@ readonly -a DIRECTORIES=(addons backup config share ssl)
 readonly BASH_HISTORY_FILE=/root/.bash_history
 readonly BASH_HISTORY_PERSISTENT_FILE=/data/.bash_history
 readonly GIT_CONFIG=/data/.gitconfig
-readonly HASSIO_PROFILE_D_FILE=/etc/profile.d/hassio.sh
+readonly HOME_ASSISTANT_PROFILE_D_FILE=/etc/profile.d/homeassistant.sh
 readonly SSH_USER_PATH=/data/.ssh
 readonly ZSH_HISTORY_FILE=/root/.zsh_history
 readonly ZSH_HISTORY_PERSISTENT_FILE=/data/.zsh_history
@@ -47,8 +47,9 @@ if ! bashio::config.true "zsh"; then
     sed -i -e 's|/zsh$|/bash|' /root/.tmux.conf
 fi
 
-echo "export HASSIO_TOKEN=\"${HASSIO_TOKEN}\"" >> "${HASSIO_PROFILE_D_FILE}" \
-    || bashio::exit.nok 'Failed to export Hassio API token'
+echo "export SUPERVISOR_TOKEN=\"${SUPERVISOR_TOKEN}\"" \
+    >> "${HOME_ASSISTANT_PROFILE_D_FILE}" \
+        || bashio::exit.nok 'Failed to export Supervisor API token'
 
 # Sets up the users .ssh folder to be persistent
 if ! bashio::fs.directory_exists "${SSH_USER_PATH}"; then
