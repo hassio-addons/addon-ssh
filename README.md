@@ -106,30 +106,24 @@ comparison to installing any other Hass.io add-on.
 
 SSH add-on configuration:
 
-```json
-{
-  "log_level": "info",
-  "ssh": {
-    "username": "hassio",
-    "password": "",
-    "authorized_keys": [
-      "ssh-rsa AASDJKJKJFWJFAFLCNALCMLAK234234....."
-    ],
-    "sftp": false,
-    "compatibility_mode": false,
-    "allow_agent_forwarding": false,
-    "allow_remote_port_forwarding": false,
-    "allow_tcp_forwarding": false
-  },
-  "zsh": true,
-  "share_sessions": true,
-  "packages": [
-    "build-base"
-  ],
-  "init_commands": [
-    "ls -la"
-  ]
-}
+```yaml
+log_level: info
+ssh:
+  username: hassio
+  password: ''
+  authorized_keys:
+    - ssh-rsa AASDJKJKJFWJFAFLCNALCMLAK234234.....
+  sftp: false
+  compatibility_mode: false
+  allow_agent_forwarding: false
+  allow_remote_port_forwarding: false
+  allow_tcp_forwarding: false
+zsh: true
+share_sessions: true
+packages:
+  - build-base
+init_commands:
+  - ls -la
 ```
 
 **Note**: _This is just an example, don't copy and paste it! Create your own!_
