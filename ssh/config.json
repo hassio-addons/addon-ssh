@@ -50,10 +50,10 @@
     "init_commands": []
   },
   "schema": {
-    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)?",
+    "log_level": "list(trace|debug|info|notice|warning|error|fatal)?",
     "ssh": {
       "username": "str",
-      "password": "str",
+      "password": "password",
       "authorized_keys": ["str"],
       "sftp": "bool",
       "compatibility_mode": "bool",
