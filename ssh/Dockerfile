@@ -96,7 +96,7 @@ RUN \
     \
     && git clone --branch master --single-branch \
         https://github.com/tsl0922/ttyd.git /tmp/ttyd \
-    && git -C /tmp/ttyd checkout aed3faa38dd20e8b377484ff7ac3da1826f21524 \
+    && git -C /tmp/ttyd checkout v1.6.0 \
     \
     && mkdir -p /tmp/ttyd/build \
     && cd /tmp/ttyd/build \
