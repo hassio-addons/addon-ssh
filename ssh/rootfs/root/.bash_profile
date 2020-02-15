@@ -1,3 +1,3 @@
 if [[ -z "$TMUX" ]]; then
-  exec tmux -u new -A -s hassio bash -l
+  exec tmux -u new -A -s homeassistant bash -l
 fi

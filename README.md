@@ -21,15 +21,15 @@
 
 [![Support Frenck on Patreon][patreon-shield]][patreon]
 
-This add-on allows you to log in to your Hass.io Home Assistant instance using
+This add-on allows you to log in to your Home Assistant instance using
 SSH or by using the Web Terminal.
 
 ![Web Terminal in the Home Assistant Frontend](images/screenshot.png)
 
 ## About
 
-This add-on allows you to log in to your Hass.io Home Assistant instance using
-SSH or a Web Terminal, giving you to access your Hass.io folders and
+This add-on allows you to log in to your Home Assistant instance using
+SSH or a Web Terminal, giving you to access your folders and
 also includes a command-line tool to do things like restart, update,
 and check your instance.
 
@@ -63,13 +63,13 @@ well. Additionally, it comes out of the box with the following:
 - Comes with an SSH compatibility mode option to allow older clients to connect.
 - Support for Mosh allowing roaming and supports intermittent connectivity.
 - SFTP support is disabled by default but is user configurable.
-- Compatible if Hass.io was installed via the generic Linux installer.
+- Compatible if Home Assistant was installed via the generic Linux installer.
 - Username is configurable, so `root` is no longer mandatory.
 - Persists custom SSH client settings & keys between add-on restarts
 - Hardware access to your audio, uart/serial devices and GPIO pins.
 - Runs with more privileges, allowing you to debug and test more situations.
 - Has access to the dbus of the host system.
-- Has the option to access the Docker instance running Hass.io host system.
+- Has the option to access the Docker instance running on the host system.
 - Runs on host level network, allowing you to open ports or run little daemons.
 - Have custom Alpine packages installed on start. This allows you to install
   your favorite tools, which will be available every single time you log in.
@@ -79,7 +79,7 @@ well. Additionally, it comes out of the box with the following:
   for the more experienced user. It even comes preloaded with
   ["Oh My ZSH"][ohmyzsh], with some plugins enabled as well.
 - Bash: If ZSH is not your cup of tea, Bash can be enabled again, which
-  includes Bash completion for both the Hass.io and the Home Assistant CLI.
+  includes Bash completion for both the Core CLI and the Home Assistant CLI.
 - Contains a sensible set of tools right out of the box: curl, Wget, RSync, GIT,
   Nmap, Mosquitto client, MariaDB/MySQL client, Awake (“wake on LAN”), Nano,
   Vim, tmux, and a bunch commonly used networking tools.
@@ -109,7 +109,7 @@ SSH add-on configuration:
 ```yaml
 log_level: info
 ssh:
-  username: hassio
+  username: homeassistant
   password: ''
   authorized_keys:
     - ssh-rsa AASDJKJKJFWJFAFLCNALCMLAK234234.....

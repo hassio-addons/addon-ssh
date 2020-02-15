@@ -16,16 +16,16 @@ else
     options+=(-d1)
 fi
 
-# Listen on hassio interface only
+# Listen on Supervisor interface only
 options+=(-i hassio)
 
 # Get assigned Ingress port
 ingress_port=$(bashio::addon.ingress_port)
 options+=(-p "${ingress_port}")
 
-ttyd_command=(tmux -u new -A -s hassio zsh -l)
+ttyd_command=(tmux -u new -A -s homeassistant zsh -l)
 if ! bashio::config.true "zsh"; then
-    ttyd_command=(tmux -u new -A -s hassio bash -l)
+    ttyd_command=(tmux -u new -A -s homeassistant bash -l)
 fi
 
 # Change working directory
