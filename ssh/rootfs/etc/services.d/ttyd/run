@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Hass.io Add-ons: SSH & Web Terminal
+# Home Assistant Community Add-on: SSH & Web Terminal
 # Runs the ttyd daemon
 # ==============================================================================
 declare ttyd_command

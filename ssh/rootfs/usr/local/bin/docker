@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Hass.io Add-ons: SSH & Web Terminal
+# Home Assistant Community Add-on: SSH & Web Terminal
 # This script gives the user instructions on how to enable Docker access.
 # ==============================================================================
 bashio::log.yellow "PROTECTION MODE ENABLED!"

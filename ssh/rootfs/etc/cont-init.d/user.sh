@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Hass.io Add-ons: SSH & Web Terminal
+# Home Assistant Community Add-on: SSH & Web Terminal
 # Executes configured customizations & persists user settings
 # ==============================================================================
 readonly -a DIRECTORIES=(addons backup config share ssl)

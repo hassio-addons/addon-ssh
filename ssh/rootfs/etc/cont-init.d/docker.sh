@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Hass.io Add-ons: SSH & Web Terminal
+# Home Assistant Community Add-on: SSH & Web Terminal
 # Enables Docker by moving the Docker executable in place.
 # ==============================================================================
 if bashio::var.false "$(bashio::addon.protected)"; then

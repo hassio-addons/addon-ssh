@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Hass.io Add-ons: SSH & Web Terminal
+# Home Assistant Community Add-on: SSH & Web Terminal
 # Configures the SSH daemon
 # ==============================================================================
 readonly SSH_AUTHORIZED_KEYS_PATH=/etc/ssh/authorized_keys

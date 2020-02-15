@@ -1,8 +1,8 @@
 ---
 repository:
-  description: "SSH & Web Terminal - Community Hass.io Add-on for Home Assistant"
+  description: "SSH & Web Terminal - Home Assistant Community Add-ons"
   homepage: https://addons.community
-  topics: ssh, ssh-server, hassio-addons, hassio, hass, home-assistant, homeassistant, home-automation
+  topics: ssh, ssh-server, addon, addons, home-assistant, homeassistant, home-automation
   private: false
   has_issues: true
   has_projects: false
