@@ -20,6 +20,7 @@
   "boot": "auto",
   "hassio_api": true,
   "hassio_role": "manager",
+  "services": ["mysql:want", "mqtt:want"],
   "homeassistant_api": true,
   "host_network": true,
   "auto_uart": true,
