@@ -21,7 +21,7 @@ if bashio::var.has_value "${host}"; then
     echo "password=\"${password}\""
     echo "port=${port}"
     echo "user=\"${username}\""
-  } > /etc/mysql/conf.d/service.cnf
+  } > /etc/my.cnf.d/service.cnf
 else
   bashio::log.info "The above error can be ignored if you don't have MariaDB installed"
 fi
