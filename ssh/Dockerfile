@@ -29,6 +29,7 @@ RUN \
     \
     && apk add --no-cache \
         ack=3.2.0-r0 \
+        alsa-plugins-pulse=1.2.1-r0 \
         awake=1.0-r4 \
         bash-completion=2.9-r0 \
         bind-tools=9.14.8-r5 \
