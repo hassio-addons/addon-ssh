@@ -57,6 +57,7 @@ RUN \
         openssh=8.1_p1-r0 \
         openssl=1.1.1d-r3 \
         pwgen=2.08-r0 \
+        pulseaudio-utils=13.0-r2 \
         python3=3.8.2-r0 \
         rsync=3.1.3-r2 \
         sqlite=3.30.1-r1 \
