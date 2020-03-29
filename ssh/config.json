@@ -11,7 +11,6 @@
   "panel_title": "Terminal",
   "homeassistant": "0.92.0b2",
   "arch": ["aarch64", "amd64", "armhf", "armv7", "i386"],
-  "init": false,
   "ports": {
     "22/tcp": 22
   },
