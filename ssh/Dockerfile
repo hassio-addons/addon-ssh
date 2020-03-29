@@ -74,7 +74,7 @@ RUN \
         git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh \
     \
     && curl -L -s -o /usr/bin/ha \
-        "https://github.com/home-assistant/cli/releases/download/4.1.0/ha_${BUILD_ARCH}" \
+        "https://github.com/home-assistant/cli/releases/download/4.2.0/ha_${BUILD_ARCH}" \
     \
     && chmod a+x /usr/bin/ha \
     && ha completion > /usr/share/bash-completion/completions/ha \
