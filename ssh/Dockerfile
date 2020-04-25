@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/base:7.0.5
+ARG BUILD_FROM=hassioaddons/base:7.1.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -23,7 +23,7 @@ RUN \
         json-c-dev=0.13.1-r0 \
         libffi-dev=3.2.1-r6 \
         libuv-dev=1.34.0-r0 \
-        openssl-dev=1.1.1d-r3 \
+        openssl-dev=1.1.1g-r0 \
         python3-dev=3.8.2-r0 \
         zlib-dev=1.2.11-r3 \
     \
