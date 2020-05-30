@@ -171,6 +171,7 @@ SOFTWARE.
 [github-sponsors]: https://github.com/sponsors/frenck
 [gitlabci-shield]: https://gitlab.com/hassio-addons/addon-ssh/badges/master/pipeline.svg
 [gitlabci]: https://gitlab.com/hassio-addons/addon-ssh/pipelines
+[hass-ssh]: https://github.com/home-assistant/hassio-addons/tree/master/ssh
 [i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
 [issue]: https://github.com/hassio-addons/addon-ssh/issues
 [license-shield]: https://img.shields.io/github/license/hassio-addons/addon-ssh.svg
