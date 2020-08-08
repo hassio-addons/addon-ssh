@@ -15,6 +15,8 @@ port=$(bashio::addon.port 22)
 
 # Don't execute this when SSH is disabled
 if ! bashio::var.has_value "${port}"; then
+    bashio::log.info 'No network port is defined in the configuration so access'
+    bashio::log.info 'will only be available via the web interface.'
     exit 0
 fi
 
