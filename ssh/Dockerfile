@@ -36,7 +36,7 @@ RUN \
         bind-tools=9.14.8-r5 \
         bluez=5.52-r1 \
         colordiff=1.0.18-r1 \
-        device-mapper-libs=2.02.186-r0 \
+        device-mapper-libs=2.02.186-r1 \
         docker-bash-completion=19.03.12-r0 \
         docker-zsh-completion=19.03.12-r0 \
         git=2.24.3-r0 \
