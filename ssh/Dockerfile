@@ -20,7 +20,7 @@ RUN \
         build-base=0.5-r2 \
         cmake=3.17.2-r0 \
         docker=19.03.12-r0 \
-        json-c-dev=0.13.1-r0 \
+        json-c-dev=0.14-r1 \
         libffi-dev=3.2.1-r6 \
         libuv-dev=1.34.0-r0 \
         openssl-dev=1.1.1g-r0 \
