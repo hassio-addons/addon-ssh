@@ -58,6 +58,7 @@ RUN \
         openssl=1.1.1g-r0 \
         pwgen=2.08-r1 \
         pulseaudio-utils=13.0-r10 \
+        py3-pip=20.1.1-r0 \
         python3=3.8.5-r0 \
         rsync=3.1.3-r3 \
         sqlite=3.32.1-r0 \
