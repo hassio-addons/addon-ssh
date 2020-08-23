@@ -41,7 +41,7 @@ RUN \
         docker-zsh-completion=19.03.12-r0 \
         git=2.24.3-r0 \
         htop=2.2.0-r0 \
-        json-c=0.13.1-r0 \
+        json-c=0.14-r1 \
         libltdl=2.4.6-r7 \
         libuv=1.37.0-r0 \
         libxml2-utils=2.9.10-r3 \
