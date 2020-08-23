@@ -59,7 +59,7 @@ RUN \
         pwgen=2.08-r1 \
         pulseaudio-utils=13.0-r2 \
         python3=3.8.5-r0 \
-        rsync=3.1.3-r2 \
+        rsync=3.1.3-r3 \
         sqlite=3.30.1-r2 \
         sudo=1.8.31-r0 \
         tmux=3.0a-r1 \
