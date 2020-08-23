@@ -48,8 +48,8 @@ RUN \
         mariadb-client=10.4.13-r0 \
         mosh=1.3.2-r14 \
         mosquitto-clients=1.6.8-r0 \
-        nano-syntax=4.6-r0 \
-        nano=4.6-r0 \
+        nano-syntax=4.9.3-r0 \
+        nano=4.9.3-r0 \
         ncurses=6.1_p20200118-r4 \
         net-tools=1.60_git20140218-r2 \
         networkmanager=1.20.8-r0 \
