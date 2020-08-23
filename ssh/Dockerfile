@@ -50,7 +50,7 @@ RUN \
         mosquitto-clients=1.6.9-r0 \
         nano-syntax=4.9.3-r0 \
         nano=4.9.3-r0 \
-        ncurses=6.1_p20200118-r4 \
+        ncurses=6.2_p20200523-r0 \
         net-tools=1.60_git20140218-r2 \
         networkmanager=1.24.2-r0 \
         nmap=7.80-r1 \
