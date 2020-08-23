@@ -52,7 +52,7 @@ RUN \
         nano=4.9.3-r0 \
         ncurses=6.1_p20200118-r4 \
         net-tools=1.60_git20140218-r2 \
-        networkmanager=1.20.8-r0 \
+        networkmanager=1.24.2-r0 \
         nmap=7.80-r1 \
         openssh=8.1_p1-r0 \
         openssl=1.1.1g-r0 \
