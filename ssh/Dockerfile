@@ -43,7 +43,7 @@ RUN \
         htop=2.2.0-r0 \
         json-c=0.13.1-r0 \
         libltdl=2.4.6-r7 \
-        libuv=1.34.0-r0 \
+        libuv=1.37.0-r0 \
         libxml2-utils=2.9.10-r3 \
         mariadb-client=10.4.13-r0 \
         mosh=1.3.2-r13 \
