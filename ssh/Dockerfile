@@ -28,7 +28,7 @@ RUN \
         zlib-dev=1.2.11-r3 \
     \
     && apk add --no-cache \
-        ack=3.2.0-r0 \
+        ack=3.3.1-r0 \
         alsa-plugins-pulse=1.2.1-r0 \
         alsa-utils=1.2.1-r0 \
         awake=1.0-r4 \
