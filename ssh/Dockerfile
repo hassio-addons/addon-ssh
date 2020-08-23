@@ -68,7 +68,7 @@ RUN \
         zip=3.0-r7 \
         zsh-autosuggestions=0.6.3-r0 \
         zsh-syntax-highlighting=0.6.0-r0 \
-        zsh=5.7.1-r0 \
+        zsh=5.8-r1 \
     \
     && git clone --depth 1 \
         git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh \
