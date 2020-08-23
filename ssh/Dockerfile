@@ -117,7 +117,7 @@ RUN \
     \
     && pip3 install \
         --no-cache-dir \
-        --find-links "https://wheels.home-assistant.io/alpine-3.11/${BUILD_ARCH}/" \
+        --find-links "https://wheels.home-assistant.io/alpine-3.12/${BUILD_ARCH}/" \
         -r /tmp/requirements.txt \
     \
     && hass-cli completion bash > /usr/share/bash-completion/completions/hass-cli \
