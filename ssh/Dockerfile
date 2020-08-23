@@ -32,7 +32,7 @@ RUN \
         alsa-plugins-pulse=1.2.2-r1 \
         alsa-utils=1.2.2-r1 \
         awake=1.0-r4 \
-        bash-completion=2.9-r0 \
+        bash-completion=2.10-r0 \
         bind-tools=9.14.8-r5 \
         bluez=5.52-r1 \
         colordiff=1.0.18-r1 \
