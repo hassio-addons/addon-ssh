@@ -3,7 +3,7 @@
 # Home Assistant Community Add-on: SSH & Web Terminal
 # Executes configured customizations & persists user settings
 # ==============================================================================
-readonly -a DIRECTORIES=(addons backup config share ssl)
+readonly -a DIRECTORIES=(addons backup config media share ssl)
 readonly BASH_HISTORY_FILE=/root/.bash_history
 readonly BASH_HISTORY_PERSISTENT_FILE=/data/.bash_history
 readonly GIT_CONFIG=/data/.gitconfig

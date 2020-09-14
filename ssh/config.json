@@ -34,7 +34,14 @@
   "full_access": true,
   "privileged": ["NET_ADMIN", "SYS_ADMIN", "SYS_RAWIO", "SYS_TIME", "SYS_NICE"],
   "devices": ["/dev/mem:/dev/mem:rwm"],
-  "map": ["config:rw", "ssl:rw", "addons:rw", "share:rw", "backup:rw"],
+  "map": [
+    "config:rw",
+    "ssl:rw",
+    "addons:rw",
+    "media:rw",
+    "share:rw",
+    "backup:rw"
+  ],
   "options": {
     "ssh": {
       "username": "hassio",
