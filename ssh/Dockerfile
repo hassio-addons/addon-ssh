@@ -44,7 +44,7 @@ RUN \
         json-c=0.14-r1 \
         libltdl=2.4.6-r7 \
         libuv=1.37.0-r0 \
-        libxml2-utils=2.9.10-r4 \
+        libxml2-utils=2.9.10-r5 \
         mariadb-client=10.4.13-r0 \
         mosh=1.3.2-r14 \
         mosquitto-clients=1.6.9-r0 \
