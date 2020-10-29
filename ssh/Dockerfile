@@ -22,7 +22,7 @@ RUN \
         docker=19.03.12-r0 \
         json-c-dev=0.14-r1 \
         libffi-dev=3.3-r2 \
-        libuv-dev=1.37.0-r0 \
+        libuv-dev=1.38.1-r0 \
         openssl-dev=1.1.1g-r0 \
         python3-dev=3.8.5-r0 \
         zlib-dev=1.2.11-r3 \
@@ -43,7 +43,7 @@ RUN \
         htop=2.2.0-r0 \
         json-c=0.14-r1 \
         libltdl=2.4.6-r7 \
-        libuv=1.37.0-r0 \
+        libuv=1.38.1-r0 \
         libxml2-utils=2.9.10-r5 \
         mariadb-client=10.4.13-r0 \
         mosh=1.3.2-r14 \
