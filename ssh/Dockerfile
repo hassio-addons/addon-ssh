@@ -63,7 +63,7 @@ RUN \
         rsync=3.1.3-r3 \
         sqlite=3.32.1-r0 \
         sudo=1.9.0-r0 \
-        tmux=3.1b-r0 \
+        tmux=3.1c-r0 \
         vim=8.2.0735-r0 \
         wget=1.20.3-r1 \
         zip=3.0-r8 \
