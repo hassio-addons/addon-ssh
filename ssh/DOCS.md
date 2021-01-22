@@ -275,8 +275,7 @@ automation:
 ## Changelog & Releases
 
 This repository keeps a change log using [GitHub's releases][releases]
-functionality. The format of the log is based on
-[Keep a Changelog][keepchangelog].
+functionality.
 
 Releases are based on [Semantic Versioning][semver], and use the format
 of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
@@ -339,9 +338,8 @@ SOFTWARE.
 [forum]: https://community.home-assistant.io/t/community-hass-io-add-on-ssh-web-terminal/33820?u=frenck
 [frenck]: https://github.com/frenck
 [github-ssh]: https://help.github.com/articles/connecting-to-github-with-ssh/
-[hass-ssh]: https://github.com/home-assistant/hassio-addons/tree/master/ssh
+[hass-ssh]: https://github.com/home-assistant/hassio-addons/tree/main/ssh
 [issue]: https://github.com/hassio-addons/addon-ssh/issues
-[keepchangelog]: http://keepachangelog.com/en/1.0.0/
 [ohmyzsh]: http://ohmyz.sh/
 [openssh]: https://www.openssh.com/
 [reddit]: https://reddit.com/r/homeassistant
