@@ -28,8 +28,8 @@ well. Additionally, it comes out of the box with the following:
   - Only allows login by the configured user, even if more users are created.
   - Only uses known secure ciphers and algorithms.
   - Limits login attempts to hold off brute-force attacks better.
-  - Many more security tweaks, *this addon passes all [ssh-audit] checks
-    without warnings!*
+  - Many more security tweaks, _this addon passes all [ssh-audit] checks
+    without warnings!_
 - Passwords are checked with HaveIBeenPwned using K-anonymity.
 - Comes with an SSH compatibility mode option to allow older clients to connect.
 - Support for Mosh allowing roaming and supports intermittent connectivity.
@@ -69,7 +69,7 @@ comparison to installing any other Home Assistant add-on.
 1. Configure the `username` and `password`/`authorized_keys` options.
 1. Start the "SSH & Web Terminal" add-on.
 1. Check the logs of the "SSH & Web Terminal" add-on to see if everything
-    went well.
+   went well.
 
 ## Configuration
 
@@ -81,7 +81,7 @@ SSH add-on configuration:
 log_level: info
 ssh:
   username: homeassistant
-  password: ''
+  password: ""
   authorized_keys:
     - ssh-rsa AASDJKJKJFWJFAFLCNALCMLAK234234.....
   sftp: false
@@ -109,7 +109,7 @@ dealing with an unknown issue. Possible values are:
 - `debug`: Shows detailed debug information.
 - `info`: Normal (usually) interesting events.
 - `warning`: Exceptional occurrences that are not errors.
-- `error`:  Runtime errors that do not require immediate action.
+- `error`: Runtime errors that do not require immediate action.
 - `fatal`: Something went terribly wrong. Add-on becomes unusable.
 
 Please note that each level automatically includes log messages from a
@@ -252,16 +252,16 @@ Example automation running `my_command`:
 
 ```yaml
 automation:
-- alias: 'Example my script'
-  trigger:
-    platform: state
-    entity_id: binary_sensor.motion_sensor
-    to: 'ON'
-  action:
-    service: hassio.addon_stdin
-    data:
-      addon: a0d7b954_ssh
-      input: "/config/scripts/my_command"
+  - alias: "Example my script"
+    trigger:
+      platform: state
+      entity_id: binary_sensor.motion_sensor
+      to: "ON"
+    action:
+      service: hassio.addon_stdin
+      data:
+        addon: a0d7b954_ssh
+        input: "/config/scripts/my_command"
 ```
 
 ## Known issues and limitations
@@ -279,12 +279,12 @@ functionality. The format of the log is based on
 [Keep a Changelog][keepchangelog].
 
 Releases are based on [Semantic Versioning][semver], and use the format
-of ``MAJOR.MINOR.PATCH``. In a nutshell, the version will be incremented
+of `MAJOR.MINOR.PATCH`. In a nutshell, the version will be incremented
 based on the following:
 
-- ``MAJOR``: Incompatible or major changes.
-- ``MINOR``: Backwards-compatible new features and enhancements.
-- ``PATCH``: Backwards-compatible bugfixes and package updates.
+- `MAJOR`: Incompatible or major changes.
+- `MINOR`: Backwards-compatible new features and enhancements.
+- `PATCH`: Backwards-compatible bugfixes and package updates.
 
 ## Support
 

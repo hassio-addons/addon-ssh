@@ -58,8 +58,8 @@ well. Additionally, it comes out of the box with the following:
   - Only allows login by the configured user, even if more users are created.
   - Only uses known secure ciphers and algorithms.
   - Limits login attempts to hold off brute-force attacks better.
-  - Many more security tweaks, *this addon passes all [ssh-audit] checks
-    without warnings!*
+  - Many more security tweaks, _this addon passes all [ssh-audit] checks
+    without warnings!_
     ![Result of SSH-Audit](images/ssh-audit.png)
 - Passwords are checked with HaveIBeenPwned using K-anonymity.
 - Comes with an SSH compatibility mode option to allow older clients to connect.
