@@ -18,7 +18,6 @@
   "ports_description": {
     "22/tcp": "SSH server port (make empty to disable)"
   },
-  "boot": "auto",
   "hassio_api": true,
   "hassio_role": "manager",
   "services": ["mysql:want", "mqtt:want"],
