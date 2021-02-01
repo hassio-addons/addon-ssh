@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/base:8.0.6
+ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.1.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -18,55 +18,55 @@ RUN \
     apk add --no-cache --virtual .build-dependencies \
         bsd-compat-headers=0.7.2-r3 \
         build-base=0.5-r2 \
-        cmake=3.17.2-r0 \
-        docker=19.03.12-r0 \
-        json-c-dev=0.14-r1 \
+        cmake=3.18.4-r1 \
+        docker=20.10.2-r0 \
+        json-c-dev=0.15-r1 \
         libffi-dev=3.3-r2 \
-        libuv-dev=1.38.1-r0 \
-        openssl-dev=1.1.1g-r0 \
-        python3-dev=3.8.5-r0 \
+        libuv-dev=1.40.0-r0 \
+        openssl-dev=1.1.1i-r0 \
+        python3-dev=3.8.7-r0 \
         zlib-dev=1.2.11-r3 \
     \
     && apk add --no-cache \
-        ack=3.3.1-r0 \
+        ack=3.4.0-r0 \
         alsa-plugins-pulse=1.2.2-r1 \
-        alsa-utils=1.2.2-r0 \
+        alsa-utils=1.2.4-r0 \
         awake=1.0-r4 \
-        bash-completion=2.10-r0 \
-        bind-tools=9.16.6-r0 \
-        bluez=5.54-r5 \
+        bash-completion=2.11-r2 \
+        bind-tools=9.16.11-r0 \
+        bluez=5.55-r1 \
         colordiff=1.0.19-r0 \
-        device-mapper-libs=2.02.186-r1 \
-        docker-bash-completion=19.03.12-r0 \
-        docker-zsh-completion=19.03.12-r0 \
-        git=2.26.2-r0 \
-        htop=2.2.0-r0 \
-        json-c=0.14-r1 \
+        device-mapper-libs=2.02.187-r1 \
+        docker-bash-completion=20.10.2-r0 \
+        docker-zsh-completion=20.10.2-r0 \
+        git=2.30.0-r0 \
+        htop=3.0.5-r1 \
+        json-c=0.15-r1 \
         libltdl=2.4.6-r7 \
-        libuv=1.38.1-r0 \
-        libxml2-utils=2.9.10-r5 \
-        mariadb-client=10.4.15-r0 \
-        mosh=1.3.2-r14 \
-        mosquitto-clients=1.6.9-r0 \
-        nano-syntax=4.9.3-r0 \
-        nano=4.9.3-r0 \
-        ncurses=6.2_p20200523-r0 \
+        libuv=1.40.0-r0 \
+        libxml2-utils=2.9.10-r6 \
+        mariadb-client=10.5.8-r0 \
+        mosh=1.3.2-r17 \
+        mosquitto-clients=1.6.12-r2 \
+        nano-syntax=5.4-r1 \
+        nano=5.4-r1 \
+        ncurses=6.2_p20210109-r0 \
         net-tools=1.60_git20140218-r2 \
-        networkmanager=1.24.2-r0 \
-        nmap=7.80-r2 \
-        openssh=8.3_p1-r0 \
-        openssl=1.1.1g-r0 \
+        networkmanager=1.26.4-r0 \
+        nmap=7.91-r0 \
+        openssh=8.4_p1-r2 \
+        openssl=1.1.1i-r0 \
         pwgen=2.08-r1 \
-        pulseaudio-utils=13.0-r10 \
-        py3-pip=20.1.1-r0 \
-        python3=3.8.5-r0 \
-        rsync=3.1.3-r3 \
-        sqlite=3.32.1-r0 \
-        sudo=1.9.0-r0 \
+        pulseaudio-utils=14.1-r0 \
+        py3-pip=20.3.4-r0 \
+        python3=3.8.7-r0 \
+        rsync=3.2.3-r1 \
+        sqlite=3.34.1-r0 \
+        sudo=1.9.5p2-r0 \
         tmux=3.1c-r0 \
-        vim=8.2.0735-r0 \
-        wget=1.20.3-r1 \
-        zip=3.0-r8 \
+        vim=8.2.2320-r0 \
+        wget=1.21.1-r1 \
+        zip=3.0-r9 \
         zsh-autosuggestions=0.6.4-r0 \
         zsh-syntax-highlighting=0.7.1-r0 \
         zsh=5.8-r1 \
@@ -117,7 +117,7 @@ RUN \
     \
     && pip3 install \
         --no-cache-dir \
-        --find-links "https://wheels.home-assistant.io/alpine-3.12/${BUILD_ARCH}/" \
+        --find-links "https://wheels.home-assistant.io/alpine-3.13/${BUILD_ARCH}/" \
         -r /tmp/requirements.txt \
     \
     && hass-cli completion bash > /usr/share/bash-completion/completions/hass-cli \
