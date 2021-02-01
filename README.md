@@ -10,7 +10,7 @@
 ![Supports armv7 Architecture][armv7-shield]
 ![Supports i386 Architecture][i386-shield]
 
-[![GitLab CI][gitlabci-shield]][gitlabci]
+[![Github Actions][github-actions-shield]][github-actions]
 ![Project Maintenance][maintenance-shield]
 [![GitHub Activity][commits-shield]][commits]
 
@@ -58,8 +58,8 @@ well. Additionally, it comes out of the box with the following:
   - Only allows login by the configured user, even if more users are created.
   - Only uses known secure ciphers and algorithms.
   - Limits login attempts to hold off brute-force attacks better.
-  - Many more security tweaks, *this addon passes all [ssh-audit] checks
-    without warnings!*
+  - Many more security tweaks, _this addon passes all [ssh-audit] checks
+    without warnings!_
     ![Result of SSH-Audit](images/ssh-audit.png)
 - Passwords are checked with HaveIBeenPwned using K-anonymity.
 - Comes with an SSH compatibility mode option to allow older clients to connect.
@@ -133,7 +133,7 @@ our [GitHub Repository][repository].
 
 MIT License
 
-Copyright (c) 2017-2020 Franck Nijhof
+Copyright (c) 2017-2021 Franck Nijhof
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -158,24 +158,24 @@ SOFTWARE.
 [armhf-shield]: https://img.shields.io/badge/armhf-yes-green.svg
 [armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
 [commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/addon-ssh.svg
-[commits]: https://github.com/hassio-addons/addon-ssh/commits/master
+[commits]: https://github.com/hassio-addons/addon-ssh/commits/main
 [contributors]: https://github.com/hassio-addons/addon-ssh/graphs/contributors
 [discord-ha]: https://discord.gg/c5DvZ4e
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons
-[docs]: https://github.com/hassio-addons/addon-ssh/blob/master/ssh/DOCS.md
+[docs]: https://github.com/hassio-addons/addon-ssh/blob/main/ssh/DOCS.md
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
 [forum]: https://community.home-assistant.io/t/community-hass-io-add-on-ssh-web-terminal/33820?u=frenck
 [frenck]: https://github.com/frenck
 [github-sponsors-shield]: https://frenck.dev/wp-content/uploads/2019/12/github_sponsor.png
 [github-sponsors]: https://github.com/sponsors/frenck
-[gitlabci-shield]: https://gitlab.com/hassio-addons/addon-ssh/badges/master/pipeline.svg
-[gitlabci]: https://gitlab.com/hassio-addons/addon-ssh/pipelines
-[hass-ssh]: https://github.com/home-assistant/hassio-addons/tree/master/ssh
+[github-actions-shield]: https://github.com/hassio-addons/addon-ssh/workflows/CI/badge.svg
+[github-actions]: https://github.com/hassio-addons/addon-ssh/actions
+[hass-ssh]: https://github.com/home-assistant/hassio-addons/tree/main/ssh
 [i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
 [issue]: https://github.com/hassio-addons/addon-ssh/issues
 [license-shield]: https://img.shields.io/github/license/hassio-addons/addon-ssh.svg
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2020.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2021.svg
 [ohmyzsh]: http://ohmyz.sh/
 [openssh]: https://www.openssh.com/
 [patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png

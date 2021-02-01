@@ -5,7 +5,7 @@ AddressFamily any
 TCPKeepAlive no
 ClientAliveInterval 600
 ClientAliveCountMax 3
-UseDNS yes
+UseDNS no
 
 # Loggin
 # ===================
