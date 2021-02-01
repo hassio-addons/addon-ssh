@@ -41,8 +41,8 @@ usability, flexibility and also provides access using a web interface.
 
 ## WARNING
 
-The SSH & Web Terminal add-on is a really powerful and gives you virtually
-access to all tools and almost all hardware of your system.
+The SSH & Web Terminal add-on is very powerful and gives you access to almost
+all tools and hardware of your system.
 
 While this add-on is created and maintained with care and with security in mind,
 in the wrong or inexperienced hands, it could damage your system.
@@ -171,7 +171,7 @@ SOFTWARE.
 [github-sponsors]: https://github.com/sponsors/frenck
 [github-actions-shield]: https://github.com/hassio-addons/addon-ssh/workflows/CI/badge.svg
 [github-actions]: https://github.com/hassio-addons/addon-ssh/actions
-[hass-ssh]: https://github.com/home-assistant/hassio-addons/tree/main/ssh
+[hass-ssh]: https://github.com/home-assistant/addons/tree/master/ssh
 [i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
 [issue]: https://github.com/hassio-addons/addon-ssh/issues
 [license-shield]: https://img.shields.io/github/license/hassio-addons/addon-ssh.svg
