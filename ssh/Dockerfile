@@ -82,7 +82,7 @@ RUN \
     \
     && sed -i -e "s#bin/ash#bin/zsh#" /etc/passwd \
     \
-    && git clone --branch "v3.2.3" --depth=1 \
+    && git clone --branch "v4.1.4" --depth=1 \
         https://github.com/warmcat/libwebsockets.git /tmp/libwebsockets \
     \
     && mkdir -p /tmp/libwebsockets/build \
@@ -102,7 +102,7 @@ RUN \
     \
     && git clone --branch master --single-branch \
         https://github.com/tsl0922/ttyd.git /tmp/ttyd \
-    && git -C /tmp/ttyd checkout 1.6.1 \
+    && git -C /tmp/ttyd checkout 1.6.3 \
     \
     && mkdir -p /tmp/ttyd/build \
     && cd /tmp/ttyd/build \
