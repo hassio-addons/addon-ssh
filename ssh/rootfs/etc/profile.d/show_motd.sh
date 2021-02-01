@@ -1,1 +1,1 @@
-[ "$(id -u)" -eq 0 ] && cat /etc/motd
+[ "$(id -u)" -eq 0 ] && ha banner
