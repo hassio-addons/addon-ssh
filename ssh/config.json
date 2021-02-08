@@ -23,7 +23,8 @@
   "services": ["mysql:want", "mqtt:want"],
   "homeassistant_api": true,
   "host_network": true,
-  "auto_uart": true,
+  "uart": true,
+  "usb": true,
   "gpio": true,
   "audio": true,
   "apparmor": false,
@@ -32,7 +33,7 @@
   "docker_api": true,
   "full_access": true,
   "privileged": ["NET_ADMIN", "SYS_ADMIN", "SYS_RAWIO", "SYS_TIME", "SYS_NICE"],
-  "devices": ["/dev/mem:/dev/mem:rwm"],
+  "devices": ["/dev/mem"],
   "map": [
     "config:rw",
     "ssl:rw",
