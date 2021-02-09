@@ -39,7 +39,7 @@ RUN \
         device-mapper-libs=2.02.187-r1 \
         docker-bash-completion=20.10.3-r0 \
         docker-zsh-completion=20.10.3-r0 \
-        git=2.30.0-r0 \
+        git=2.30.1-r0 \
         htop=3.0.5-r1 \
         json-c=0.15-r1 \
         libltdl=2.4.6-r7 \
