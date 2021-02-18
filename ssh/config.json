@@ -31,7 +31,6 @@
   "host_dbus": true,
   "stdin": true,
   "docker_api": true,
-  "full_access": true,
   "privileged": ["NET_ADMIN", "SYS_ADMIN", "SYS_RAWIO", "SYS_TIME", "SYS_NICE"],
   "devices": ["/dev/mem"],
   "map": [
