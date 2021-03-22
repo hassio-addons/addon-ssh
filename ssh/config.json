@@ -41,6 +41,7 @@
     "share:rw",
     "backup:rw"
   ],
+  "journald": true,
   "options": {
     "ssh": {
       "username": "hassio",
