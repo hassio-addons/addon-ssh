@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.1.5
+ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.1.6
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -23,7 +23,7 @@ RUN \
         json-c-dev=0.15-r1 \
         libffi-dev=3.3-r2 \
         libuv-dev=1.40.0-r0 \
-        openssl-dev=1.1.1j-r0 \
+        openssl-dev=1.1.1k-r0 \
         python3-dev=3.8.8-r0 \
         zlib-dev=1.2.11-r3 \
     \
@@ -55,7 +55,7 @@ RUN \
         networkmanager=1.26.4-r0 \
         nmap=7.91-r0 \
         openssh=8.4_p1-r3 \
-        openssl=1.1.1j-r0 \
+        openssl=1.1.1k-r0 \
         pwgen=2.08-r1 \
         pulseaudio-utils=14.1-r0 \
         py3-pip=20.3.4-r0 \
