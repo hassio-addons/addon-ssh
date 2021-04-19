@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.1.6
+ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.2.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -33,7 +33,7 @@ RUN \
         alsa-utils=1.2.4-r0 \
         awake=1.0-r4 \
         bash-completion=2.11-r2 \
-        bind-tools=9.16.11-r0 \
+        bind-tools=9.16.11-r1 \
         bluez=5.55-r1 \
         colordiff=1.0.19-r0 \
         device-mapper-libs=2.02.187-r1 \
