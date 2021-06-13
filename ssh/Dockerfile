@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.2.0
+ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:9.2.2
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -44,7 +44,7 @@ RUN \
         json-c=0.15-r1 \
         libltdl=2.4.6-r7 \
         libuv=1.40.0-r0 \
-        libxml2-utils=2.9.10-r6 \
+        libxml2-utils=2.9.10-r7 \
         mariadb-client=10.5.9-r0 \
         mosh=1.3.2-r17 \
         mosquitto-clients=1.6.12-r2 \
@@ -52,7 +52,7 @@ RUN \
         nano=5.4-r1 \
         ncurses=6.2_p20210109-r0 \
         net-tools=1.60_git20140218-r2 \
-        networkmanager=1.26.6-r0 \
+        networkmanager=1.26.6-r1 \
         nmap=7.91-r0 \
         openssh=8.4_p1-r3 \
         openssl=1.1.1k-r0 \
