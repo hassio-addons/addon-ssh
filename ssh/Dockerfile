@@ -45,7 +45,7 @@ RUN \
         libltdl=2.4.6-r7 \
         libuv=1.41.0-r0 \
         libxml2-utils=2.9.12-r1 \
-        mariadb-client=10.5.11-r0 \
+        mariadb-client=10.5.12-r0 \
         mosh=1.3.2-r18 \
         mosquitto-clients=2.0.11-r0 \
         nano-syntax=5.7-r2 \
