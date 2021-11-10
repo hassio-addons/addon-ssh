@@ -33,7 +33,7 @@ RUN \
         alsa-utils=1.2.5-r2 \
         awake=1.0-r6 \
         bash-completion=2.11-r4 \
-        bind-tools=9.16.16-r2 \
+        bind-tools=9.16.20-r1 \
         bluez=5.58-r2 \
         colordiff=1.0.19-r0 \
         device-mapper-libs=2.02.187-r1 \
