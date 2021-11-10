@@ -54,7 +54,7 @@ RUN \
         net-tools=1.60_git20140218-r2 \
         networkmanager=1.30.2-r0 \
         nmap=7.91-r0 \
-        openssh=8.6_p1-r2 \
+        openssh=8.6_p1-r3 \
         openssl=1.1.1l-r0 \
         pwgen=2.08-r1 \
         pulseaudio-utils=14.2-r5 \
