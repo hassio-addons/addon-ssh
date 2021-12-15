@@ -30,7 +30,6 @@ well. Additionally, it comes out of the box with the following:
   - Limits login attempts to hold off brute-force attacks better.
   - Many more security tweaks, _this addon passes all [ssh-audit] checks
     without warnings!_
-- Passwords are checked with HaveIBeenPwned using K-anonymity.
 - Comes with an SSH compatibility mode option to allow older clients to connect.
 - Support for Mosh allowing roaming and supports intermittent connectivity.
 - SFTP support is disabled by default but is user configurable.
