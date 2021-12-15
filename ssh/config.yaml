@@ -84,4 +84,3 @@ schema:
     - str
   init_commands:
     - str
-  i_like_to_be_pwned: bool?

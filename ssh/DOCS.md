@@ -231,14 +231,6 @@ Customize your shell environment even more with the `init_commands` option.
 Add one or more shell commands to the list, and they will be executed every
 single time this add-on starts.
 
-#### Option: `i_like_to_be_pwned`
-
-Adding this option to the add-on configuration allows to you bypass the
-HaveIBeenPwned password requirement by setting it to `true`.
-
-**Note**: _We STRONGLY suggest picking a stronger/safer password instead of
-using this option! USE AT YOUR OWN RISK!_
-
 ## Known issues and limitations
 
 - The add-on fails to start when a password that is listed by HaveIBeenPwned
