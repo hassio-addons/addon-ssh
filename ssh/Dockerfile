@@ -120,8 +120,6 @@ RUN \
         --find-links "https://wheels.home-assistant.io/alpine-3.14/${BUILD_ARCH}/" \
         -r /tmp/requirements.txt \
     \
-    && hass-cli completion bash > /usr/share/bash-completion/completions/hass-cli \
-    \
     && apk del --no-cache --purge .build-dependencies \
     \
     && find /usr/local \
