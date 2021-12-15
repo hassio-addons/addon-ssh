@@ -30,7 +30,6 @@ well. Additionally, it comes out of the box with the following:
   - Limits login attempts to hold off brute-force attacks better.
   - Many more security tweaks, _this addon passes all [ssh-audit] checks
     without warnings!_
-- Passwords are checked with HaveIBeenPwned using K-anonymity.
 - Comes with an SSH compatibility mode option to allow older clients to connect.
 - Support for Mosh allowing roaming and supports intermittent connectivity.
 - SFTP support is disabled by default but is user configurable.
@@ -230,14 +229,6 @@ time for the add-on._
 Customize your shell environment even more with the `init_commands` option.
 Add one or more shell commands to the list, and they will be executed every
 single time this add-on starts.
-
-#### Option: `i_like_to_be_pwned`
-
-Adding this option to the add-on configuration allows to you bypass the
-HaveIBeenPwned password requirement by setting it to `true`.
-
-**Note**: _We STRONGLY suggest picking a stronger/safer password instead of
-using this option! USE AT YOUR OWN RISK!_
 
 ## Known issues and limitations
 

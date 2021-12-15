@@ -52,12 +52,6 @@ then
     bashio::exit.nok
 fi
 
-# Require a secure password
-if bashio::config.has_value 'ssh.password' \
-    && ! bashio::config.true 'i_like_to_be_pwned'; then
-    bashio::config.require.safe_password 'ssh.password'
-fi
-
 # SFTP only works if the user is root
 if bashio::config.true 'ssh.sftp' \
     && ! bashio::config.equals 'ssh.username' 'root';
