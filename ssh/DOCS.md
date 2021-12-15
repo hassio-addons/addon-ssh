@@ -239,31 +239,6 @@ HaveIBeenPwned password requirement by setting it to `true`.
 **Note**: _We STRONGLY suggest picking a stronger/safer password instead of
 using this option! USE AT YOUR OWN RISK!_
 
-## Executing commands in this add-on using a Home Assistant service call
-
-This add-on uses the `hassio.addon_stdin` service to expose a shell interface
-to Home Assistant. This allows you to execute commands and scripts within
-the SSH & Web Terminal add-on, straight from Home Assistant.
-
-This is particularly helpful when you want to execute custom scripts or
-commands from automations.
-
-Example automation running `my_command`:
-
-```yaml
-automation:
-  - alias: "Example my script"
-    trigger:
-      platform: state
-      entity_id: binary_sensor.motion_sensor
-      to: "ON"
-    action:
-      service: hassio.addon_stdin
-      data:
-        addon: a0d7b954_ssh
-        input: "/config/scripts/my_command"
-```
-
 ## Known issues and limitations
 
 - The add-on fails to start when a password that is listed by HaveIBeenPwned
