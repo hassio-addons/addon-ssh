@@ -35,7 +35,6 @@ gpio: true
 audio: true
 apparmor: false
 host_dbus: true
-stdin: true
 docker_api: true
 privileged:
   - NET_ADMIN
