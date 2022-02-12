@@ -149,8 +149,11 @@ This is the recommended over setting a password.
 Please take a look at the awesome [documentation created by GitHub][github-ssh]
 about using public/private key pairs and how to create them.
 
-**Note**: _Please ensure the keys are specified as a list by pasting within the
+**Note**: 
+
+1. _Please ensure the keys are specified as a list by pasting within the
 `[]` comma delimited._
+2. Due to upstream changes https://www.openssh.com/txt/release-8.8, RSA keys with SHA1 hashes will be rejected.  Please use a stronger encryption/hashing algorithm set. 
 
 #### Option `ssh`: `sftp`
 
