@@ -80,7 +80,7 @@ ssh:
   username: homeassistant
   password: ""
   authorized_keys:
-    - ssh-rsa AASDJKJKJFWJFAFLCNALCMLAK234234.....
+    - ecdsa-sha2-nistp256 AA.....
   sftp: false
   compatibility_mode: false
   allow_agent_forwarding: false
