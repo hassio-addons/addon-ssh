@@ -68,7 +68,7 @@ RUN \
         wget=1.21.2-r2 \
         zip=3.0-r9 \
         zsh-autosuggestions=0.7.0-r0 \
-        zsh-syntax-highlighting=0.7.1-r0 \
+        zsh-syntax-highlighting=0.7.1-r1 \
         zsh=5.8.1-r0 \
     \
     && git clone --depth 1 \
