@@ -320,4 +320,3 @@ SOFTWARE.
 [semver]: http://semver.org/spec/v2.0.0.htm
 [ssh-audit]: https://github.com/arthepsy/ssh-audit
 [zsh]: https://en.wikipedia.org/wiki/Z_shell
-
