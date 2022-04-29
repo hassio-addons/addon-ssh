@@ -55,7 +55,7 @@ RUN \
         networkmanager=1.32.12-r1 \
         nmap=7.92-r2 \
         openssh=8.8_p1-r1 \
-        openssl=1.1.1l-r8 \
+        openssl=1.1.1n-r0 \
         pwgen=2.08-r1 \
         pulseaudio-utils=15.0-r2 \
         py3-pip=20.3.4-r1 \
