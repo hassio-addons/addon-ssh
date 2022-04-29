@@ -72,7 +72,7 @@ RUN \
         zsh=5.8.1-r0 \
     \
     && git clone --depth 1 \
-        git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh \
+        https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh \
     \
     && curl -L -s -o /usr/bin/ha \
         "https://github.com/home-assistant/cli/releases/download/4.15.1/ha_${BUILD_ARCH}" \
