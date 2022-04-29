@@ -34,7 +34,7 @@ RUN \
         awake=1.0-r6 \
         bash-completion=2.11-r4 \
         bind-tools=9.16.27-r0 \
-        bluez=5.63-r0 \
+        bluez=5.64-r0 \
         colordiff=1.0.19-r0 \
         device-mapper-libs=2.02.187-r2 \
         docker-bash-completion=20.10.14-r1 \
