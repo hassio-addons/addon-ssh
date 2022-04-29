@@ -102,7 +102,7 @@ RUN \
     \
     && git clone --branch main --single-branch \
         https://github.com/tsl0922/ttyd.git /tmp/ttyd \
-    && git -C /tmp/ttyd checkout "3e37e33b1cd927ae8f25cfbcf0da268723b6d230" \
+    && git -C /tmp/ttyd checkout "2b4dbacc10f0db7fceb092ea42ea12cd9301f4aa" \
     \
     && mkdir -p /tmp/ttyd/build \
     && cd /tmp/ttyd/build \
