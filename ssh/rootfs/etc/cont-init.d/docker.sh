@@ -1,4 +1,4 @@
-#!/usr/bin/with-contenv bashio
+#!/command/with-contenv bashio
 # ==============================================================================
 # Home Assistant Community Add-on: SSH & Web Terminal
 # Enables Docker by moving the Docker executable in place.

@@ -10,6 +10,7 @@ startup: services
 ingress: true
 ingress_port: 0
 ingress_stream: true
+init: false
 panel_icon: mdi:console
 panel_title: Terminal
 homeassistant: 0.92.0b2

@@ -1,4 +1,4 @@
-#!/usr/bin/with-contenv bashio
+#!/command/with-contenv bashio
 # ==============================================================================
 # Home Assistant Community Add-on: SSH & Web Terminal
 # This script gives the user instructions on how to enable Docker access.
