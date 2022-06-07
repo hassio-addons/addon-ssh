@@ -1,4 +1,4 @@
-#!/usr/bin/env bashio
+#!/command/with-contenv bashio
 # ==============================================================================
 # Home Assistant Community Add-on: SSH & Web Terminal
 # Take down the S6 supervision tree when the SSH daemon fails
