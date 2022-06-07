@@ -117,7 +117,7 @@ RUN \
     \
     && pip3 install \
         --no-cache-dir \
-        --find-links "https://wheels.home-assistant.io/alpine-3.14/${BUILD_ARCH}/" \
+        --find-links "https://wheels.home-assistant.io/alpine-3.16/${BUILD_ARCH}/" \
         -r /tmp/requirements.txt \
     \
     && apk del --no-cache --purge .build-dependencies \
