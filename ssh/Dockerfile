@@ -52,7 +52,7 @@ RUN \
         nano=6.3-r0 \
         ncurses=6.3_p20220521-r0 \
         net-tools=2.10-r0 \
-        networkmanager=1.38.0-r0 \
+        networkmanager-cli=1.38.0-r0 \
         nmap=7.92-r2 \
         openssh=9.0_p1-r1 \
         openssl=1.1.1o-r0 \
