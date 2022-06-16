@@ -20,7 +20,7 @@ needed for this is listed down below.
 
 In the report, please include as much information as possible, including:
 
-- A extensive description of the vulnerability.
+- An extensive description of the vulnerability.
 - How it could be exploited.
 - The potential impact you think it would have (e.g., DOS attackable, privacy
   concerns, leaking of credentials).
