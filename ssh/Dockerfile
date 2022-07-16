@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:12.0.0
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:12.2.1
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -13,17 +13,17 @@ COPY requirements.txt /tmp/
 
 # Setup base
 ARG BUILD_ARCH=amd64
-# hadolint ignore=DL3003
+# hadolint ignore=DL3003,DL3042
 RUN \
     apk add --no-cache --virtual .build-dependencies \
         bsd-compat-headers=0.7.2-r3 \
-        build-base=0.5-r2 \
+        build-base=0.5-r3 \
         cmake=3.23.1-r0 \
         docker=20.10.16-r0 \
         json-c-dev=0.16-r0 \
         libffi-dev=3.4.2-r1 \
         libuv-dev=1.44.1-r0 \
-        openssl-dev=1.1.1o-r0 \
+        openssl-dev=1.1.1q-r0 \
         python3-dev=3.10.4-r0 \
         zlib-dev=1.2.12-r1 \
     \
@@ -39,7 +39,7 @@ RUN \
         device-mapper-libs=2.02.187-r2 \
         docker-bash-completion=20.10.16-r0 \
         docker-zsh-completion=20.10.16-r0 \
-        git=2.36.1-r0 \
+        git=2.36.2-r0 \
         htop=3.2.0-r1 \
         json-c=0.16-r0 \
         libltdl=2.4.7-r0 \
@@ -52,10 +52,10 @@ RUN \
         nano=6.3-r0 \
         ncurses=6.3_p20220521-r0 \
         net-tools=2.10-r0 \
-        networkmanager-cli=1.38.0-r0 \
+        networkmanager-cli=1.38.2-r1 \
         nmap=7.92-r2 \
         openssh=9.0_p1-r1 \
-        openssl=1.1.1o-r0 \
+        openssl=1.1.1q-r0 \
         pwgen=2.08-r1 \
         pulseaudio-utils=15.0-r2 \
         py3-pip=22.1.1-r0 \
@@ -115,14 +115,11 @@ RUN \
     \
     && cp /usr/bin/docker /usr/local/bin/.undocked \
     \
-    && pip3 install \
-        --no-cache-dir \
-        --find-links "https://wheels.home-assistant.io/alpine-3.16/${BUILD_ARCH}/" \
-        -r /tmp/requirements.txt \
+    && pip3 install -r /tmp/requirements.txt \
     \
     && apk del --no-cache --purge .build-dependencies \
     \
-    && find /usr/local \
+    && find /usr \
         \( -type d -a -name test -o -name tests -o -name '__pycache__' \) \
         -o \( -type f -a -name '*.pyc' -o -name '*.pyo' \) \
         -exec rm -rf '{}' + \
