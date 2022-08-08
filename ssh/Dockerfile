@@ -25,7 +25,7 @@ RUN \
         libuv-dev=1.44.1-r0 \
         openssl-dev=1.1.1q-r0 \
         python3-dev=3.10.5-r0 \
-        zlib-dev=1.2.12-r1 \
+        zlib-dev=1.2.12-r2 \
     \
     && apk add --no-cache \
         ack=3.5.0-r1 \
