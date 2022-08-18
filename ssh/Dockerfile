@@ -102,7 +102,7 @@ RUN \
     \
     && git clone --branch main --single-branch \
         https://github.com/tsl0922/ttyd.git /tmp/ttyd \
-    && git -C /tmp/ttyd checkout "1.7.0" \
+    && git -C /tmp/ttyd checkout "1.7.1" \
     \
     && mkdir -p /tmp/ttyd/build \
     && cd /tmp/ttyd/build \
