@@ -117,7 +117,7 @@ Thank you for being involved! :heart_eyes:
 The original setup of this repository is by [Franck Nijhof][frenck].
 
 For a full list of all authors and contributors,
-check [the contributor's page][contributors].
+check [the contributors page][contributors].
 
 ## We have got some Home Assistant add-ons for you
 
