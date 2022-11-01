@@ -42,7 +42,7 @@ then
     bashio::log.fatal
     bashio::log.fatal 'Configuration of this add-on is incomplete.'
     bashio::log.fatal
-    bashio::log.fatal 'Please be sure to set a least a SSH password'
+    bashio::log.fatal 'Please be sure to set at least an SSH password'
     bashio::log.fatal 'or at least one authorized key!'
     bashio::log.fatal
     bashio::log.fatal 'You can configure this using the "ssh.password"'
