@@ -94,4 +94,4 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Home Assistant CLI
-source <(ha completion --zsh)
+source <(ha completion zsh) && compdef _ha ha
