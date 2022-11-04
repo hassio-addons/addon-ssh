@@ -78,7 +78,7 @@ RUN \
         "https://github.com/home-assistant/cli/releases/download/4.22.0/ha_${BUILD_ARCH}" \
     \
     && chmod a+x /usr/bin/ha \
-    && ha completion > /usr/share/bash-completion/completions/ha \
+    && ha completion bash > /usr/share/bash-completion/completions/ha \
     \
     && sed -i -e "s#bin/ash#bin/zsh#" /etc/passwd \
     \
