@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:12.2.7
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:13.0.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -18,58 +18,57 @@ RUN \
     apk add --no-cache --virtual .build-dependencies \
         bsd-compat-headers=0.7.2-r3 \
         build-base=0.5-r3 \
-        cmake=3.23.1-r0 \
-        docker=20.10.20-r0 \
+        cmake=3.24.3-r0 \
+        docker=20.10.21-r1 \
         json-c-dev=0.16-r0 \
-        libffi-dev=3.4.2-r1 \
-        libuv-dev=1.44.1-r0 \
-        openssl-dev=1.1.1s-r0 \
-        python3-dev=3.10.8-r0 \
-        zlib-dev=1.2.12-r3 \
+        libffi-dev=3.4.4-r0 \
+        libuv-dev=1.44.2-r0 \
+        openssl-dev=3.0.7-r0 \
+        python3-dev=3.10.9-r0 \
+        zlib-dev=1.2.13-r0 \
     \
     && apk add --no-cache \
-        ack=3.5.0-r1 \
+        ack=3.6.0-r0 \
         alsa-plugins-pulse=1.2.7.1-r0 \
-        alsa-utils=1.2.7-r1 \
+        alsa-utils=1.2.8-r0 \
         awake=1.0-r7 \
         bash-completion=2.11-r4 \
-        bind-tools=9.16.33-r0 \
-        bluez=5.65-r0 \
+        bind-tools=9.18.9-r0 \
+        bluez=5.66-r1 \
         colordiff=1.0.20-r0 \
-        device-mapper-libs=2.02.187-r2 \
-        docker-bash-completion=20.10.20-r0 \
-        docker-zsh-completion=20.10.20-r0 \
-        git=2.36.3-r0 \
-        htop=3.2.0-r1 \
+        docker-bash-completion=20.10.21-r1 \
+        docker-zsh-completion=20.10.21-r1 \
+        git=2.38.1-r0 \
+        htop=3.2.1-r1 \
         json-c=0.16-r0 \
         libltdl=2.4.7-r0 \
-        libuv=1.44.1-r0 \
-        libxml2-utils=2.9.14-r2 \
-        mariadb-client=10.6.10-r0 \
-        mosh=1.3.2-r22 \
-        mosquitto-clients=2.0.14-r2 \
-        nano-syntax=6.3-r0 \
-        nano=6.3-r0 \
-        ncurses=6.3_p20220521-r0 \
+        libuv=1.44.2-r0 \
+        libxml2-utils=2.10.3-r1 \
+        mariadb-client=10.6.11-r0 \
+        mosh=1.4.0-r0 \
+        mosquitto-clients=2.0.15-r1 \
+        nano-syntax=7.0-r0 \
+        nano=7.0-r0 \
+        ncurses=6.3_p20221119-r0 \
         net-tools=2.10-r0 \
-        networkmanager-cli=1.38.2-r1 \
-        nmap=7.92-r2 \
-        openssh=9.0_p1-r2 \
-        openssl=1.1.1s-r0 \
-        pwgen=2.08-r1 \
-        pulseaudio-utils=15.0-r2 \
-        py3-pip=22.1.1-r0 \
-        python3=3.10.8-r0 \
+        networkmanager-cli=1.40.6-r0 \
+        nmap=7.93-r0 \
+        openssh=9.1_p1-r1 \
+        openssl=3.0.7-r0 \
+        pwgen=2.08-r2 \
+        pulseaudio-utils=16.1-r6 \
+        py3-pip=22.3.1-r1 \
+        python3=3.10.9-r0 \
         rsync=3.2.7-r0 \
-        sqlite=3.38.5-r0 \
-        sudo=1.9.12-r1 \
-        tmux=3.2a-r0 \
-        vim=8.2.5000-r0 \
-        wget=1.21.3-r0 \
-        zip=3.0-r9 \
+        sqlite=3.40.0-r0 \
+        sudo=1.9.12_p1-r1 \
+        tmux=3.3a-r0 \
+        vim=9.0.0999-r0 \
+        wget=1.21.3-r2 \
+        zip=3.0-r10 \
         zsh-autosuggestions=0.7.0-r0 \
-        zsh-syntax-highlighting=0.7.1-r2 \
-        zsh=5.8.1-r4 \
+        zsh-syntax-highlighting=0.7.1_git20220514-r0 \
+        zsh=5.9-r0 \
     \
     && git clone --depth 1 \
         https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh \
