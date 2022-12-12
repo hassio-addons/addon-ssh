@@ -38,7 +38,7 @@ RUN \
         colordiff=1.0.20-r0 \
         docker-bash-completion=20.10.21-r1 \
         docker-zsh-completion=20.10.21-r1 \
-        git=2.38.1-r0 \
+        git=2.38.2-r0 \
         htop=3.2.1-r1 \
         json-c=0.16-r0 \
         libltdl=2.4.7-r0 \
