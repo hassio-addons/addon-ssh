@@ -60,7 +60,7 @@ RUN \
         py3-pip=22.3.1-r1 \
         python3=3.10.9-r1 \
         rsync=3.2.7-r0 \
-        sqlite=3.40.0-r0 \
+        sqlite=3.40.1-r0 \
         sudo=1.9.12_p1-r1 \
         tmux=3.3a-r0 \
         vim=9.0.0999-r0 \
