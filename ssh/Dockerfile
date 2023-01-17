@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:13.0.1
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:13.1.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -20,7 +20,7 @@ RUN \
         build-base=0.5-r3 \
         cmake=3.24.3-r0 \
         docker=20.10.21-r2 \
-        json-c-dev=0.16-r0 \
+        json-c-dev=0.16-r2 \
         libffi-dev=3.4.4-r0 \
         libuv-dev=1.44.2-r0 \
         openssl-dev=3.0.7-r2 \
@@ -40,7 +40,7 @@ RUN \
         docker-zsh-completion=20.10.21-r2 \
         git=2.38.2-r0 \
         htop=3.2.1-r1 \
-        json-c=0.16-r0 \
+        json-c=0.16-r2 \
         libltdl=2.4.7-r0 \
         libuv=1.44.2-r0 \
         libxml2-utils=2.10.3-r1 \
@@ -51,7 +51,7 @@ RUN \
         nano=7.0-r0 \
         ncurses=6.3_p20221119-r0 \
         net-tools=2.10-r0 \
-        networkmanager-cli=1.40.8-r0 \
+        networkmanager-cli=1.40.10-r0 \
         nmap=7.93-r0 \
         openssh=9.1_p1-r1 \
         openssl=3.0.7-r2 \
