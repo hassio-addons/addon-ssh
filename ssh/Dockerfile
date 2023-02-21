@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:13.1.0
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:13.1.2
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -19,12 +19,12 @@ RUN \
         bsd-compat-headers=0.7.2-r3 \
         build-base=0.5-r3 \
         cmake=3.24.3-r0 \
-        docker=20.10.21-r2 \
+        docker=20.10.21-r3 \
         json-c-dev=0.16-r2 \
         libffi-dev=3.4.4-r0 \
         libuv-dev=1.44.2-r0 \
-        openssl-dev=3.0.7-r2 \
-        python3-dev=3.10.9-r1 \
+        openssl-dev=3.0.8-r0 \
+        python3-dev=3.10.10-r0 \
         zlib-dev=1.2.13-r0 \
     \
     && apk add --no-cache \
@@ -33,35 +33,35 @@ RUN \
         alsa-utils=1.2.8-r0 \
         awake=1.0-r7 \
         bash-completion=2.11-r4 \
-        bind-tools=9.18.10-r0 \
+        bind-tools=9.18.11-r0 \
         bluez=5.66-r1 \
         colordiff=1.0.20-r0 \
-        docker-bash-completion=20.10.21-r2 \
-        docker-zsh-completion=20.10.21-r2 \
-        git=2.38.3-r1 \
+        docker-bash-completion=20.10.21-r3 \
+        docker-zsh-completion=20.10.21-r3 \
+        git=2.38.4-r0 \
         htop=3.2.1-r1 \
         json-c=0.16-r2 \
-        libltdl=2.4.7-r0 \
+        libltdl=2.4.7-r1 \
         libuv=1.44.2-r0 \
         libxml2-utils=2.10.3-r1 \
-        mariadb-client=10.6.11-r0 \
+        mariadb-client=10.6.12-r0 \
         mosh=1.4.0-r0 \
         mosquitto-clients=2.0.15-r1 \
         nano-syntax=7.0-r0 \
         nano=7.0-r0 \
         ncurses=6.3_p20221119-r0 \
         net-tools=2.10-r0 \
-        networkmanager-cli=1.40.10-r0 \
+        networkmanager-cli=1.40.12-r0 \
         nmap=7.93-r0 \
-        openssh=9.1_p1-r1 \
-        openssl=3.0.7-r2 \
+        openssh=9.1_p1-r2 \
+        openssl=3.0.8-r0 \
         pwgen=2.08-r2 \
         pulseaudio-utils=16.1-r6 \
         py3-pip=22.3.1-r1 \
-        python3=3.10.9-r1 \
+        python3=3.10.10-r0 \
         rsync=3.2.7-r0 \
         sqlite=3.40.1-r0 \
-        sudo=1.9.12_p1-r1 \
+        sudo=1.9.12_p2-r0 \
         tmux=3.3a-r0 \
         vim=9.0.0999-r0 \
         wget=1.21.3-r2 \
