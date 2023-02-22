@@ -38,10 +38,12 @@ RUN \
         colordiff=1.0.20-r0 \
         docker-bash-completion=20.10.21-r3 \
         docker-zsh-completion=20.10.21-r3 \
+        gcompat=1.1.0-r0 \
         git=2.38.4-r0 \
         htop=3.2.1-r1 \
         json-c=0.16-r2 \
         libltdl=2.4.7-r1 \
+        libstdc++=12.2.1_git20220924-r9 \
         libuv=1.44.2-r0 \
         libxml2-utils=2.10.3-r1 \
         mariadb-client=10.6.12-r0 \
