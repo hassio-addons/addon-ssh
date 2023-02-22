@@ -251,26 +251,13 @@ based on the following:
 
 ## Visual Studio Code Remote - SSH
 
-Some customization is required prior to being able to connect to your Home 
-Assistant install with Visual Studio Code. The following configuration will aid
-in setting up VSCode Remote - SSH:
+Setting the following parameters as is shown will allow you to connect to
+your Home Assistant instance using VSCode Remote - SSH:
 
 ```yaml
-packages:
-  - gcompat
-  - libstdc++
-  - curl
 allow_remote_port_forwarding: true
 allow_tcp_forwarding: true
 ```
-
-### Notes
-* Allowing remote port and tcp forwarding lower the overall level of security of 
-your SSH server. Nevertheless, this warning is debatable. 
-* It is *not* required to disable protection mode for this to work correctly.
-* The Studio Code Server addon is not required for this to work correctly.
-* This will not work through Home Assistant Cloud. LAN only unless you've exposed
-your server directly to the internet. 
 
 ## Support
 
