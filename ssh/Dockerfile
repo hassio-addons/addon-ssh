@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:13.1.2
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:13.1.3
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -38,7 +38,7 @@ RUN \
         colordiff=1.0.20-r0 \
         docker-bash-completion=20.10.21-r3 \
         docker-zsh-completion=20.10.21-r3 \
-        git=2.38.4-r0 \
+        git=2.38.4-r1 \
         htop=3.2.1-r1 \
         json-c=0.16-r2 \
         libltdl=2.4.7-r1 \
@@ -51,7 +51,7 @@ RUN \
         nano=7.0-r0 \
         ncurses=6.3_p20221119-r0 \
         net-tools=2.10-r0 \
-        networkmanager-cli=1.40.12-r0 \
+        networkmanager-cli=1.40.16-r0 \
         nmap=7.93-r0 \
         openssh=9.1_p1-r2 \
         openssl=3.0.8-r0 \
@@ -61,7 +61,7 @@ RUN \
         python3=3.10.10-r0 \
         rsync=3.2.7-r0 \
         sqlite=3.40.1-r0 \
-        sudo=1.9.12_p2-r0 \
+        sudo=1.9.12_p2-r1 \
         tmux=3.3a-r0 \
         vim=9.0.0999-r0 \
         wget=1.21.3-r2 \
