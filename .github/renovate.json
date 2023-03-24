@@ -4,6 +4,7 @@
   "dependencyDashboard": true,
   "labels": ["dependencies", "no-stale"],
   "commitMessagePrefix": "⬆️",
+  "commitMessageTopic": "{{depName}}",
   "regexManagers": [
     {
       "fileMatch": ["/Dockerfile$", "/build.yaml$"],
