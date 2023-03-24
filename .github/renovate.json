@@ -60,6 +60,20 @@
       "matchDatasources": ["docker"],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
+    },
+    {
+      "matchManagers": ["pip_requirements"],
+      "addLabels": ["python"]
+    },
+    {
+      "matchManagers": ["pip_requirements"],
+      "matchDepTypes": ["dev"],
+      "rangeStrategy": "pin"
+    },
+    {
+      "matchManagers": ["pip_requirements"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
     }
   ]
 }
