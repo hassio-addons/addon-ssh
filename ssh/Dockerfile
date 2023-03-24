@@ -13,6 +13,8 @@ COPY requirements.txt /tmp/
 
 # Setup base
 ARG BUILD_ARCH=amd64
+ARG HA_CLI_VERSION="4.23.0"
+ARG TTYD_VERSION="1.7.3"
 # hadolint ignore=DL3003,DL3042
 RUN \
     apk add --no-cache --virtual .build-dependencies \
@@ -74,7 +76,7 @@ RUN \
         https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh \
     \
     && curl -L -s -o /usr/bin/ha \
-        "https://github.com/home-assistant/cli/releases/download/4.23.0/ha_${BUILD_ARCH}" \
+        "https://github.com/home-assistant/cli/releases/download/${HA_CLI_VERSION}/ha_${BUILD_ARCH}" \
     \
     && chmod a+x /usr/bin/ha \
     && ha completion bash > /usr/share/bash-completion/completions/ha \
@@ -101,7 +103,7 @@ RUN \
     \
     && git clone --branch main --single-branch \
         https://github.com/tsl0922/ttyd.git /tmp/ttyd \
-    && git -C /tmp/ttyd checkout "1.7.3" \
+    && git -C /tmp/ttyd checkout "${TTYD_VERSION}" \
     \
     && mkdir -p /tmp/ttyd/build \
     && cd /tmp/ttyd/build \
