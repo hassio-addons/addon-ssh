@@ -25,7 +25,7 @@ RUN \
         json-c-dev=0.16-r2 \
         libffi-dev=3.4.4-r0 \
         libuv-dev=1.44.2-r0 \
-        openssl-dev=3.0.8-r0 \
+        openssl-dev=3.0.8-r1 \
         python3-dev=3.10.10-r0 \
         zlib-dev=1.2.13-r0 \
     \
