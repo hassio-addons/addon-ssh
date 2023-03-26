@@ -45,7 +45,7 @@ RUN \
         htop=3.2.1-r1 \
         json-c=0.16-r2 \
         libltdl=2.4.7-r1 \
-        libstdc++=12.2.1_git20220924-r9 \
+        libstdc++=12.2.1_git20220924-r4 \
         libuv=1.44.2-r0 \
         libxml2-utils=2.10.3-r1 \
         mariadb-client=10.6.12-r0 \
