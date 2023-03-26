@@ -34,7 +34,7 @@
       "fileMatch": ["/Dockerfile$"],
       "matchStringsStrategy": "any",
       "matchStrings": [
-        "\\s\\s(?<package>[a-z0-9-]+)=(?<currentValue>[a-z0-9-_.]+)\\s+"
+        "\\s\\s(?<package>[a-z0-9][a-z0-9-_]+)=(?<currentValue>[a-z0-9-_.]+)\\s+"
       ],
       "versioningTemplate": "loose",
       "datasourceTemplate": "repology",
@@ -63,11 +63,7 @@
     },
     {
       "matchManagers": ["pip_requirements"],
-      "addLabels": ["python"]
-    },
-    {
-      "matchManagers": ["pip_requirements"],
-      "matchDepTypes": ["dev"],
+      "addLabels": ["python"],
       "rangeStrategy": "pin"
     },
     {
