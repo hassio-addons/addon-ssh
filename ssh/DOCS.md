@@ -208,6 +208,11 @@ The add-on has ZSH pre-installed and configured as the default shell.
 However, ZSH might not be your preferred choice. By setting this option to
 `false`, you will disable ZSH and the add-on will fallback to Bash instead.
 
+#### Option: `tmux`
+
+By default, the terminal Web UI uses [tmux][tmux] which can be disabled by
+setting this option to `false`.
+
 #### Option: `share_sessions`
 
 By default, the terminal session between the web client and SSH is shared.
@@ -322,4 +327,5 @@ SOFTWARE.
 [releases]: https://github.com/hassio-addons/addon-ssh/releases
 [semver]: https://semver.org/spec/v2.0.0.html
 [ssh-audit]: https://github.com/jtesta/ssh-audit
+[tmux]: https://github.com/tmux/tmux
 [zsh]: https://en.wikipedia.org/wiki/Z_shell

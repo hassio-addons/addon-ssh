@@ -24,9 +24,15 @@ options+=(-i hassio)
 ingress_port=$(bashio::addon.ingress_port)
 options+=(-p "${ingress_port}")
 
-ttyd_command=(tmux -u new -A -s homeassistant zsh -l)
-if ! bashio::config.true "zsh"; then
-    ttyd_command=(tmux -u new -A -s homeassistant bash -l)
+ttyd_command=()
+if bashio::config.true "tmux"; then
+    ttyd_command+=(tmux -u new -A -s homeassistant)
+fi
+
+if bashio::config.true "zsh"; then
+    ttyd_command+=(zsh -l)
+else
+    ttyd_command+=(bash -l)
 fi
 
 # Change working directory
