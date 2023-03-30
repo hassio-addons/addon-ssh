@@ -70,6 +70,12 @@
       "matchManagers": ["pip_requirements"],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
+    },
+    {
+      "groupName": "OpenSSL",
+      "matchDatasources": ["repology"],
+      "matchPackagePatterns": ["^alpine_.*/openssl.*$"],
+      "automerge": true
     }
   ]
 }
