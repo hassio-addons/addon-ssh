@@ -21,7 +21,7 @@ RUN \
         bsd-compat-headers=0.7.2-r3 \
         build-base=0.5-r3 \
         cmake=3.24.4-r0 \
-        docker=20.10.21-r3 \
+        docker=20.10.24-r0 \
         json-c-dev=0.16-r2 \
         libffi-dev=3.4.4-r0 \
         libuv-dev=1.44.2-r0 \
