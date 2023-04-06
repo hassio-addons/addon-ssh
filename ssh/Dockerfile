@@ -62,7 +62,7 @@ RUN \
         pwgen=2.08-r2 \
         pulseaudio-utils=16.1-r6 \
         py3-pip=22.3.1-r1 \
-        python3=3.10.10-r0 \
+        python3=3.10.11-r0 \
         rsync=3.2.7-r0 \
         sqlite=3.40.1-r0 \
         sudo=1.9.12_p2-r1 \
