@@ -76,6 +76,12 @@
       "matchDatasources": ["repology"],
       "matchPackagePatterns": ["^alpine_.*/openssl.*$"],
       "automerge": true
+    },
+    {
+      "groupName": "Docker",
+      "matchDatasources": ["repology"],
+      "matchPackagePatterns": ["^alpine_.*/docker.*$"],
+      "automerge": true
     }
   ]
 }
