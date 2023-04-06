@@ -72,15 +72,21 @@
       "automerge": true
     },
     {
+      "groupName": "Docker",
+      "matchDatasources": ["repology"],
+      "matchPackagePatterns": ["^alpine_.*/docker.*$"],
+      "automerge": true
+    },
+    {
       "groupName": "OpenSSL",
       "matchDatasources": ["repology"],
       "matchPackagePatterns": ["^alpine_.*/openssl.*$"],
       "automerge": true
     },
     {
-      "groupName": "Docker",
+      "groupName": "Python",
       "matchDatasources": ["repology"],
-      "matchPackagePatterns": ["^alpine_.*/docker.*$"],
+      "matchPackagePatterns": ["^alpine_.*/python3(-dev)?$"],
       "automerge": true
     }
   ]
