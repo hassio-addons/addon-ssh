@@ -38,7 +38,7 @@ RUN \
         bind-tools=9.18.11-r0 \
         bluez=5.66-r1 \
         colordiff=1.0.20-r0 \
-        docker-bash-completion=20.10.21-r3 \
+        docker-bash-completion=20.10.24-r0 \
         docker-zsh-completion=20.10.21-r3 \
         gcompat=1.1.0-r0 \
         git=2.38.4-r1 \
