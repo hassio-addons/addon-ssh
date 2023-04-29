@@ -52,6 +52,9 @@ echo "export SUPERVISOR_TOKEN=\"${SUPERVISOR_TOKEN}\"" \
     >> "${HOME_ASSISTANT_PROFILE_D_FILE}" \
         || bashio::exit.nok 'Failed to export Supervisor API token'
 
+echo "SUPERVISOR_TOKEN=${SUPERVISOR_TOKEN}" > /data/.ssh/environment \
+    || bashio::exit.nok 'Failed to set Supervisor API token in env'
+
 # Sets up the users .ssh folder to be persistent
 if ! bashio::fs.directory_exists "${SSH_USER_PATH}"; then
     mkdir -p "${SSH_USER_PATH}" \
