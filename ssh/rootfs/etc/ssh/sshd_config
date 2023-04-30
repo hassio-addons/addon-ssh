@@ -44,7 +44,7 @@ AuthorizedKeysFile /etc/ssh/authorized_keys ~/.ssh/authorized_keys
 
 # Environment
 # ===================
-PermitUserEnvironment no
+PermitUserEnvironment SUPERVISOR_TOKEN
 
 # Forwarding / Tunnel
 # ===================
