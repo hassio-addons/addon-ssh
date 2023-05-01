@@ -1,4 +1,4 @@
-# Home Assistant Community Add-on: SSH & Web Terminal
+# Home Assistant Community Add-on: Advanced SSH & Web Terminal
 
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
@@ -41,8 +41,8 @@ usability, flexibility and also provides access using a web interface.
 
 ## WARNING
 
-The SSH & Web Terminal add-on is very powerful and gives you access to almost
-all tools and hardware of your system.
+The advanced SSH & Web Terminal add-on is very powerful and gives you access
+to almost all tools and hardware of your system.
 
 While this add-on is created and maintained with care and with security in mind,
 in the wrong or inexperienced hands, it could damage your system.
