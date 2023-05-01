@@ -1,6 +1,6 @@
 #!/command/with-contenv bashio
 # ==============================================================================
-# Home Assistant Community Add-on: SSH & Web Terminal
+# Home Assistant Community Add-on: Advanced SSH & Web Terminal
 # This script overrides the shutdown command to shutdown the host machine.
 # ==============================================================================
 bashio::host.shutdown

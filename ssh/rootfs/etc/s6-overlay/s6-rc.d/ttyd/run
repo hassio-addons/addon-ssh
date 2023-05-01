@@ -1,7 +1,7 @@
 #!/command/with-contenv bashio
 # shellcheck shell=bash
 # ==============================================================================
-# Home Assistant Community Add-on: SSH & Web Terminal
+# Home Assistant Community Add-on: Advanced SSH & Web Terminal
 # Runs the ttyd daemon
 # ==============================================================================
 declare ttyd_command
