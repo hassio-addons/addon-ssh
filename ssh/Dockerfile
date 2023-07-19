@@ -57,7 +57,7 @@ RUN \
         net-tools=2.10-r3 \
         networkmanager-cli=1.42.8-r0 \
         nmap=7.93-r1 \
-        openssh=9.3_p1-r3 \
+        openssh=9.3_p2-r0 \
         openssl=3.1.1-r2 \
         pwgen=2.08-r3 \
         pulseaudio-utils=16.1-r10 \
