@@ -50,7 +50,7 @@ RUN \
         libxml2-utils=2.11.4-r0 \
         mariadb-client=10.11.4-r0 \
         mosh=1.4.0-r1 \
-        mosquitto-clients=2.0.15-r3 \
+        mosquitto-clients=2.0.17-r0 \
         nano-syntax=7.2-r1 \
         nano=7.2-r1 \
         ncurses=6.4_p20230506-r0 \
