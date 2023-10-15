@@ -20,6 +20,9 @@ fi
 # Listen on Supervisor interface only
 options+=(-i hassio)
 
+# We want to be able to use the terminal
+options+=(--writable)
+
 # Get assigned Ingress port
 ingress_port=$(bashio::addon.ingress_port)
 options+=(-p "${ingress_port}")
