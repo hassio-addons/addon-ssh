@@ -21,9 +21,9 @@ done
 
 # Some links to old locations, to not mess with the user's muscle memory
 ln -s "/homeassistant" "/config" \
-    || bashio::log.warning "Failed linking common directory: ${dir}"
+    || bashio::log.warning "Failed linking common directory: /config"
 ln -s "/homeassistant" "${HOME}/config" \
-    || bashio::log.warning "Failed linking common directory: ${dir}"
+    || bashio::log.warning "Failed linking common directory: ${HOME}/config"
 
 # Sets up ZSH or Bash shell history
 if bashio::config.true "zsh"; then
