@@ -44,12 +44,13 @@ privileged:
 devices:
   - /dev/mem
 map:
-  - config:rw
-  - ssl:rw
   - addons:rw
+  - all_addon_configs:rw
+  - backup:rw
+  - homeassistant_config:rw
   - media:rw
   - share:rw
-  - backup:rw
+  - ssl:rw
 journald: true
 options:
   ssh:

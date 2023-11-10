@@ -4,7 +4,7 @@
 # Home Assistant Community Add-on: Advanced SSH & Web Terminal
 # Executes configured customizations & persists user settings
 # ==============================================================================
-readonly -a DIRECTORIES=(addons backup config media share ssl)
+readonly -a DIRECTORIES=(addon_configs addons backup homeassistant media share ssl)
 readonly BASH_HISTORY_FILE=/root/.bash_history
 readonly BASH_HISTORY_PERSISTENT_FILE=/data/.bash_history
 readonly GIT_CONFIG=/data/.gitconfig
@@ -18,6 +18,12 @@ for dir in "${DIRECTORIES[@]}"; do
     ln -s "/${dir}" "${HOME}/${dir}" \
         || bashio::log.warning "Failed linking common directory: ${dir}"
 done
+
+# Some links to old locations, to not mess with the user's muscle memory
+ln -s "/homeassistant" "/config" \
+    || bashio::log.warning "Failed linking common directory: ${dir}"
+ln -s "/homeassistant" "${HOME}/config" \
+    || bashio::log.warning "Failed linking common directory: ${dir}"
 
 # Sets up ZSH or Bash shell history
 if bashio::config.true "zsh"; then
