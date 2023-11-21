@@ -47,7 +47,7 @@ RUN \
         libltdl=2.4.7-r2 \
         libstdc++=12.2.1_git20220924-r10 \
         libuv=1.44.2-r2 \
-        libxml2-utils=2.11.4-r0 \
+        libxml2-utils=2.11.6-r0 \
         mariadb-client=10.11.5-r0 \
         mosh=1.4.0-r1 \
         mosquitto-clients=2.0.18-r0 \
