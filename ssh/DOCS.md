@@ -72,6 +72,22 @@ comparison to installing any other Home Assistant add-on.
 1. Check the logs of the "Advanced SSH & Web Terminal" add-on to see if everything
    went well.
 
+<details>
+  <summary> :rotating_light: NOTE :rotating_light: </summary>
+  
+  --- 
+  
+   **RSA is deprecated**
+  
+  Please use *ed25519* instead. <br />
+  To generate a new ed25519 key, (on linux) you can use this command: <br />
+  `ssh-keygen -t ed25519` <br /><br />
+  Paste the content of your ``~/.ssh/id_ed25519.pub`` file in the `authorized_keys` section
+  
+  ---
+  
+</details>
+
 ## Configuration
 
 **Note**: _Remember to restart the add-on when the configuration is changed._
@@ -84,7 +100,7 @@ ssh:
   username: homeassistant
   password: ""
   authorized_keys:
-    - ssh-rsa AASDJKJKJFWJFAFLCNALCMLAK234234.....
+    - ssh-ed25519 AASDJKJKJFWJFAFLCNALCMLAK234234.....
   sftp: false
   compatibility_mode: false
   allow_agent_forwarding: false
