@@ -10,6 +10,8 @@ readonly BASH_HISTORY_PERSISTENT_FILE=/data/.bash_history
 readonly GIT_CONFIG=/data/.gitconfig
 readonly HOME_ASSISTANT_PROFILE_D_FILE=/etc/profile.d/homeassistant.sh
 readonly SSH_USER_PATH=/data/.ssh
+readonly VSCODE_SERVER_PATH=/root/.vscode-server
+readonly VSCODE_SERVER_PERSISTENT_PATH=/data/.vscode-server
 readonly ZSH_HISTORY_FILE=/root/.zsh_history
 readonly ZSH_HISTORY_PERSISTENT_FILE=/data/.zsh_history
 
@@ -78,6 +80,13 @@ if ! bashio::fs.file_exists "${GIT_CONFIG}"; then
         || bashio::exit.nok 'Failed to create .gitconfig file'
 fi
 ln -s "${GIT_CONFIG}" ~/.gitconfig
+
+# Sets up the user .vscode-server folder to be persistent
+if ! bashio::fs.directory_exists "${VSCODE_SERVER_PERSISTENT_PATH}"; then
+    mkdir -p "${VSCODE_SERVER_PERSISTENT_PATH}" \
+        || bashio::exit.nok 'Failed to create a persistent .vscode-server folder'
+fi
+ln -s "${VSCODE_SERVER_PERSISTENT_PATH}" "${VSCODE_SERVER_PATH}"
 
 # Disable SSH & Web Terminal session sharing if configured
 if ! bashio::config.true 'share_sessions'; then
