@@ -20,54 +20,54 @@ RUN \
     apk add --no-cache --virtual .build-dependencies \
         bsd-compat-headers=0.7.2-r5 \
         build-base=0.5-r3 \
-        cmake=3.26.5-r0 \
-        docker=23.0.6-r7 \
-        json-c-dev=0.16-r3 \
-        libffi-dev=3.4.4-r2 \
-        libuv-dev=1.44.2-r2 \
-        openssl-dev=3.1.4-r1 \
-        python3-dev=3.11.6-r0 \
-        zlib-dev=1.2.13-r1 \
+        cmake=3.27.8-r0 \
+        docker=24.0.7-r0 \
+        json-c-dev=0.17-r0 \
+        libffi-dev=3.4.4-r3 \
+        libuv-dev=1.47.0-r0 \
+        openssl-dev=3.1.4-r2 \
+        python3-dev=3.11.6-r1 \
+        zlib-dev=1.3-r2 \
     \
     && apk add --no-cache \
-        ack=3.7.0-r0 \
+        ack=3.7.0-r1 \
         alsa-plugins-pulse=1.2.7.1-r2 \
-        alsa-utils=1.2.9-r0 \
+        alsa-utils=1.2.10-r0 \
         awake=1.0-r9 \
-        bash-completion=2.11-r5 \
-        bind-tools=9.18.19-r0 \
-        bluez=5.66-r5 \
+        bash-completion=2.11-r6 \
+        bind-tools=9.18.19-r1 \
+        bluez=5.70-r0 \
         colordiff=1.0.21-r0 \
-        docker-bash-completion=23.0.6-r7 \
-        docker-zsh-completion=23.0.6-r7 \
-        gcompat=1.1.0-r1 \
-        git=2.40.1-r0 \
+        docker-bash-completion=24.0.7-r0 \
+        docker-zsh-completion=24.0.7-r0 \
+        gcompat=1.1.0-r4 \
+        git=2.43.0-r0 \
         htop=3.2.2-r1 \
-        json-c=0.16-r3 \
-        libltdl=2.4.7-r2 \
-        libstdc++=12.2.1_git20220924-r10 \
-        libuv=1.44.2-r2 \
+        json-c=0.17-r0 \
+        libltdl=2.4.7-r3 \
+        libstdc++=13.2.1_git20231014-r0 \
+        libuv=1.47.0-r0 \
         libxml2-utils=2.11.6-r0 \
-        mariadb-client=10.11.5-r0 \
-        mosh=1.4.0-r1 \
+        mariadb-client=10.11.5-r3 \
+        mosh=1.4.0-r6 \
         mosquitto-clients=2.0.18-r0 \
         nano-syntax=7.2-r1 \
         nano=7.2-r1 \
-        ncurses=6.4_p20230506-r0 \
+        ncurses=6.4_p20231125-r0 \
         net-tools=2.10-r3 \
-        networkmanager-cli=1.42.8-r0 \
-        nmap=7.93-r1 \
-        openssh=9.3_p2-r0 \
-        openssl=3.1.4-r1 \
+        networkmanager-cli=1.44.2-r1 \
+        nmap=7.94-r0 \
+        openssh=9.5_p1-r0 \
+        openssl=3.1.4-r2 \
         pwgen=2.08-r3 \
-        pulseaudio-utils=16.1-r10 \
-        py3-pip=23.1.2-r0 \
-        python3=3.11.6-r0 \
+        pulseaudio-utils=16.1-r11 \
+        py3-pip=23.3.1-r0 \
+        python3=3.11.6-r1 \
         rsync=3.2.7-r4 \
-        sqlite=3.41.2-r2 \
-        sudo=1.9.13_p3-r2 \
+        sqlite=3.44.2-r0 \
+        sudo=1.9.15_p2-r0 \
         tmux=3.3a_git20230428-r0 \
-        vim=9.0.2073-r0 \
+        vim=9.0.2127-r0 \
         wget=1.21.4-r0 \
         zip=3.0-r12 \
         zsh-autosuggestions=0.7.0-r0 \
@@ -85,7 +85,7 @@ RUN \
     \
     && sed -i -e "s#bin/ash#bin/zsh#" /etc/passwd \
     \
-    && git clone --branch "v4.3.2" --depth=1 \
+    && git clone --branch "v4.3.3" --depth=1 \
         https://github.com/warmcat/libwebsockets.git /tmp/libwebsockets \
     \
     && mkdir -p /tmp/libwebsockets/build \
