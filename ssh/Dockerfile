@@ -25,7 +25,7 @@ RUN \
         json-c-dev=0.17-r0 \
         libffi-dev=3.4.4-r3 \
         libuv-dev=1.47.0-r0 \
-        openssl-dev=3.1.4-r3 \
+        openssl-dev=3.1.4-r4 \
         python3-dev=3.11.6-r1 \
         zlib-dev=1.3-r2 \
     \
@@ -58,7 +58,7 @@ RUN \
         networkmanager-cli=1.44.2-r1 \
         nmap=7.94-r0 \
         openssh=9.6_p1-r0 \
-        openssl=3.1.4-r3 \
+        openssl=3.1.4-r4 \
         pwgen=2.08-r3 \
         pulseaudio-utils=16.1-r11 \
         py3-pip=23.3.1-r0 \
