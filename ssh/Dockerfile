@@ -14,7 +14,7 @@ COPY requirements.txt /tmp/
 # Setup base
 ARG BUILD_ARCH=amd64
 ARG HA_CLI_VERSION="4.31.0"
-ARG TTYD_VERSION="1.7.5"
+ARG TTYD_VERSION="1.7.6"
 # hadolint ignore=DL3003,DL3042
 RUN \
     apk add --no-cache --virtual .build-dependencies \
