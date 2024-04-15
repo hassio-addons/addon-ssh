@@ -258,8 +258,6 @@ your Home Assistant instance using VSCode Remote - SSH:
 ssh:
   allow_remote_port_forwarding: true
   allow_tcp_forwarding: true
-packages:
-  - procps
 ```
 
 ## Support
