@@ -28,6 +28,10 @@ RUN \
         openssl-dev=3.1.4-r6 \
         python3-dev=3.11.9-r0 \
         zlib-dev=1.3.1-r0 \
+        python3-dev-3.11.9-r0 \
+        klibc-dev-2.0.13-r0 \
+        libc-dev-0.7.2-r5 \
+        gcc \
     \
     && apk add --no-cache \
         ack=3.7.0-r1 \
