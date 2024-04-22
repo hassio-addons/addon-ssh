@@ -35,5 +35,8 @@ fi
 # Change working directory
 cd /root || bashio::exit.nok 'Unable to change working directory'
 
+# Set environment so that we know if we're running under ttyd
+export TTYD=1
+
 # Run the ttyd daemon
 exec ttyd "${options[@]}" "${ttyd_command[@]}"
