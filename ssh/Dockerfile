@@ -59,7 +59,7 @@ RUN \
         nmap=7.95-r0 \
         openssh=9.7_p1-r3 \
         openssl=3.3.0-r2 \
-        procps=4.0.4-r0 \
+        procps-ng=4.0.4-r0 \
         pwgen=2.08-r3 \
         pulseaudio-utils=17.0-r0 \
         py3-pip=24.0-r2 \
