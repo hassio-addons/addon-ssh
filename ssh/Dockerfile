@@ -84,7 +84,7 @@ RUN \
     && chmod a+x /usr/bin/ha \
     && ha completion bash > /usr/share/bash-completion/completions/ha \
     \
-    && sed -i -e "s#bin/ash#bin/zsh#" /etc/passwd \
+    && sed -i -e "s#bin/sh#bin/zsh#" /etc/passwd \
     \
     && git clone --branch "v4.3.3" --depth=1 \
         https://github.com/warmcat/libwebsockets.git /tmp/libwebsockets \
