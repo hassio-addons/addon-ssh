@@ -53,21 +53,6 @@ then
     bashio::exit.nok
 fi
 
-# SFTP only works if the user is root
-if bashio::config.true 'ssh.sftp' \
-    && ! bashio::config.equals 'ssh.username' 'root';
-then
-    bashio::log.fatal
-    bashio::log.fatal 'You have enabled SFTP using the "ssh.sftp" add-on'
-    bashio::log.fatal 'option. Unfortunately, this requires "ssh.username"'
-    bashio::log.fatal 'to be "root".'
-    bashio::log.fatal
-    bashio::log.fatal 'Please change "ssh.username" to "root" or disable'
-    bashio::log.fatal 'SFTP by setting "ssh.sftp" to false.'
-    bashio::log.fatal
-    bashio::exit.nok
-fi
-
 # Warn about password login
 if bashio::config.has_value 'ssh.password'; then
     bashio::log.warning
@@ -134,6 +119,13 @@ sed -i "s/Port\\ .*/Port\\ ${port}/" "${SSH_CONFIG_PATH}" \
 # SFTP access
 if bashio::config.true 'ssh.sftp'; then
     sed -i '/Subsystem sftp/s/^#//g' "${SSH_CONFIG_PATH}"
+    if [[ "${username}" != "root" ]]; then
+        # The configuration files a user is interested in are writable
+        # only by root and aren't accessible if logging in not as root.
+        # Run sftp-server under sudo just like .profile so it can modify
+        # them.
+        sed -i "s#/usr/lib/ssh/sftp-server#/usr/bin/sudo /usr/lib/ssh/sftp-server#" "${SSH_CONFIG_PATH}"
+    fi
     bashio::log.notice 'SFTP access is enabled'
 fi
 

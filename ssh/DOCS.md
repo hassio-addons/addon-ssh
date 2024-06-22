@@ -137,9 +137,6 @@ you have authenticated. Using `root` as the username is possible, but not
 recommended. Usernames will be converted to lower case as per recommended
 practises.
 
-**Note**: _Due to limitations, you will need to set this option to `root` in
-order to be able to enable the SFTP capabilities._
-
 #### Option `ssh`: `password`
 
 Sets the password to log in with. Leaving it empty would disable the possibility
@@ -160,10 +157,7 @@ about using public/private key pairs and how to create them.
 #### Option `ssh`: `sftp`
 
 When set to `true` the addon will enable SFTP support on the SSH daemon.
-Please only enable it when you plan on using it.
-
-**Note**: _Due to limitations, you will need to set the username to `root` in
-order to be able to enable the SFTP capabilities._
+Please only enable it when you plan on using it (sshfs also requires SFTP).
 
 #### Option `ssh`: `compatibility_mode`
 
@@ -232,9 +226,8 @@ single time this add-on starts.
 
 ## Known issues and limitations
 
-- When SFTP is enabled, the username MUST be set to `root`.
-- If you want to use rsync for file transfer, the username MUST be set to
-  `root`.
+- If you want to use rsync for writing files, add the argument `--rsync-path="/usr/bin/sudo /usr/bin/rsync" ` to rsync as most files are writable only by root.
+- Alternatively set the username to `root`.
 
 ## Changelog & Releases
 
