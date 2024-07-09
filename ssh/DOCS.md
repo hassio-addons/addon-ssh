@@ -227,7 +227,7 @@ single time this add-on starts.
 ## Known issues and limitations
 
 - If you want to use rsync for writing files, add the argument `--rsync-path="/usr/bin/sudo /usr/bin/rsync" ` to rsync as most files are writable only by root.
-- Alternatively set the username to `root`.
+- Alternatively, set the username to `root`.
 
 ## Changelog & Releases
 
