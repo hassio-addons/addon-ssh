@@ -21,7 +21,7 @@ RUN \
         bsd-compat-headers=0.7.2-r6 \
         build-base=0.5-r3 \
         cmake=3.29.3-r0 \
-        docker=26.1.3-r1 \
+        docker=26.1.3-r2 \
         json-c-dev=0.17-r0 \
         libffi-dev=3.4.6-r0 \
         libuv-dev=1.48.0-r0 \
@@ -38,8 +38,8 @@ RUN \
         bind-tools=9.18.27-r0 \
         bluez=5.76-r0 \
         colordiff=1.0.21-r0 \
-        docker-bash-completion=26.1.3-r1 \
-        docker-zsh-completion=26.1.3-r1 \
+        docker-bash-completion=26.1.3-r2 \
+        docker-zsh-completion=26.1.3-r2 \
         gcompat=1.1.0-r4 \
         git=2.45.2-r0 \
         htop=3.3.0-r0 \
