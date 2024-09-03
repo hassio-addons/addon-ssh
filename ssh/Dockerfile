@@ -67,7 +67,7 @@ RUN \
         sqlite=3.45.3-r1 \
         sudo=1.9.15_p5-r0 \
         tmux=3.4-r1 \
-        vim=9.1.0414-r0 \
+        vim=9.1.0707-r0 \
         wget=1.24.5-r0 \
         zip=3.0-r12 \
         zsh-autosuggestions=0.7.0-r0 \
