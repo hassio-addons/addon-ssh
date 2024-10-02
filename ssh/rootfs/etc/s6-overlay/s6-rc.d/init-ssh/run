@@ -99,7 +99,7 @@ username=$(bashio::string.lower "${username}")
 if [[ "${username}" != "root" ]]; then
 
     # Create an user account
-    adduser -D "${username}" -s "/bin/zsh" \
+    adduser -D "${username}" -s "/bin/sh" \
         || bashio::exit.nok 'Failed creating the user account'
 
     # Add new user to the wheel group
