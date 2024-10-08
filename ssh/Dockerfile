@@ -26,7 +26,7 @@ RUN \
         libffi-dev=3.4.6-r0 \
         libuv-dev=1.48.0-r0 \
         openssl-dev=3.3.2-r0 \
-        python3-dev=3.12.6-r0 \
+        python3-dev=3.12.7-r0 \
         zlib-dev=1.3.1-r1 \
     \
     && apk add --no-cache \
@@ -62,7 +62,7 @@ RUN \
         pwgen=2.08-r3 \
         pulseaudio-utils=17.0-r0 \
         py3-pip=24.0-r2 \
-        python3=3.12.6-r0 \
+        python3=3.12.7-r0 \
         rsync=3.3.0-r0 \
         sqlite=3.45.3-r1 \
         sudo=1.9.15_p5-r0 \
