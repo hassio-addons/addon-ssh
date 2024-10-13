@@ -60,13 +60,14 @@ well. Additionally, it comes out of the box with the following:
   - Limits login attempts to hold off brute-force attacks better.
   - Many more security tweaks, _this addon passes all [ssh-audit] checks
     without warnings!_
-    ![Result of SSH-Audit](images/ssh-audit.png)
+    ![Result of SSH-Audit][ssh-audit-image]
 - Comes with an SSH compatibility mode option to allow older clients to connect.
 - Support for Mosh allowing roaming and supports intermittent connectivity.
 - SFTP support is disabled by default but is user configurable.
 - Compatible if Home Assistant was installed via the generic Linux installer.
 - Username is configurable, so `root` is no longer mandatory.
 - Persists custom SSH client settings & keys between add-on restarts
+- Log levels for allowing you to triage issues easier.
 - Hardware access to your audio, uart/serial devices and GPIO pins.
 - Runs with more privileges, allowing you to debug and test more situations.
 - Has access to the dbus of the host system.
@@ -79,13 +80,9 @@ well. Additionally, it comes out of the box with the following:
 - [ZSH][zsh] as its default shell. Easier to use for the beginner, more advanced
   for the more experienced user. It even comes preloaded with
   ["Oh My ZSH"][ohmyzsh], with some plugins enabled as well.
-- Bash: If ZSH is not your cup of tea, Bash can be enabled again, which
-  includes Bash completion for both the Core CLI and the Home Assistant CLI.
 - Contains a sensible set of tools right out of the box: curl, Wget, RSync, GIT,
   Nmap, Mosquitto client, MariaDB/MySQL client, Awake (“wake on LAN”), Nano,
   Vim, tmux, and a bunch commonly used networking tools.
-- Support executing commands inside using a Home Assistant service call, e.g.,
-  for use with automations.
 
 ## Support
 
@@ -183,5 +180,6 @@ SOFTWARE.
 [releases]: https://github.com/hassio-addons/addon-ssh/releases
 [repository]: https://github.com/hassio-addons/repository
 [semver]: http://semver.org/spec/v2.0.0.htm
+[ssh-audit-image]: images/ssh-audit.png
 [ssh-audit]: https://github.com/jtesta/ssh-audit
 [zsh]: https://en.wikipedia.org/wiki/Z_shell
