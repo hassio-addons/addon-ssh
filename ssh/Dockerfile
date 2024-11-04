@@ -48,7 +48,7 @@ RUN \
         libstdc++=13.2.1_git20240309-r0 \
         libuv=1.48.0-r0 \
         libxml2-utils=2.12.7-r0 \
-        mariadb-client=10.11.8-r0 \
+        mariadb-client=10.11.10-r0 \
         mosh=1.4.0-r8 \
         mosquitto-clients=2.0.18-r0 \
         nano-syntax=8.0-r0 \
