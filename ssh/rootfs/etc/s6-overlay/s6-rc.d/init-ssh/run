@@ -107,7 +107,7 @@ if [[ "${username}" != "root" ]]; then
         || bashio::exit.nok 'Failed adding user to wheel group'
 
     # Ensure new user switches to root after login
-    echo 'exec sudo -i' > "/home/${username}/.profile" \
+    echo 'exec sudo -i' > "/home/${username}/.zprofile" \
         || bashio::exit.nok 'Failed configuring user profile'
 fi
 
