@@ -106,9 +106,14 @@ if [[ "${username}" != "root" ]]; then
     adduser "${username}" wheel \
         || bashio::exit.nok 'Failed adding user to wheel group'
 
+    if bashio::config.true 'zsh'; then
     # Ensure new user switches to root after login
-    echo 'exec sudo -i' > "/home/${username}/.zprofile" \
-        || bashio::exit.nok 'Failed configuring user profile'
+        echo 'exec sudo -i' > "/home/${username}/.zprofile" \
+            || bashio::exit.nok 'Failed configuring user profile'
+    else
+        echo 'exec sudo -i' > "/home/${username}/.profile" \
+            || bashio::exit.nok 'Failed configuring user profile'
+    fi
 fi
 
 # We need to set a password for the user account
