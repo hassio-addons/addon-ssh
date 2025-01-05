@@ -52,7 +52,7 @@ fi
 
 # Set up Bash
 if ! bashio::config.true "zsh"; then
-    sed -i -e 's|/zsh$|/bash|' /etc/passwd*
+    sed -i -r -e 's|^(root:.*)/bin/zsh$|\1/bin/bash|' /etc/passwd*
     sed -i -e 's|/zsh$|/bash|' /root/.tmux.conf
 fi
 
