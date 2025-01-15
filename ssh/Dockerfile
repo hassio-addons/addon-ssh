@@ -41,7 +41,7 @@ RUN \
         docker-bash-completion=27.3.1-r0 \
         docker-zsh-completion=27.3.1-r0 \
         gcompat=1.1.0-r4 \
-        git=2.47.1-r0 \
+        git=2.47.2-r0 \
         htop=3.3.0-r0 \
         json-c=0.18-r0\
         libltdl=2.4.7-r3 \
