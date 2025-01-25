@@ -94,6 +94,7 @@ packages:
   - build-base
 init_commands:
   - ls -la
+dotfiles_repo: "https://github.com/yourusername/dotfiles"
 ```
 
 **Note**: _This is just an example, don't copy and paste it! Create your own!_
@@ -227,6 +228,12 @@ time for the add-on._
 Customize your shell environment even more with the `init_commands` option.
 Add one or more shell commands to the list, and they will be executed every
 single time this add-on starts.
+
+#### Option: `dotfiles_repo`
+
+Specify the URL of your GitHub repository containing your dotfiles. The repository will be cloned, and the setup scripts will be executed to configure your environment.
+
+**Note**: _Ensure the repository URL is correct and accessible._
 
 ## Known issues and limitations
 

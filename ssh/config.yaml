@@ -66,6 +66,7 @@ options:
   share_sessions: false
   packages: []
   init_commands: []
+  dotfiles_repo: ""
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   ssh:
@@ -84,3 +85,4 @@ schema:
     - str
   init_commands:
     - str
+  dotfiles_repo: str

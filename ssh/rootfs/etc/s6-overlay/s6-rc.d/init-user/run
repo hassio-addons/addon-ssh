@@ -113,3 +113,14 @@ if bashio::config.has_value 'init_commands'; then
             || bashio::exit.nok "Failed executing init command: ${cmd}"
     done <<< "$(bashio::config 'init_commands')"
 fi
+
+# Clone the specified dotfiles repository and execute setup scripts
+if bashio::config.has_value 'dotfiles_repo'; then
+    dotfiles_repo=$(bashio::config 'dotfiles_repo')
+    git clone "${dotfiles_repo}" /root/dotfiles \
+        || bashio::exit.nok "Failed to clone dotfiles repository: ${dotfiles_repo}"
+    if [ -f /root/dotfiles/install.sh ]; then
+        bash /root/dotfiles/install.sh \
+            || bashio::exit.nok "Failed to execute dotfiles setup script"
+    fi
+fi
