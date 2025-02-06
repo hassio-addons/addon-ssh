@@ -2,12 +2,19 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "rebaseWhen": "behind-base-branch",
   "dependencyDashboard": true,
-  "labels": ["dependencies", "no-stale"],
+  "labels": [
+    "dependencies",
+    "no-stale"
+  ],
   "commitMessagePrefix": "⬆️",
   "commitMessageTopic": "{{depName}}",
-  "regexManagers": [
+  "customManagers": [
     {
-      "fileMatch": ["/Dockerfile$", "/build.yaml$"],
+      "customType": "regex",
+      "fileMatch": [
+        "/Dockerfile$",
+        "/build.yaml$"
+      ],
       "matchStringsStrategy": "any",
       "matchStrings": [
         "ARG BUILD_FROM=(?<depName>.*?):(?<currentValue>.*?)\\s+",
@@ -16,7 +23,10 @@
       "datasourceTemplate": "docker"
     },
     {
-      "fileMatch": ["/Dockerfile$"],
+      "customType": "regex",
+      "fileMatch": [
+        "/Dockerfile$"
+      ],
       "matchStrings": [
         "ARG HA_CLI_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"
       ],
@@ -25,13 +35,21 @@
       "versioningTemplate": "loose"
     },
     {
-      "fileMatch": ["/Dockerfile$"],
-      "matchStrings": ["ARG TTYD_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"],
+      "customType": "regex",
+      "fileMatch": [
+        "/Dockerfile$"
+      ],
+      "matchStrings": [
+        "ARG TTYD_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"
+      ],
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "tsl0922/ttyd"
     },
     {
-      "fileMatch": ["/Dockerfile$"],
+      "customType": "regex",
+      "fileMatch": [
+        "/Dockerfile$"
+      ],
       "matchStringsStrategy": "any",
       "matchStrings": [
         "\\s\\s(?<package>[a-z0-9][a-z0-9-_]+)=(?<currentValue>[a-z0-9-_.]+)\\s+"
@@ -43,51 +61,85 @@
   ],
   "packageRules": [
     {
-      "matchDatasources": ["github-releases"],
-      "matchDepNames": ["home-assistant/cli"],
+      "matchDatasources": [
+        "github-releases"
+      ],
+      "matchDepNames": [
+        "home-assistant/cli"
+      ],
       "automerge": true
     },
     {
-      "matchDatasources": ["repology"],
+      "matchDatasources": [
+        "repology"
+      ],
       "automerge": true
     },
     {
       "groupName": "Add-on base image",
-      "matchDatasources": ["docker"]
+      "matchDatasources": [
+        "docker"
+      ]
     },
     {
       "groupName": "Add-on base image",
-      "matchDatasources": ["docker"],
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "automerge": true
     },
     {
-      "matchManagers": ["pip_requirements"],
-      "addLabels": ["python"],
+      "matchManagers": [
+        "pip_requirements"
+      ],
+      "addLabels": [
+        "python"
+      ],
       "rangeStrategy": "pin"
     },
     {
-      "matchManagers": ["pip_requirements"],
-      "matchUpdateTypes": ["minor", "patch"],
+      "matchManagers": [
+        "pip_requirements"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
       "automerge": true
     },
     {
       "groupName": "Docker",
-      "matchDatasources": ["repology"],
-      "matchPackagePatterns": ["^alpine_.*/docker.*$"],
-      "automerge": true
+      "matchDatasources": [
+        "repology"
+      ],
+      "automerge": true,
+      "matchPackageNames": [
+        "/^alpine_.*/docker.*$/"
+      ]
     },
     {
       "groupName": "OpenSSL",
-      "matchDatasources": ["repology"],
-      "matchPackagePatterns": ["^alpine_.*/openssl.*$"],
-      "automerge": true
+      "matchDatasources": [
+        "repology"
+      ],
+      "automerge": true,
+      "matchPackageNames": [
+        "/^alpine_.*/openssl.*$/"
+      ]
     },
     {
       "groupName": "Python",
-      "matchDatasources": ["repology"],
-      "matchPackagePatterns": ["^alpine_.*/python3(-dev)?$"],
-      "automerge": true
+      "matchDatasources": [
+        "repology"
+      ],
+      "automerge": true,
+      "matchPackageNames": [
+        "/^alpine_.*/python3(-dev)?$/"
+      ]
     }
   ]
 }
