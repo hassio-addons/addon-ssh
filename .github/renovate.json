@@ -5,8 +5,9 @@
   "labels": ["dependencies", "no-stale"],
   "commitMessagePrefix": "⬆️",
   "commitMessageTopic": "{{depName}}",
-  "regexManagers": [
+  "customManagers": [
     {
+      "customType": "regex",
       "fileMatch": ["/Dockerfile$", "/build.yaml$"],
       "matchStringsStrategy": "any",
       "matchStrings": [
@@ -16,6 +17,7 @@
       "datasourceTemplate": "docker"
     },
     {
+      "customType": "regex",
       "fileMatch": ["/Dockerfile$"],
       "matchStrings": [
         "ARG HA_CLI_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"
@@ -25,12 +27,14 @@
       "versioningTemplate": "loose"
     },
     {
+      "customType": "regex",
       "fileMatch": ["/Dockerfile$"],
       "matchStrings": ["ARG TTYD_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"],
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "tsl0922/ttyd"
     },
     {
+      "customType": "regex",
       "fileMatch": ["/Dockerfile$"],
       "matchStringsStrategy": "any",
       "matchStrings": [
@@ -74,20 +78,20 @@
     {
       "groupName": "Docker",
       "matchDatasources": ["repology"],
-      "matchPackagePatterns": ["^alpine_.*/docker.*$"],
-      "automerge": true
+      "automerge": true,
+      "matchPackageNames": ["/^alpine_.*/docker.*$/"]
     },
     {
       "groupName": "OpenSSL",
       "matchDatasources": ["repology"],
-      "matchPackagePatterns": ["^alpine_.*/openssl.*$"],
-      "automerge": true
+      "automerge": true,
+      "matchPackageNames": ["/^alpine_.*/openssl.*$/"]
     },
     {
       "groupName": "Python",
       "matchDatasources": ["repology"],
-      "matchPackagePatterns": ["^alpine_.*/python3(-dev)?$"],
-      "automerge": true
+      "automerge": true,
+      "matchPackageNames": ["/^alpine_.*/python3(-dev)?$/"]
     }
   ]
 }
