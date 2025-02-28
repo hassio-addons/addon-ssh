@@ -23,7 +23,7 @@ RUN \
         cmake=3.31.1-r0 \
         docker=27.3.1-r2 \
         json-c-dev=0.18-r0 \
-        libffi-dev=3.4.6-r0 \
+        libffi-dev=3.4.7-r0 \
         libuv-dev=1.49.2-r0 \
         openssl-dev=3.3.3-r0 \
         python3-dev=3.12.9-r0 \
