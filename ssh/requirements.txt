@@ -1,2 +1,2 @@
 pulsemixer==1.5.1
-yamllint==1.35.1
+yamllint==1.36.0
