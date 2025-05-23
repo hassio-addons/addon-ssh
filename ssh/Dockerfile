@@ -137,9 +137,10 @@ COPY rootfs /
 
 # Ensure right permissions
 RUN \
-    chmod 0750 /etc/sudo.conf \
-    && chmod 0750 -R /etc/sudoers.d \
-    && chmod 0640 /etc/sudoers.d
+    chmod 0640 /etc/sudo.conf \
+    && chmod 0750 /etc/sudoers.d \
+    && chmod 0640 /etc/sudoers.d/* \
+    && chmod 0660 /var/log/btmp
 
 # Build arguments
 ARG BUILD_ARCH
