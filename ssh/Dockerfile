@@ -141,6 +141,11 @@ RUN \
     && chmod 0750 -R /etc/sudoers.d \
     && chmod 0640 /etc/sudoers.d
 
+# Hardenings, https://www.sshaudit.com/hardening_guides.html
+RUN \
+    awk '$5 >= 3071' /etc/ssh/moduli >/etc/ssh/moduli.safe \
+    && mv /etc/ssh/moduli.safe /etc/ssh/moduli
+
 # Build arguments
 ARG BUILD_ARCH
 ARG BUILD_DATE
