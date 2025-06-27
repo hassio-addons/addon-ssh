@@ -142,6 +142,11 @@ RUN \
     && chmod 0640 /etc/sudoers.d/* \
     && chmod 0660 /var/log/btmp
 
+# Hardenings, https://www.sshaudit.com/hardening_guides.html
+RUN \
+    awk '$5 >= 3071' /etc/ssh/moduli >/etc/ssh/moduli.safe \
+    && [ -s /etc/ssh/moduli.safe ] && mv /etc/ssh/moduli.safe /etc/ssh/moduli || echo "Warning: /etc/ssh/moduli.safe is empty. SSH moduli file not replaced."
+
 # Build arguments
 ARG BUILD_ARCH
 ARG BUILD_DATE
