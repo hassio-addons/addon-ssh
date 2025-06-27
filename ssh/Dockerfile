@@ -144,7 +144,7 @@ RUN \
 # Hardenings, https://www.sshaudit.com/hardening_guides.html
 RUN \
     awk '$5 >= 3071' /etc/ssh/moduli >/etc/ssh/moduli.safe \
-    && mv /etc/ssh/moduli.safe /etc/ssh/moduli
+    && [ -s /etc/ssh/moduli.safe ] && mv /etc/ssh/moduli.safe /etc/ssh/moduli || echo "Warning: /etc/ssh/moduli.safe is empty. SSH moduli file not replaced."
 
 # Build arguments
 ARG BUILD_ARCH
