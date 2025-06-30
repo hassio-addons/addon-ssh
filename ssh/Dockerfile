@@ -65,7 +65,7 @@ RUN \
         python3=3.12.11-r0 \
         rsync=3.4.1-r0 \
         sqlite=3.49.2-r0 \
-        sudo=1.9.16_p2-r1 \
+        sudo=1.9.17_p1-r0 \
         tmux=3.5a-r1 \
         vim=9.1.1415-r0 \
         wget=1.25.0-r1 \
