@@ -2,19 +2,13 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "rebaseWhen": "behind-base-branch",
   "dependencyDashboard": true,
-  "labels": [
-    "dependencies",
-    "no-stale"
-  ],
+  "labels": ["dependencies", "no-stale"],
   "commitMessagePrefix": "⬆️",
   "commitMessageTopic": "{{depName}}",
   "customManagers": [
     {
       "customType": "regex",
-      "managerFilePatterns": [
-        "//Dockerfile$/",
-        "//build.yaml$/"
-      ],
+      "managerFilePatterns": ["//Dockerfile$/", "//build.yaml$/"],
       "matchStringsStrategy": "any",
       "matchStrings": [
         "ARG BUILD_FROM=(?<depName>.*?):(?<currentValue>.*?)\\s+",
@@ -24,9 +18,7 @@
     },
     {
       "customType": "regex",
-      "managerFilePatterns": [
-        "//Dockerfile$/"
-      ],
+      "managerFilePatterns": ["//Dockerfile$/"],
       "matchStrings": [
         "ARG HA_CLI_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"
       ],
@@ -36,20 +28,14 @@
     },
     {
       "customType": "regex",
-      "managerFilePatterns": [
-        "//Dockerfile$/"
-      ],
-      "matchStrings": [
-        "ARG TTYD_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"
-      ],
+      "managerFilePatterns": ["//Dockerfile$/"],
+      "matchStrings": ["ARG TTYD_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"],
       "datasourceTemplate": "github-tags",
       "depNameTemplate": "tsl0922/ttyd"
     },
     {
       "customType": "regex",
-      "managerFilePatterns": [
-        "//Dockerfile$/"
-      ],
+      "managerFilePatterns": ["//Dockerfile$/"],
       "matchStringsStrategy": "any",
       "matchStrings": [
         "\\s\\s(?<package>[a-z0-9][a-z0-9-_]+)=(?<currentValue>[a-z0-9-_.]+)\\s+"
@@ -61,85 +47,51 @@
   ],
   "packageRules": [
     {
-      "matchDatasources": [
-        "github-releases"
-      ],
-      "matchDepNames": [
-        "home-assistant/cli"
-      ],
+      "matchDatasources": ["github-releases"],
+      "matchDepNames": ["home-assistant/cli"],
       "automerge": true
     },
     {
-      "matchDatasources": [
-        "repology"
-      ],
+      "matchDatasources": ["repology"],
       "automerge": true
     },
     {
       "groupName": "Add-on base image",
-      "matchDatasources": [
-        "docker"
-      ]
+      "matchDatasources": ["docker"]
     },
     {
       "groupName": "Add-on base image",
-      "matchDatasources": [
-        "docker"
-      ],
-      "matchUpdateTypes": [
-        "minor",
-        "patch"
-      ],
+      "matchDatasources": ["docker"],
+      "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
     },
     {
-      "matchManagers": [
-        "pip_requirements"
-      ],
-      "addLabels": [
-        "python"
-      ],
+      "matchManagers": ["pip_requirements"],
+      "addLabels": ["python"],
       "rangeStrategy": "pin"
     },
     {
-      "matchManagers": [
-        "pip_requirements"
-      ],
-      "matchUpdateTypes": [
-        "minor",
-        "patch"
-      ],
+      "matchManagers": ["pip_requirements"],
+      "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
     },
     {
       "groupName": "Docker",
-      "matchDatasources": [
-        "repology"
-      ],
+      "matchDatasources": ["repology"],
       "automerge": true,
-      "matchPackageNames": [
-        "/^alpine_.*/docker.*$/"
-      ]
+      "matchPackageNames": ["/^alpine_.*/docker.*$/"]
     },
     {
       "groupName": "OpenSSL",
-      "matchDatasources": [
-        "repology"
-      ],
+      "matchDatasources": ["repology"],
       "automerge": true,
-      "matchPackageNames": [
-        "/^alpine_.*/openssl.*$/"
-      ]
+      "matchPackageNames": ["/^alpine_.*/openssl.*$/"]
     },
     {
       "groupName": "Python",
-      "matchDatasources": [
-        "repology"
-      ],
+      "matchDatasources": ["repology"],
       "automerge": true,
-      "matchPackageNames": [
-        "/^alpine_.*/python3(-dev)?$/"
-      ]
+      "matchPackageNames": ["/^alpine_.*/python3(-dev)?$/"]
     }
   ]
 }
