@@ -43,7 +43,7 @@ RUN \
         gcompat=1.1.0-r4 \
         git=2.49.1-r0 \
         htop=3.4.1-r0 \
-        json-c=0.18-r0\
+        json-c=0.18-r1 \
         libltdl=2.5.4-r1 \
         libstdc++=14.2.0-r6 \
         libuv=1.51.0-r0 \
