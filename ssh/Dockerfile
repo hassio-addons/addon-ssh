@@ -56,7 +56,7 @@ RUN \
         ncurses=6.5_p20250503-r0 \
         net-tools=2.10-r3 \
         nmap=7.97-r0 \
-        openssh=10.0_p1-r7 \
+        openssh=10.0_p1-r9 \
         openssl=3.5.2-r0 \
         procps-ng=4.0.4-r3 \
         pwgen=2.08-r3 \
