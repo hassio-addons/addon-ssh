@@ -35,7 +35,7 @@ RUN \
         alsa-utils=1.2.14-r0 \
         awake=1.0-r12 \
         bash-completion=2.16.0-r0 \
-        bind-tools=9.20.12-r0 \
+        bind-tools=9.20.13-r0 \
         bluez=5.82-r0 \
         colordiff=1.0.21-r0 \
         docker-bash-completion=28.3.3-r1 \
