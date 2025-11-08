@@ -49,6 +49,8 @@ map:
   - media:rw
   - share:rw
   - ssl:rw
+backup_exclude:
+  - "*/.vscode-server/**"
 journald: true
 options:
   ssh:
