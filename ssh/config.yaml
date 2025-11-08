@@ -15,7 +15,6 @@ homeassistant: 0.92.0b2
 arch:
   - aarch64
   - amd64
-  - armv7
 ports:
   22/tcp: 22
 ports_description:
