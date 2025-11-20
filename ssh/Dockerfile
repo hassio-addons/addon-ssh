@@ -63,7 +63,7 @@ RUN \
         pulseaudio-utils=17.0-r5 \
         py3-pip=25.1.1-r0 \
         python3=3.12.12-r0 \
-        rsync=3.4.1-r0 \
+        rsync=3.4.1-r1 \
         sqlite=3.49.2-r1 \
         sudo=1.9.17_p2-r0 \
         tmux=3.5a-r1 \
