@@ -72,7 +72,7 @@ RUN \
         py3-pip=26.1.2-r0 \
         python3=3.14.5-r0 \
         rsync=3.4.3-r1 \
-        screen=5.0.1-r1 \
+        screen=5.0.2-r0 \
         smartmontools=7.5-r0 \
         sqlite=3.53.2-r0 \
         sudo=1.9.17_p2-r1 \
