@@ -28,7 +28,7 @@ RUN \
         libffi-dev=3.5.2-r1 \
         libuv-dev=1.52.1-r0 \
         openssl-dev=3.5.7-r0 \
-        python3-dev=3.14.5-r0 \
+        python3-dev=3.14.7-r1 \
         zlib-dev=1.3.2-r0 \
     \
     && apk add --no-cache \
@@ -70,7 +70,7 @@ RUN \
         pwgen=2.08-r3 \
         pulseaudio-utils=17.0-r7 \
         py3-pip=26.1.2-r0 \
-        python3=3.14.5-r0 \
+        python3=3.14.7-r1 \
         rsync=3.4.3-r1 \
         screen=5.0.1-r1 \
         smartmontools=7.5-r0 \
