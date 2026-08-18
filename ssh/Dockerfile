@@ -77,7 +77,7 @@ RUN \
         sqlite=3.53.2-r0 \
         sudo=1.9.17_p2-r1 \
         tcpdump=4.99.6-r1 \
-        tmux=3.6b-r0 \
+        tmux=3.7c-r0 \
         ttyd=1.7.7-r0 \
         wget=1.25.0-r3 \
         zip=3.0-r13 \
