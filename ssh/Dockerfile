@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:21.0.0
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:21.0.2
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -15,7 +15,7 @@ COPY requirements.txt /tmp/
 
 # Setup base
 ARG BUILD_ARCH=amd64
-ARG HA_CLI_VERSION="5.2.0"
+ARG HA_CLI_VERSION="5.3.0"
 
 # hadolint ignore=DL3003,DL3042
 RUN \
@@ -28,7 +28,7 @@ RUN \
         libffi-dev=3.5.2-r1 \
         libuv-dev=1.52.1-r0 \
         openssl-dev=3.5.7-r0 \
-        python3-dev=3.14.5-r0 \
+        python3-dev=3.14.7-r1 \
         zlib-dev=1.3.2-r0 \
     \
     && apk add --no-cache \
@@ -37,14 +37,14 @@ RUN \
         alsa-utils=1.2.15.2-r1 \
         awake=1.0-r13 \
         bash-completion=2.17.0-r1 \
-        bind-tools=9.20.23-r0 \
+        bind-tools=9.20.26-r0 \
         bluez=5.86-r2 \
         colordiff=1.0.22-r0 \
         docker-bash-completion=29.5.3-r0 \
         docker-zsh-completion=29.5.3-r0 \
         gcompat=1.1.0-r4 \
         git=2.54.0-r0 \
-        htop=3.5.1-r1 \
+        htop=3.5.3-r0 \
         iproute2=7.0.0-r0 \
         json-c=0.18-r1 \
         libltdl=2.6.0-r1 \
@@ -57,8 +57,8 @@ RUN \
         mosh=1.4.0-r18 \
         mosquitto-clients=2.1.2-r1 \
         mtr=0.96-r2 \
-        nano-syntax=9.1-r0 \
-        nano=9.0-r0 \
+        nano-syntax=9.2-r0 \
+        nano=9.2-r0 \
         ncdu=1.22-r2 \
         ncurses=6.6_p20260516-r0 \
         neovim=0.12.2-r0 \
@@ -70,9 +70,9 @@ RUN \
         pwgen=2.08-r3 \
         pulseaudio-utils=17.0-r7 \
         py3-pip=26.1.2-r0 \
-        python3=3.14.5-r0 \
+        python3=3.14.7-r1 \
         rsync=3.4.3-r1 \
-        screen=5.0.1-r1 \
+        screen=5.0.2-r0 \
         smartmontools=7.5-r0 \
         sqlite=3.53.2-r0 \
         sudo=1.9.17_p2-r1 \
