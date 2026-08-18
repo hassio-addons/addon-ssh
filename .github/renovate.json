@@ -6,6 +6,12 @@
   "labels": ["dependencies", "no-stale"],
   "commitMessagePrefix": "⬆️",
   "commitMessageTopic": "{{depName}}",
+  "customDatasources": {
+    "alpine": {
+      "defaultRegistryUrlTemplate": "https://dl-cdn.alpinelinux.org/alpine/v3.24/main/x86_64/",
+      "format": "html"
+    }
+  },
   "customManagers": [
     {
       "customType": "regex",
@@ -35,8 +41,9 @@
         "\\s\\s(?<package>[a-z0-9][a-z0-9-_]+)=(?<currentValue>[a-z0-9-_.]+)\\s+"
       ],
       "versioningTemplate": "loose",
-      "datasourceTemplate": "repology",
-      "depNameTemplate": "alpine_3_24/{{package}}"
+      "datasourceTemplate": "custom.alpine",
+      "depNameTemplate": "alpine_3_24/{{package}}",
+      "extractVersionTemplate": "^{{{package}}}-(?<version>\\d.*)\\.apk$"
     }
   ],
   "packageRules": [
@@ -46,8 +53,30 @@
       "automerge": true
     },
     {
-      "matchDatasources": ["repology"],
+      "matchDatasources": ["custom.alpine"],
       "automerge": true
+    },
+    {
+      "description": "Packages that live in the Alpine community repository",
+      "matchDatasources": ["custom.alpine"],
+      "matchPackageNames": [
+        "alpine_3_24/alsa-plugins-pulse",
+        "alpine_3_24/awake",
+        "alpine_3_24/colordiff",
+        "alpine_3_24/docker",
+        "alpine_3_24/docker-bash-completion",
+        "alpine_3_24/docker-zsh-completion",
+        "alpine_3_24/mtr",
+        "alpine_3_24/neovim",
+        "alpine_3_24/pulseaudio-utils",
+        "alpine_3_24/sudo",
+        "alpine_3_24/ttyd",
+        "alpine_3_24/zsh-autosuggestions",
+        "alpine_3_24/zsh-syntax-highlighting"
+      ],
+      "registryUrls": [
+        "https://dl-cdn.alpinelinux.org/alpine/v3.24/community/x86_64/"
+      ]
     },
     {
       "groupName": "App base image",
@@ -71,19 +100,19 @@
     },
     {
       "groupName": "Docker",
-      "matchDatasources": ["repology"],
+      "matchDatasources": ["custom.alpine"],
       "automerge": true,
       "matchPackageNames": ["/^alpine_.*/docker.*$/"]
     },
     {
       "groupName": "OpenSSL",
-      "matchDatasources": ["repology"],
+      "matchDatasources": ["custom.alpine"],
       "automerge": true,
       "matchPackageNames": ["/^alpine_.*/openssl.*$/"]
     },
     {
       "groupName": "Python",
-      "matchDatasources": ["repology"],
+      "matchDatasources": ["custom.alpine"],
       "automerge": true,
       "matchPackageNames": ["/^alpine_.*/python3(-dev)?$/"]
     }
