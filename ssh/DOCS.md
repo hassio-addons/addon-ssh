@@ -29,7 +29,8 @@ well. Additionally, it comes out of the box with the following:
   - Only uses known secure ciphers and algorithms.
   - Limits login attempts to hold off brute-force attacks better.
 - Comes with an SSH compatibility mode option to allow older clients to connect.
-- Support for Mosh allowing roaming and supports intermittent connectivity.
+- Support for [Mosh](#connecting-with-mosh) allowing roaming and supports
+  intermittent connectivity.
 - SFTP support is disabled by default but is user configurable.
 - Compatible if Home Assistant was installed via the generic Linux installer.
 - Username is configurable, so `root` is no longer mandatory.
