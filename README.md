@@ -50,7 +50,8 @@ well. Additionally, it comes out of the box with the following:
   - Only uses known secure ciphers and algorithms.
   - Limits login attempts to hold off brute-force attacks better.
 - Comes with an SSH compatibility mode option to allow older clients to connect.
-- Support for Mosh allowing roaming and supports intermittent connectivity.
+- Support for [Mosh][mosh-docs] allowing roaming and supports intermittent
+  connectivity.
 - SFTP support is disabled by default but is user configurable.
 - Compatible if Home Assistant was installed via the generic Linux installer.
 - Username is configurable, so `root` is no longer mandatory.
@@ -151,6 +152,7 @@ SOFTWARE.
 [issue]: https://github.com/hassio-addons/app-ssh/issues
 [license-shield]: https://img.shields.io/github/license/hassio-addons/app-ssh.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2026.svg
+[mosh-docs]: https://github.com/hassio-addons/app-ssh/blob/main/ssh/DOCS.md#connecting-with-mosh
 [ohmyzsh]: http://ohmyz.sh/
 [openssh]: https://www.openssh.com/
 [patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
