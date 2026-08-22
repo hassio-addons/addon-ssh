@@ -27,28 +27,30 @@ ln -s "/homeassistant" "/config" \
 ln -s "/homeassistant" "${HOME}/config" \
     || bashio::log.warning "Failed linking common directory: ${HOME}/config"
 
-# Sets up ZSH or Bash shell history
-if bashio::config.true "zsh"; then
-    touch "${ZSH_HISTORY_PERSISTENT_FILE}" \
-        || bashio::exit.nok 'Failed creating a persistent ZSH history file'
+# Sets up the shell history of both ZSH and Bash to be persistent.
+#
+# This is done regardless of the configured default shell; starting the other
+# shell from within a session is always possible, and its history should
+# survive an app restart or update just the same.
+touch "${ZSH_HISTORY_PERSISTENT_FILE}" \
+    || bashio::exit.nok 'Failed creating a persistent ZSH history file'
 
-    chmod 600 "${ZSH_HISTORY_PERSISTENT_FILE}" \
-        || bashio::exit.nok \
-            'Failed setting the correct permissions to the ZSH history file'
+chmod 600 "${ZSH_HISTORY_PERSISTENT_FILE}" \
+    || bashio::exit.nok \
+        'Failed setting the correct permissions to the ZSH history file'
 
-    ln -s -f "${ZSH_HISTORY_PERSISTENT_FILE}" "${ZSH_HISTORY_FILE}" \
-        || bashio::exit.nok 'Failed linking the persistent ZSH history file'
-else
-    touch "${BASH_HISTORY_PERSISTENT_FILE}" \
-        || bashio::exit.nok 'Failed creating a persistent Bash history file'
+ln -s -f "${ZSH_HISTORY_PERSISTENT_FILE}" "${ZSH_HISTORY_FILE}" \
+    || bashio::exit.nok 'Failed linking the persistent ZSH history file'
 
-    chmod 600 "${BASH_HISTORY_PERSISTENT_FILE}" \
-        || bashio::exit.nok \
-            'Failed setting the correct permissions to the Bash history file'
+touch "${BASH_HISTORY_PERSISTENT_FILE}" \
+    || bashio::exit.nok 'Failed creating a persistent Bash history file'
 
-    ln -s -f "${BASH_HISTORY_PERSISTENT_FILE}" "${BASH_HISTORY_FILE}" \
-        || bashio::exit.nok 'Failed linking the persistent Bash history file'
-fi
+chmod 600 "${BASH_HISTORY_PERSISTENT_FILE}" \
+    || bashio::exit.nok \
+        'Failed setting the correct permissions to the Bash history file'
+
+ln -s -f "${BASH_HISTORY_PERSISTENT_FILE}" "${BASH_HISTORY_FILE}" \
+    || bashio::exit.nok 'Failed linking the persistent Bash history file'
 
 # Set up Bash
 if ! bashio::config.true "zsh"; then
