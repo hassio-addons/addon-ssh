@@ -71,7 +71,7 @@ RUN \
         pulseaudio-utils=17.0-r7 \
         py3-pip=26.1.2-r0 \
         python3=3.14.7-r1 \
-        rsync=3.4.3-r1 \
+        rsync=3.5.0-r0 \
         screen=5.0.2-r0 \
         smartmontools=7.5-r0 \
         sqlite=3.53.4-r0 \
