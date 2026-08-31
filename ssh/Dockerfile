@@ -64,7 +64,7 @@ RUN \
         neovim=0.12.2-r0 \
         nmap=7.99-r0 \
         nmap-ncat=7.99-r0 \
-        openssh=10.3_p1-r0 \
+        openssh=10.3_p1-r1 \
         openssl=3.5.8-r0 \
         procps-ng=4.0.6-r0 \
         pwgen=2.08-r3 \
