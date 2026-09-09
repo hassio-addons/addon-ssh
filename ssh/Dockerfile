@@ -15,7 +15,7 @@ COPY requirements.txt /tmp/
 
 # Setup base
 ARG BUILD_ARCH=amd64
-ARG HA_CLI_VERSION="5.4.0"
+ARG HA_CLI_VERSION="5.5.0"
 
 # hadolint ignore=DL3003,DL3042
 RUN \
